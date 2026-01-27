@@ -11,29 +11,44 @@ engine: knitr
 
 ![](img/circuito%20del%20dato.png)
 
-### Módulo I: Presentación del lenguaje R.
+### Módulo I: Introducción al curso y a la EPH
 
--   R base.
--   Data frames (bases de datos)
--   Paquetes
--   Proyectos de trabajo con RStudio
+-   Presentación del curso y dinámica de trabajo
+-   ¿Qué es la Encuesta Permanente de Hogares (EPH)?
+-   Estructura de la base de datos: hogares e individuos
+-   Principales indicadores: pobreza, empleo, ingresos
 
-### Módulo II: Procesamiento de datos con `{tidyverse}` (Parte 1)
+### Módulo II: Introducción a R + IA en el análisis de datos
+
+-   ¿Qué es R? R vs RStudio
+-   Conceptos básicos: valores, vectores, data frames, funciones
+-   IA como herramienta de aprendizaje: qué sí y qué no
+-   Buenas prácticas al usar asistentes de código
+
+### Módulo III: Procesamiento de datos con `{tidyverse}` (Parte 1)
 
 -   Importación de datos (de Excel, SPSS, Stata, archivos de texto, etc.)
 -   Seleccionar variables (`select()`)
 -   Filtrar casos (`filter()`)
 -   Operador pipe (`|>` / `%>%`)
 
-### Módulo III: Procesamiento de datos con `{tidyverse}` (Parte 2)
+### Módulo IV: Procesamiento de datos con `{tidyverse}` (Parte 2)
 
 -   Crear y transformar variables (`mutate()`)
 -   Recodificar valores (`case_when()`, `if_else()`)
 -   Agrupar y resumir información (`group_by()`, `summarise()`)
 -   Tratamiento de valores faltantes (NA's)
 
-### Módulo IV: Visualización de la información
+### Módulo V: Proyectos y organización de trabajo
 
--   Paquete `{ggplot2}`: gramática de gráficos
+-   Proyectos de RStudio: estructura y beneficios
+-   Organización de carpetas y archivos
+-   Paquetes: instalación y uso
+-   Flujo de trabajo reproducible
+
+### Módulo VI: Visualización con `{ggplot2}` + TP Integrador
+
+-   Gramática de gráficos: capas, estéticas, geometrías
 -   Gráficos de barras, líneas y dispersión
--   Personalización: títulos, ejes, leyendas, colores, temas
+-   Personalización: títulos, ejes, leyendas, colores
+-   Trabajo práctico integrador con datos de la EPH
