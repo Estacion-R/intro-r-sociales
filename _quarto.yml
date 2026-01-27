@@ -1,0 +1,61 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - encuentros/1-intro-r/intro-r.scss
+
+website:
+  #logo: jsm-logo.png
+  #repo-url: https://github.com/pablotis/intro-r-quarto/settings/pages
+  #repo-actions: [edit, issue]
+  back-to-top-navigation: true
+  navbar:
+    logo: "img/Logo_PNG_Baja_Mesa de trabajo 1.png"
+    search: true
+    left:
+      - href: index.qmd
+        text: "Inicio"
+      - href: programa.qmd
+        text: "Programa"
+      - href: puesta-punto.qmd
+        text: "Puesta a punto"
+      - href: profesor.qmd
+        text: "Docente"
+      - text: "Encuentros"
+        menu: 
+          - text: "Módulo 1: Intro a R"
+            href: encuentros/1-intro-r/index.qmd
+          - text: "Módulo 2: Proyectos de trabajo"
+            href: encuentros/2-proyectos/index.qmd
+          - text: "Módulo 3: Procesamiento de datos con {tidyverse}"
+            href: encuentros/3-tidyverse/index.qmd
+          - text: "Módulo 4: Visualización de datos con {ggplot2}"
+            href: encuentros/4-visualizacion/index.qmd
+          - text: "Módulo 5: Reportes con {rmarkdown}"
+            href: encuentros/5-reportes/index.qmd
+          - text: "Módulo 6: Trabajo integrador"
+            href: encuentros/6-TP integrador/index.qmd
+      - text: "Ejercitación"
+        menu: 
+         - text: "Encuentro 1: Intro a R"
+           href: encuentros/1-intro-r/intro-r_ejercitacion.qmd
+         - text: "Encuentro 2: Proyectos de trabajo y paquetes"
+           href: encuentros/2-proyectos/proyectos-r_ejercitacion.qmd
+         - text: "Encuentro 3: Intro a tidyverse"
+           href: encuentros/3-tidyverse/r-tidyverse_ejercicios.qmd
+    right: 
+      - href: cod_de_conducta.qmd
+        text: Código de conducta
+    # tools:
+    #   - icon: github
+    #     href: https://github.com/Estacion-R/intro-r-quarto
+ 
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+editor: visual
+
+execute:
+  freeze: auto

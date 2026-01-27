@@ -1,0 +1,44 @@
+---
+title: "Encuentro 1 - Introducción a R y conceptos básicos del lenguaje"
+author: Estación R
+image: featured.png
+description: ¿Qué es R? ¿Qué es la Ciencia de Datos? ¿Valores? ¿Vectores? ¿Funciones?
+---
+
+## Descripción
+
+En este encuentro vamos a presentar a R, su contexto y su potencia, asi como también introducirnos en sus conceptos básicos, como lo son los `valores`, `vectores`, `data frames` y `funciones`.
+
+Tendremos ejercitación para realizar durante el encuentro y se dejará práctica para poder continuar incorporando el lenguaje durante la semana. La entrega de la práctica no es obligatoria, y las resoluciones se darán al comienzo del encuentro siguiente.
+
+## Slides
+
+<iframe class="slide-deck" src="/encuentros/1-intro-r/intro-r-speaker.html" height="420" width="747" style="border: 1px solid #2e3846;">
+
+</iframe>
+
+```{r echo=FALSE}
+downloadthis::download_file(
+  path = here::here("encuentros/1-intro-r/Introducción a R base.pdf"),
+  output_name = "r-intro_r",
+  button_label = "Descarga las diapositivas",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = TRUE
+)
+```
+
+## Links
+
+-   Presentación: <https://docs.google.com/document/d/10MfUrYuR66ZB1e9OznpzsKQQBXtdPO1GTy_4aPhRLf4/edit?usp=sharing>
+
+-   Ciencia de Datos para Gente Sociable: <https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/>
+
+-   Ejercitación de la semana: <https://Estacion-R.github.io/intro-r-quarto/encuentros/1-intro-r/intro-r_ejercitacion.html>
+
+## Docente
+
+![](images/docente.jpg){style="float: right; padding-left: 10px;" fig-alt="Foto de Pablo Tiscornia" width="180"}
+
+[Pablo Tiscornia](https://www.linkedin.com/in/pablotiscornia/)

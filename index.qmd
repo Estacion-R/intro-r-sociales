@@ -1,0 +1,64 @@
+---
+title: Introducción al Procesamiento de Datos con R para Ciencias Sociales
+---
+
+![](img/Logo_PNG_Baja_Mesa%20de%20trabajo%201.png){style="float: right;" fig-alt="Logo Estación R" width="150"}
+
+> Modalidad virtual sincrónica con grabaciones disponibles.
+
+## Presentación
+
+Este curso tiene como objetivo introducir a profesionales e investigadores/as de las ciencias sociales en el uso de R para el análisis y procesamiento de datos. Trabajaremos con la **Encuesta Permanente de Hogares (EPH)** del INDEC como hilo conductor, aprendiendo a importar, limpiar, procesar y visualizar datos de forma profesional.
+
+El enfoque es 100% práctico: vas a trabajar con datos reales desde la primera clase.
+
+## ¿Para quién es?
+
+- Investigadores/as en ciencias sociales
+- Estudiantes de grado y posgrado
+- Profesionales del sector público
+- Analistas que trabajan con encuestas y datos socioeconómicos
+
+**No se requiere experiencia previa en programación.** Vamos desde cero.
+
+## ¿Qué vas a lograr?
+
+- ✅ Importar y limpiar bases de la EPH de forma profesional
+- ✅ Procesar miles de registros en minutos (vs. horas en Excel)
+- ✅ Crear visualizaciones de calidad con `{ggplot2}`
+- ✅ Automatizar análisis con código reutilizable
+- ✅ Construir indicadores socioeconómicos con criterios sólidos
+
+## Modalidad
+
+**Modalidad híbrida:** 6 clases en vivo de 2:30 hs + grabaciones con acceso de por vida. Lo podés hacer a tu ritmo si se te complica asistir.
+
+La programación no es un tema de mentes brillantes, sino de perseverancia. Con este lema, el curso se focaliza en lo práctico: ejercicios para resolver entre clase y clase, materiales de apoyo y soporte continuo.
+
+**Tip:** Recomendamos traer tu proyecto de datos para trabajar durante el curso. ¡Todas las consultas son bienvenidas!
+
+## Cronograma
+
+**Edición:** Enero - Marzo 2026
+
+**Día y horario:** Martes
+
+- 🇦🇷 Argentina: 19:00 a 21:30 hs (UTC-3)
+- 🇲🇽 México: 16:00 a 18:30 hs (UTC-6)
+
+**Fecha de inicio:** Martes 27 de enero de 2026
+
+**Cantidad de encuentros:** 6 clases de 2:30 hs cada una
+
+| Clase | Fecha | Tema |
+|-------|-------|------|
+| 1 | 27/01 | Introducción a R y RStudio |
+| 2 | 03/02 | Proyectos de trabajo y paquetes |
+| 3 | 10/02 | Procesamiento de datos con tidyverse |
+| 4 | 17/02 | Visualización con ggplot2 |
+| 5 | 24/02 | Reportes con RMarkdown/Quarto |
+| 6 | 03/03 | Trabajo práctico integrador |
+
+## Inscripción
+
+Info y registro: [estacion-r.com](https://estacion-r.com/courses/8c7c8213-9b25-48d2-a9a7-e58e1cc80e25/detail?type=sync)

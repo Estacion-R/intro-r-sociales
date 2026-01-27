@@ -1,0 +1,28 @@
+---
+title: Docente
+engine: knitr
+# listing:
+#   contents: encuentros/*/index.qmd
+#   fields: [image, title, author, subtitle]
+#   type: grid
+#   sort:
+#     - filename
+---
+
+**Pablo Tiscornia**
+
+👋🏻 Licenciado en Sociología por la Universidad de Buenos Aires (UBA) y especialista en análisis de datos con amplia experiencia en el sector público.
+
+🔍 Experiencia profesional:
+
+Trabajó en el Instituto Nacional de Estadística y Censos (INDEC) y en el Ministerio de Turismo de la Nación, donde se especializó en el análisis de datos provenientes de encuestas a hogares y la producción de indicadores socioeconómicos (pobreza, ingresos, mercado de trabajo, turismo).
+
+Utilizó R como herramienta principal para el análisis y visualización de datos, contribuyendo a una gestión pública basada en evidencia.
+
+Actualmente dirige **Estación R**, un emprendimiento especializado en formación y consultoría en R para profesionales de ciencias sociales y sector público.
+
+📊 Enfoque del curso:
+
+Con una sólida trayectoria en el uso de R para el procesamiento y análisis de datos, Pablo combina su experiencia práctica con un enfoque didáctico, asegurando que los participantes adquieran habilidades concretas y aplicables en el mundo real.
+
+------------------------------------------------------------------------

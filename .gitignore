@@ -1,0 +1,17 @@
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Quarto
+/.quarto/
+_site/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+*~
+*.swp
