@@ -1,0 +1,303 @@
+[
+  {
+    "objectID": "index.html#presentación",
+    "href": "index.html#presentación",
+    "title": "Introducción al Procesamiento de Datos con R para Ciencias Sociales",
+    "section": "Presentación",
+    "text": "Presentación\nEste curso tiene como objetivo introducir a profesionales e investigadores/as de las ciencias sociales en el uso de R para el análisis y procesamiento de datos. Trabajaremos con la Encuesta Permanente de Hogares (EPH) del INDEC como hilo conductor, aprendiendo a importar, limpiar, procesar y visualizar datos de forma profesional.\nEl enfoque es 100% práctico: vas a trabajar con datos reales desde la primera clase."
+  },
+  {
+    "objectID": "index.html#para-quién-es",
+    "href": "index.html#para-quién-es",
+    "title": "Introducción al Procesamiento de Datos con R para Ciencias Sociales",
+    "section": "¿Para quién es?",
+    "text": "¿Para quién es?\n\nInvestigadores/as en ciencias sociales\nEstudiantes de grado y posgrado\nProfesionales del sector público\nAnalistas que trabajan con encuestas y datos socioeconómicos\n\nNo se requiere experiencia previa en programación. Vamos desde cero."
+  },
+  {
+    "objectID": "index.html#qué-vas-a-lograr",
+    "href": "index.html#qué-vas-a-lograr",
+    "title": "Introducción al Procesamiento de Datos con R para Ciencias Sociales",
+    "section": "¿Qué vas a lograr?",
+    "text": "¿Qué vas a lograr?\n\n✅ Importar y limpiar bases de la EPH de forma profesional\n✅ Procesar miles de registros en minutos (vs. horas en Excel)\n✅ Crear visualizaciones de calidad con {ggplot2}\n✅ Automatizar análisis con código reutilizable\n✅ Construir indicadores socioeconómicos con criterios sólidos"
+  },
+  {
+    "objectID": "index.html#modalidad",
+    "href": "index.html#modalidad",
+    "title": "Introducción al Procesamiento de Datos con R para Ciencias Sociales",
+    "section": "Modalidad",
+    "text": "Modalidad\nModalidad híbrida: 6 clases en vivo de 2:30 hs + grabaciones con acceso de por vida. Lo podés hacer a tu ritmo si se te complica asistir.\nLa programación no es un tema de mentes brillantes, sino de perseverancia. Con este lema, el curso se focaliza en lo práctico: ejercicios para resolver entre clase y clase, materiales de apoyo y soporte continuo.\nTip: Recomendamos traer tu proyecto de datos para trabajar durante el curso. ¡Todas las consultas son bienvenidas!"
+  },
+  {
+    "objectID": "index.html#cronograma",
+    "href": "index.html#cronograma",
+    "title": "Introducción al Procesamiento de Datos con R para Ciencias Sociales",
+    "section": "Cronograma",
+    "text": "Cronograma\nEdición: Enero - Marzo 2026\nDía y horario: Martes\n\n🇦🇷 Argentina: 19:00 a 21:30 hs (UTC-3)\n🇲🇽 México: 16:00 a 18:30 hs (UTC-6)\n\nFecha de inicio: Martes 27 de enero de 2026\nCantidad de encuentros: 6 clases de 2:30 hs cada una\n\n\n\nClase\nFecha\nTema\n\n\n\n\n1\n27/01\nIntroducción al curso e Introducción a la EPH\n\n\n2\n03/02\nIntroducción a R + IA en el análisis de datos\n\n\n3\n10/02\ntidyverse I: Importación y selección\n\n\n4\n17/02\ntidyverse II: Transformación y resumen\n\n\n5\n24/02\nProyectos y organización de trabajo\n\n\n6\n03/03\nVisualización con ggplot2 + TP integrador"
+  },
+  {
+    "objectID": "index.html#inscripción",
+    "href": "index.html#inscripción",
+    "title": "Introducción al Procesamiento de Datos con R para Ciencias Sociales",
+    "section": "Inscripción",
+    "text": "Inscripción\nInfo y registro: estacion-r.com"
+  },
+  {
+    "objectID": "programa.html",
+    "href": "programa.html",
+    "title": "Programa",
+    "section": "",
+    "text": "Módulo I: Introducción al curso y a la EPH\n\nPresentación del curso y dinámica de trabajo\n¿Qué es la Encuesta Permanente de Hogares (EPH)?\nEstructura de la base de datos: hogares e individuos\nPrincipales indicadores: pobreza, empleo, ingresos\n\n\n\nMódulo II: Introducción a R + IA en el análisis de datos\n\n¿Qué es R? R vs RStudio\nConceptos básicos: valores, vectores, data frames, funciones\nIA como herramienta de aprendizaje: qué sí y qué no\nBuenas prácticas al usar asistentes de código\n\n\n\nMódulo III: Procesamiento de datos con {tidyverse} (Parte 1)\n\nImportación de datos (de Excel, SPSS, Stata, archivos de texto, etc.)\nSeleccionar variables (select())\nFiltrar casos (filter())\nOperador pipe (|&gt; / %&gt;%)\n\n\n\nMódulo IV: Procesamiento de datos con {tidyverse} (Parte 2)\n\nCrear y transformar variables (mutate())\nRecodificar valores (case_when(), if_else())\nAgrupar y resumir información (group_by(), summarise())\nTratamiento de valores faltantes (NA’s)\n\n\n\nMódulo V: Proyectos y organización de trabajo\n\nProyectos de RStudio: estructura y beneficios\nOrganización de carpetas y archivos\nPaquetes: instalación y uso\nFlujo de trabajo reproducible\n\n\n\nMódulo VI: Visualización con {ggplot2} + TP Integrador\n\nGramática de gráficos: capas, estéticas, geometrías\nGráficos de barras, líneas y dispersión\nPersonalización: títulos, ejes, leyendas, colores\nTrabajo práctico integrador con datos de la EPH\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "profesor.html",
+    "href": "profesor.html",
+    "title": "Docente",
+    "section": "",
+    "text": "Pablo Tiscornia\n👋🏻 Licenciado en Sociología por la Universidad de Buenos Aires (UBA) y especialista en análisis de datos con amplia experiencia en el sector público.\n🔍 Experiencia profesional:\nTrabajó en el Instituto Nacional de Estadística y Censos (INDEC) y en el Ministerio de Turismo de la Nación, donde se especializó en el análisis de datos provenientes de encuestas a hogares y la producción de indicadores socioeconómicos (pobreza, ingresos, mercado de trabajo, turismo).\nUtilizó R como herramienta principal para el análisis y visualización de datos, contribuyendo a una gestión pública basada en evidencia.\nActualmente dirige Estación R, un emprendimiento especializado en formación y consultoría en R para profesionales de ciencias sociales y sector público.\n📊 Enfoque del curso:\nCon una sólida trayectoria en el uso de R para el procesamiento y análisis de datos, Pablo combina su experiencia práctica con un enfoque didáctico, asegurando que los participantes adquieran habilidades concretas y aplicables en el mundo real.\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "puesta-punto.html",
+    "href": "puesta-punto.html",
+    "title": "Puesta a punto",
+    "section": "",
+    "text": "Este taller está pensado para ser esencialmente práctico. La idea es exponer una presentación por módulo, en donde cada 3 o 4 conceptos se le dedicará un tiempo para poder ejercitar lo visto, previo a continuar con el siguiente contenido.\nSe recomienda seguir las presentaciones durante la exposición ya que de ellas se extraerá el código, haciendo más ágil la cursada."
+  },
+  {
+    "objectID": "puesta-punto.html#dinámica-de-taller",
+    "href": "puesta-punto.html#dinámica-de-taller",
+    "title": "Puesta a punto",
+    "section": "",
+    "text": "Este taller está pensado para ser esencialmente práctico. La idea es exponer una presentación por módulo, en donde cada 3 o 4 conceptos se le dedicará un tiempo para poder ejercitar lo visto, previo a continuar con el siguiente contenido.\nSe recomienda seguir las presentaciones durante la exposición ya que de ellas se extraerá el código, haciendo más ágil la cursada."
+  },
+  {
+    "objectID": "puesta-punto.html#estrategias-metodológicas-y-recursos-didácticos",
+    "href": "puesta-punto.html#estrategias-metodológicas-y-recursos-didácticos",
+    "title": "Puesta a punto",
+    "section": "Estrategias metodológicas y Recursos didácticos",
+    "text": "Estrategias metodológicas y Recursos didácticos\nLas clases del curso serán teórico-prácticas. Por cada presentación temática se irán planteando ejercicios a medida que se avanza en el contenido, abordando las dudas que vayan surgiendo. Se prioriza la utilización del programa durante la clase.\nA lo largo del curso se brindarán sintaxis al estilo “notas de clase”, en las cuales se plasman conjuntamente las líneas de código que se exponen y su correspondiente explicación respecto a los procedimientos realizados. Finalmente, se propondrán ejercicios para resolver fuera de la clase con el objetivo de reforzar los conocimientos vistos en las mismas.\nSe busca que, siempre que se pueda, el contenido, ejemplos y ejercicios representen problemáticas y desafíos propios del campo en el que se encuentran insertos los y las participantes."
+  },
+  {
+    "objectID": "puesta-punto.html#instalación-de-r",
+    "href": "puesta-punto.html#instalación-de-r",
+    "title": "Puesta a punto",
+    "section": "Instalación de R",
+    "text": "Instalación de R\nAsegurate de tener instalado R en tu computadora previo a comenzar el taller. Desde R-project vas a poder hacerte de R.\nSugerencia: Para usuarios y usuarias con Windows en sus computadoras, instalar rtools, herramienta para poder trabajar con el paquete tidyverse.\nDe todas formas, una semana previo al comienzo del curso se enviará un tutorial con todo lo necesario para un arranque sin problemas."
+  },
+  {
+    "objectID": "puesta-punto.html#instalación-de-rstudio",
+    "href": "puesta-punto.html#instalación-de-rstudio",
+    "title": "Puesta a punto",
+    "section": "Instalación de Rstudio",
+    "text": "Instalación de Rstudio\nRstudio es la plataforma desde donde se trabajará durante todo el taller. Si bien debemos tener instalado R, el programa que se abrirá en cada clase y desde donde haremos los ejercicios es Rstudio.\nDescargar Rstudio"
+  },
+  {
+    "objectID": "puesta-punto.html#descarga-de-slack-versión-escritorio",
+    "href": "puesta-punto.html#descarga-de-slack-versión-escritorio",
+    "title": "Puesta a punto",
+    "section": "Descarga de Slack (versión escritorio)",
+    "text": "Descarga de Slack (versión escritorio)\nLa forma de comunicación será principalmente Slack, una plataforma de intercambio que funciona como un chat-foro. Desde allí es posible concentrar la comunicación del curso, difundir material, código y también realizar consultas y respuestas de forma grupal."
+  },
+  {
+    "objectID": "cod_de_conducta.html",
+    "href": "cod_de_conducta.html",
+    "title": "Código de conducta",
+    "section": "",
+    "text": "La comunidad de Estación R, incluyendo sus representantes, deben conocer y seguir este Código de Conducta (basado en el Código de Conducta de R Community) que es establecido con la finalidad de alentar al crecimiento de esta comunidad, participando en un ambiente amigable y partiendo de la base del respeto mutuo.\nEste código de conducta aplica en todos los espacios de participación de Estación R, incluyendo reuniones, Twitter, Slack, listas de correo, tanto online como offline. También es aplicable fuera de los espacios del grupo a quienes actúen en representación del mismo, ya sea online u offline.\nEn cualquier tipo de evento ya sea conferencia, charla, taller, fiesta, reunión, redes sociales y otros medios en línea:\n\nAborde los esfuerzos ajenos con consideración;\nCuando no esté de acuerdo con algo, sea amable al plantear sus problemas;\nEjercite la consideración y el respeto en su discurso y en sus acciones;\nIntente colaborar para evitar conflictos;\nSea consciente de su entorno y del resto de las personas;\nAlerte a quien considere oportuno si nota alguna situación peligrosa, alguien sufriendo una situación comprometedora o violaciones de este Código de Conducta, incluso aunque parezcan poco importantes. Responderemos tan pronto como podamos.\n\nEsperamos que Estación R sea un grupo libre de acoso.\nAcoso incluye, entre otros: insultos, tanto directos como indirectos; daño o perjurio verbal o escrito relacionado con género, orientación sexual, raza, religión, incapacidad; uso inapropiado de imágenes de desnudez (incluyendo presentaciones digitales); intimidación deliberada, acecho o persecución; fotografías o grabaciones abusivas; interrupción sostenida de presentaciones u de otros eventos; contacto físico inapropiado y atención sexual no deseada.\nQuienes violen estas reglas podrían recibir una sanción o explusión del grupo. Si se te pide que detengas cualquier comportamiento que se considere como acoso, esperamos que lo detengas de inmediato.\nSomos receptivos a los comentarios constructivos y las críticas, ya que las experiencias y conjuntos de habilidades de otras personas contribuyen a todos nuestros esfuerzos. Aceptamos a cualquiera que desee participar en nuestras actividades. Fomentanmos un entorno en el que quien lo desee pueda aportar y marcar la diferencia.\n\nVeedores del Código de Conducta\nEste código de conducta será aplicado por integrantes de Estación R. En caso de disputas que involucren a alguien que es parte del grupo designado, ésta persona se hará a un lado en la toma de decisiones.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEncuentro 1 - Introducción al curso y a la EPH\n\n\n\nEstación R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEncuentro 1 - Introducción a R y conceptos básicos del lenguaje\n\n\n\nEstación R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEncuentro 2 - Pensando un flujo de trabajo en clave de proyecto\n\n\n\nEstación R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducción al procesamiento de datos con {tidyverse}.\n\n\n\nEstación R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducción a la visualización de datos con {ggplot2}.\n\n\n\nEstación R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducción a la generación de reportes con {rmarkdown}.\n\n\n\nEstación R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrabajo Práctico Integrador.\n\n\n\nEstación R\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#dinámica-de-trabajo",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#dinámica-de-trabajo",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Dinámica de trabajo",
+    "text": "Dinámica de trabajo\n\n6 encuentros de 2:30 hs cada uno (martes 19hs ARG)\nEjercitación semanal (no obligatoria)\nTrabajo práctico integrador al final\nGrabación de todos los encuentros\nComunicación por Slack"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#programa-del-curso",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#programa-del-curso",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Programa del curso",
+    "text": "Programa del curso\n\n\n\nClase\nTema\n\n\n\n\n1\nIntroducción al curso y a la EPH\n\n\n2\nIntroducción a R + IA en análisis de datos\n\n\n3\ntidyverse I: Importación y selección\n\n\n4\ntidyverse II: Transformación y resumen\n\n\n5\nProyectos y organización de trabajo\n\n\n6\nVisualización con ggplot2 + TP integrador"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#presentémonos",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#presentémonos",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Presentémonos",
+    "text": "Presentémonos\nContanos en el chat o en voz:\n\nTu nombre\nDe dónde sos\n¿Qué hacés? (trabajo, estudio)\n¿Por qué te interesa R?\n¿Tenés experiencia previa con R u otro lenguaje?"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#marco-analítico-conceptual",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#marco-analítico-conceptual",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Marco analítico conceptual",
+    "text": "Marco analítico conceptual"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#tipos-de-fuentes",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#tipos-de-fuentes",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Tipos de fuentes",
+    "text": "Tipos de fuentes\n\nCensos\nLe pregunto a TODA la población sobre sus características\n. . .\nRegistros administrativos\nLa población está registrada en formularios (con fines estadísticos o no)\n. . .\nEncuestas\nNo puedo acceder a toda la población, le pregunto sólo a una porción\n. . .\nDispositivos interconectados\nLa población “deja” rastros en celulares, internet, operaciones digitales"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#objetivo-general",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#objetivo-general",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Objetivo general",
+    "text": "Objetivo general\nEl objetivo general de la encuesta es el análisis de la inserción de la población en la estructura económico-social.\n\nDicha inserción puede ser analizada a partir de tres ejes:\n\n\n\nCaracterísticas demográficas\n\n\n\n\nInserción en la producción de bienes y servicios\n\n\n\n\nParticipación en la distribución del producto social"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#historia-de-la-eph",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#historia-de-la-eph",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Historia de la EPH",
+    "text": "Historia de la EPH"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#cobertura-geográfica",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#cobertura-geográfica",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Cobertura geográfica",
+    "text": "Cobertura geográfica\n\nDominio de estimación: Principales aglomerados urbanos\nFue creciendo progresivamente hasta llegar a 31 aglomerados urbanos:\n\nTodas las capitales de provincia\nAglomerados con +100.000 habitantes\n\n\n\n\nConcepto de aglomerado: “Dos localidades distintas pero próximas que conforman un único mercado de trabajo”"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#a-quiénes-representa",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#a-quiénes-representa",
+    "title": "Introducción al curso y a la EPH",
+    "section": "¿A quiénes representa?",
+    "text": "¿A quiénes representa?\n\nLa encuesta representa al 65% del total de la población argentina\nUna vez al año se releva la EAHU (extensión al 100% de población urbana)\nProyecto en pruebas: cobertura del ámbito rural"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#qué-es-una-muestra",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#qué-es-una-muestra",
+    "title": "Introducción al curso y a la EPH",
+    "section": "¿Qué es una muestra?",
+    "text": "¿Qué es una muestra?\nLa EPH es una encuesta por muestreo: se selecciona un grupo de hogares que representan al conjunto del universo.\n\n\n\n\n\n\n\nFuente: Hernández-Sampieri, “Metodología de la Investigación”"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#tamaño-de-la-muestra",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#tamaño-de-la-muestra",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Tamaño de la muestra",
+    "text": "Tamaño de la muestra\nPor cada trimestre se relevan aproximadamente:\n\n\n~18.000 hogares (representan a más de 9 millones)\n\n\n\n\n~58.000 personas (representan a más de 27 millones)"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#diseño-muestral",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#diseño-muestral",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Diseño muestral",
+    "text": "Diseño muestral\nDiseño bietápico estratificado:\n\n\nPrimera etapa: Se seleccionan radios censales (áreas) dentro de cada aglomerado\n\n\n\n\nSegunda etapa: Se listan las viviendas del área y se seleccionan aleatoriamente\n\n\n\nEsquema de rotación: 2-2-2\n(Un hogar está en muestra 2 trimestres, sale 2 trimestres, y vuelve 2 trimestres)"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#qué-mide-la-eph",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#qué-mide-la-eph",
+    "title": "Introducción al curso y a la EPH",
+    "section": "¿Qué mide la EPH?",
+    "text": "¿Qué mide la EPH?\n\n\nCaracterísticas demográficas básicas\n\n\n\n\nCaracterísticas ocupacionales (empleo, desempleo, informalidad)\n\n\n\n\nCaracterísticas migratorias\n\n\n\n\nCaracterísticas habitacionales\n\n\n\n\nCaracterísticas educacionales\n\n\n\n\nCaracterísticas de ingreso"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#cuestionario-de-vivienda",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#cuestionario-de-vivienda",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Cuestionario de Vivienda",
+    "text": "Cuestionario de Vivienda\nDefinición: “Cualquier recinto fijo o móvil construido o adaptado para alojar personas”\n\nPrincipales dimensiones:\n\nIdentificación de viviendas y hogares\nCaracterísticas de la vivienda y hábitat\nCondición de residencia"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#cuestionario-de-hogar",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#cuestionario-de-hogar",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Cuestionario de Hogar",
+    "text": "Cuestionario de Hogar\nDefinición: “Persona o grupo de personas, parientes o no, que viven bajo un mismo techo y comparten los gastos de alimentación”\n\nEl jefe/a de hogar\n“Aquella persona reconocida como tal por los demás miembros del hogar”\n. . .\nCriterios de asignación (en orden):\n\nResponsabilidad económica del hogar\nMiembro más antiguo\nQuien haya acudido al llamado"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#cuestionario-individual",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#cuestionario-individual",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Cuestionario Individual",
+    "text": "Cuestionario Individual\n\nAplicación: Todas las personas residentes mayores de 10 años\nRespondentes: Mayores de 18 años (puede ser auto o no auto-respondente)"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#indicadores-de-bienestar",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#indicadores-de-bienestar",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Indicadores de bienestar",
+    "text": "Indicadores de bienestar\n\n% de personas con cobertura de salud solo por sistema público\n% de hogares sin agua de red dentro de la vivienda\n% de hogares sin acceso a red cloacal\n% de población asalariada informal (sin descuento jubilatorio)"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#indicadores-de-empleo",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#indicadores-de-empleo",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Indicadores de empleo",
+    "text": "Indicadores de empleo\n\nTasa de desocupación\n% de ocupados que trabajan más de 45 horas semanales\nTasa de participación en trabajo doméstico no remunerado\n% de población en edad de jubilarse que cobra jubilación/pensión"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#clasificadores-utilizados",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#clasificadores-utilizados",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Clasificadores utilizados",
+    "text": "Clasificadores utilizados\n\nActividad (rama): CAES-MERCOSUR\nOcupación: CNO-2001-INDEC\nCódigos geográficos: Países y Provincias"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#links-útiles",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#links-útiles",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Links útiles",
+    "text": "Links útiles\n\nDiseño de registro\nCuestionario individual\nCuestionario Hogar\nCuestionario Vivienda\nLa nueva EPH continua (metodología)"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#explorar-la-documentación",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#explorar-la-documentación",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Explorar la documentación",
+    "text": "Explorar la documentación\n\nDescargar alguno de los cuestionarios de la EPH\nIdentificar preguntas relacionadas con:\n\nSituación laboral\nNivel educativo\nIngresos\n\nPensar: ¿qué indicadores podrías construir con esas variables?"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#próximo-encuentro",
+    "href": "encuentros/1-intro-curso-eph/intro-curso-eph.html#próximo-encuentro",
+    "title": "Introducción al curso y a la EPH",
+    "section": "Próximo encuentro",
+    "text": "Próximo encuentro\n\nFecha: Martes 3 de febrero, 19hs (ARG)\nTema: Introducción a R + IA en el análisis de datos\n\n\nSeguimos la comunicación por Slack\n\n\n¿Preguntas?"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/index.html",
+    "href": "encuentros/1-intro-curso-eph/index.html",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "",
+    "text": "En este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC: qué es, cómo se releva, qué mide y por qué es tan importante para las ciencias sociales en Argentina.\nNo hay ejercitación obligatoria esta semana, pero te proponemos explorar la documentación de la EPH para familiarizarte con la encuesta."
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/index.html#descripción",
+    "href": "encuentros/1-intro-curso-eph/index.html#descripción",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "",
+    "text": "En este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC: qué es, cómo se releva, qué mide y por qué es tan importante para las ciencias sociales en Argentina.\nNo hay ejercitación obligatoria esta semana, pero te proponemos explorar la documentación de la EPH para familiarizarte con la encuesta."
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/index.html#slides",
+    "href": "encuentros/1-intro-curso-eph/index.html#slides",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/index.html#contenidos",
+    "href": "encuentros/1-intro-curso-eph/index.html#contenidos",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "Contenidos",
+    "text": "Contenidos\n\nPresentación del curso y dinámica de trabajo\n¿Qué es la EPH? Contexto y objetivos\nCaracterísticas: cobertura, muestra, rotación\nLos tres cuestionarios (vivienda, hogar, individuos)\nPrincipales indicadores y clasificadores\nDocumentación oficial"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/index.html#links-útiles",
+    "href": "encuentros/1-intro-curso-eph/index.html#links-útiles",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "Links útiles",
+    "text": "Links útiles\n\nLa nueva EPH continua - Metodología (INDEC)\nDiseño de registro EPH\nCuestionarios EPH"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/index.html#docente",
+    "href": "encuentros/1-intro-curso-eph/index.html#docente",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "Docente",
+    "text": "Docente\n\nPablo Tiscornia"
+  }
+]
