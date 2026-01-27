@@ -1,0 +1,37 @@
+---
+title: "Encuentro 1 - Introducción al curso y a la EPH"
+author: Estación R
+image: featured.png
+description: Presentación del curso, dinámica de trabajo e introducción a la Encuesta Permanente de Hogares (EPH)
+---
+
+## Descripción
+
+En este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la **Encuesta Permanente de Hogares (EPH)** del INDEC: qué es, cómo se releva, qué mide y por qué es tan importante para las ciencias sociales en Argentina.
+
+No hay ejercitación obligatoria esta semana, pero te proponemos explorar la documentación de la EPH para familiarizarte con la encuesta.
+
+## Slides
+
+<iframe class="slide-deck" src="intro-curso-eph.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+
+## Contenidos
+
+- Presentación del curso y dinámica de trabajo
+- ¿Qué es la EPH? Contexto y objetivos
+- Características: cobertura, muestra, rotación
+- Los tres cuestionarios (vivienda, hogar, individuos)
+- Principales indicadores y clasificadores
+- Documentación oficial
+
+## Links útiles
+
+- [La nueva EPH continua - Metodología (INDEC)](https://www.indec.gob.ar/ftp/cuadros/sociedad/metodologia_eph_continua.pdf)
+- [Diseño de registro EPH](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_registro_1t19.pdf)
+- [Cuestionarios EPH](https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-1)
+
+## Docente
+
+![](images/docente.jpg){style="float: right; padding-left: 10px;" fig-alt="Foto de Pablo Tiscornia" width="180"}
+
+[Pablo Tiscornia](https://www.linkedin.com/in/pablotiscornia/)

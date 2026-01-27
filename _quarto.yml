@@ -24,7 +24,7 @@ website:
       - text: "Encuentros"
         menu:
           - text: "Módulo 1: Intro al curso y EPH"
-            href: encuentros/1-intro-r/index.qmd
+            href: encuentros/1-intro-curso-eph/index.qmd
           - text: "Módulo 2: Intro a R + IA"
             href: encuentros/1-intro-r/index.qmd
           - text: "Módulo 3: tidyverse I"

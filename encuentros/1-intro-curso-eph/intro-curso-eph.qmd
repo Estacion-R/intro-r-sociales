@@ -1,0 +1,331 @@
+---
+title: "Introducción al curso y a la EPH"
+subtitle: "Encuentro 1 - Aspectos metodológicos de la encuesta"
+author: "[Estación R](https://estacion-r.com/)"
+institution: Estación R
+date: 2026-01-27
+footer: "[Introducción al Procesamiento de Datos con R para Ciencias Sociales](https://estacion-r.github.io/intro-r-sociales/)"
+logo: "../../img/Logo_PNG_Baja_Mesa de trabajo 1.png"
+format:
+  revealjs:
+    theme: ../1-intro-r/intro-r.scss
+    multiplex: true
+    transition: fade
+    progress: true
+    highlight-style: printing
+    embed-resources: true
+    code-line-numbers: false
+    code-block-bg: true
+    code-copy: true
+execute:
+  echo: true
+  freeze: auto
+---
+
+# Bienvenidos y bienvenidas a Estación R
+
+::: columns
+::: {.column width="50%"}
+[Slack](https://join.slack.com/t/estacion-r/shared_invite/zt-2smy7t4ae-1KDZLHN1aqXmZXdKbc5buA)
+
+[Web](https://estacion-r.com/)
+
+[Mastodon](https://botsin.space/@r_tips)
+
+[X](https://twitter.com/estacion_erre)
+
+[Correo](mailto:pablotiscornia@estacion-r.com)
+:::
+
+::: {.column width="50%"}
+[Instagram](https://www.instagram.com/estacion_ere)
+
+[LinkedIn](https://www.linkedin.com/company/estacion-r/)
+:::
+:::
+
+# Sobre el curso
+
+## Dinámica de trabajo
+
+- **6 encuentros** de 2:30 hs cada uno (martes 19hs ARG)
+- Ejercitación semanal (no obligatoria)
+- Trabajo práctico integrador al final
+- Grabación de todos los encuentros
+- Comunicación por **Slack**
+
+## Programa del curso
+
+| Clase | Tema |
+|-------|------|
+| 1 | Introducción al curso y a la EPH |
+| 2 | Introducción a R + IA en análisis de datos |
+| 3 | tidyverse I: Importación y selección |
+| 4 | tidyverse II: Transformación y resumen |
+| 5 | Proyectos y organización de trabajo |
+| 6 | Visualización con ggplot2 + TP integrador |
+
+## Presentémonos
+
+Contanos en el chat o en voz:
+
+- Tu nombre
+- De dónde sos
+- ¿Qué hacés? (trabajo, estudio)
+- ¿Por qué te interesa R?
+- ¿Tenés experiencia previa con R u otro lenguaje?
+
+# ¿Qué es la EPH?
+
+---
+
+![](images/ni_idea.gif){fig-align="center" width="60%"}
+
+---
+
+## Marco analítico conceptual
+
+![](images/marco_analitico_coneptual_eph.jpg){fig-align="center" width="80%"}
+
+# Fuentes de datos
+
+## Tipos de fuentes
+
+. . .
+
+### Censos
+*Le pregunto a TODA la población sobre sus características*
+
+. . .
+
+### Registros administrativos
+*La población está registrada en formularios (con fines estadísticos o no)*
+
+. . .
+
+### Encuestas
+*No puedo acceder a toda la población, le pregunto sólo a una porción*
+
+. . .
+
+### Dispositivos interconectados
+*La población "deja" rastros en celulares, internet, operaciones digitales*
+
+# Objetivos de la EPH
+
+## Objetivo general
+
+El **objetivo general** de la encuesta es el análisis de la **inserción de la población en la estructura económico-social**.
+
+. . .
+
+Dicha inserción puede ser analizada a partir de tres ejes:
+
+. . .
+
+1. Características **demográficas**
+
+. . .
+
+2. Inserción en la **producción** de bienes y servicios
+
+. . .
+
+3. Participación en la **distribución** del producto social
+
+# Características de la EPH
+
+## Historia de la EPH
+
+![](images/hitos_eph.jpg){fig-align="center" width="50%"}
+
+## Cobertura geográfica
+
+- **Dominio de estimación:** Principales aglomerados urbanos
+
+- Fue creciendo progresivamente hasta llegar a **31 aglomerados urbanos**:
+  - Todas las capitales de provincia
+  - Aglomerados con +100.000 habitantes
+
+. . .
+
+- **Concepto de aglomerado:** *"Dos localidades distintas pero próximas que conforman un único mercado de trabajo"*
+
+## ¿A quiénes representa?
+
+- La encuesta representa al **65%** del total de la población argentina
+
+- Una vez al año se releva la **EAHU** (extensión al 100% de población urbana)
+
+- Proyecto en pruebas: cobertura del ámbito rural
+
+# La Muestra
+
+## ¿Qué es una muestra?
+
+La EPH es una **encuesta por muestreo**: se selecciona un grupo de hogares que representan al conjunto del universo.
+
+![](images/poblacion_muestra.PNG){fig-align="center" width="70%"}
+
+::: {.aside}
+Fuente: Hernández-Sampieri, "Metodología de la Investigación"
+:::
+
+## Tamaño de la muestra
+
+Por cada trimestre se relevan aproximadamente:
+
+. . .
+
+- **~18.000 hogares** (representan a más de 9 millones)
+
+. . .
+
+- **~58.000 personas** (representan a más de 27 millones)
+
+## Diseño muestral
+
+**Diseño bietápico estratificado:**
+
+. . .
+
+1. **Primera etapa:** Se seleccionan **radios censales** (áreas) dentro de cada aglomerado
+
+. . .
+
+2. **Segunda etapa:** Se listan las **viviendas** del área y se seleccionan aleatoriamente
+
+. . .
+
+**Esquema de rotación:** 2-2-2
+
+*(Un hogar está en muestra 2 trimestres, sale 2 trimestres, y vuelve 2 trimestres)*
+
+# Principales temáticas
+
+## ¿Qué mide la EPH?
+
+. . .
+
+- Características **demográficas** básicas
+
+. . .
+
+- Características **ocupacionales** (empleo, desempleo, informalidad)
+
+. . .
+
+- Características **migratorias**
+
+. . .
+
+- Características **habitacionales**
+
+. . .
+
+- Características **educacionales**
+
+. . .
+
+- Características de **ingreso**
+
+# Tres cuestionarios
+
+## Cuestionario de Vivienda
+
+**Definición:** *"Cualquier recinto fijo o móvil construido o adaptado para alojar personas"*
+
+. . .
+
+Principales dimensiones:
+
+- Identificación de viviendas y hogares
+- Características de la vivienda y hábitat
+- Condición de residencia
+
+## Cuestionario de Hogar
+
+**Definición:** *"Persona o grupo de personas, parientes o no, que viven bajo un mismo techo y comparten los gastos de alimentación"*
+
+. . .
+
+### El jefe/a de hogar
+
+*"Aquella persona reconocida como tal por los demás miembros del hogar"*
+
+. . .
+
+Criterios de asignación (en orden):
+
+1. Responsabilidad económica del hogar
+2. Miembro más antiguo
+3. Quien haya acudido al llamado
+
+## Cuestionario Individual
+
+- **Aplicación:** Todas las personas residentes **mayores de 10 años**
+
+- **Respondentes:** Mayores de 18 años (puede ser auto o no auto-respondente)
+
+# Indicadores clave
+
+## Indicadores de bienestar
+
+- % de personas con **cobertura de salud** solo por sistema público
+- % de hogares **sin agua de red** dentro de la vivienda
+- % de hogares **sin acceso a red cloacal**
+- % de población **asalariada informal** (sin descuento jubilatorio)
+
+## Indicadores de empleo
+
+- Tasa de **desocupación**
+- % de ocupados que trabajan **más de 45 horas semanales**
+- Tasa de participación en **trabajo doméstico no remunerado**
+- % de población en edad de jubilarse que **cobra jubilación/pensión**
+
+# Clasificadores
+
+## Clasificadores utilizados
+
+- **Actividad (rama):** [CAES-MERCOSUR](https://www.indec.gob.ar/ftp/cuadros/menusuperior/clasificadores/notas_explicativas_caes_v2018.pdf)
+
+- **Ocupación:** [CNO-2001-INDEC](https://www.indec.gob.ar/ftp/cuadros/menusuperior/clasificadores/definiciones_conceptuales_cno.pdf)
+
+- **Códigos geográficos:** [Países](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/codigospaises_09.pdf) y [Provincias](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/codigosprovincias_09.pdf)
+
+# Documentación
+
+## Links útiles
+
+- [Diseño de registro](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_registro_1t19.pdf)
+- [Cuestionario individual](https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CIndividual.pdf)
+- [Cuestionario Hogar](https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CHogar.pdf)
+- [Cuestionario Vivienda](https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CVivienda.pdf)
+- [La nueva EPH continua (metodología)](https://www.indec.gob.ar/ftp/cuadros/sociedad/metodologia_eph_continua.pdf)
+
+# Ejercicio para la semana
+
+## Explorar la documentación
+
+1. Descargar alguno de los cuestionarios de la EPH
+2. Identificar preguntas relacionadas con:
+   - Situación laboral
+   - Nivel educativo
+   - Ingresos
+
+3. Pensar: ¿qué indicadores podrías construir con esas variables?
+
+# ¡Listo!
+
+## Próximo encuentro
+
+- **Fecha:** Martes 3 de febrero, 19hs (ARG)
+- **Tema:** Introducción a R + IA en el análisis de datos
+
+. . .
+
+Seguimos la comunicación por **Slack**
+
+. . .
+
+**¿Preguntas?**
