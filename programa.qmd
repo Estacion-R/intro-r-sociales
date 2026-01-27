@@ -18,20 +18,22 @@ engine: knitr
 -   Paquetes
 -   Proyectos de trabajo con RStudio
 
-### Módulo II: Procesamiento de datos con el paquete `Tidyverse`:
+### Módulo II: Procesamiento de datos con `{tidyverse}` (Parte 1)
 
 -   Importación de datos (de Excel, SPSS, Stata, archivos de texto, etc.)
--   Limpieza: Seleccionar variables, filtrar casos, recodificar, renombrar, ordenar y agrupar información.
--   Tratamiento de valores faltantes (missing values/ NA´s)
--   Construir medidas de resumen de la información
+-   Seleccionar variables (`select()`)
+-   Filtrar casos (`filter()`)
+-   Operador pipe (`|>` / `%>%`)
 
-### Módulo III: Visualización de la información
+### Módulo III: Procesamiento de datos con `{tidyverse}` (Parte 2)
 
--   Paquete `ggplot2`:
--   Gráficos de línea, barras, Boxplots
--   Chapa y pintura: Leyendas, ejes, títulos, notas, colores, escala
+-   Crear y transformar variables (`mutate()`)
+-   Recodificar valores (`case_when()`, `if_else()`)
+-   Agrupar y resumir información (`group_by()`, `summarise()`)
+-   Tratamiento de valores faltantes (NA's)
 
-### Módulo IV: Introducción al armado de informes/reportes con RMarkdown
+### Módulo IV: Visualización de la información
 
--   Aspectos básicos de html
--   Recopilación y procesamiento de datos de la web
+-   Paquete `{ggplot2}`: gramática de gráficos
+-   Gráficos de barras, líneas y dispersión
+-   Personalización: títulos, ejes, leyendas, colores, temas

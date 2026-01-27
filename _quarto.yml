@@ -22,17 +22,17 @@ website:
       - href: profesor.qmd
         text: "Docente"
       - text: "Encuentros"
-        menu: 
+        menu:
           - text: "Módulo 1: Intro a R"
             href: encuentros/1-intro-r/index.qmd
           - text: "Módulo 2: Proyectos de trabajo"
             href: encuentros/2-proyectos/index.qmd
-          - text: "Módulo 3: Procesamiento de datos con {tidyverse}"
+          - text: "Módulo 3: tidyverse I - Importación y selección"
             href: encuentros/3-tidyverse/index.qmd
-          - text: "Módulo 4: Visualización de datos con {ggplot2}"
+          - text: "Módulo 4: tidyverse II - Transformación y resumen"
+            href: encuentros/3-tidyverse/index.qmd
+          - text: "Módulo 5: Visualización con {ggplot2}"
             href: encuentros/4-visualizacion/index.qmd
-          - text: "Módulo 5: Reportes con {rmarkdown}"
-            href: encuentros/5-reportes/index.qmd
           - text: "Módulo 6: Trabajo integrador"
             href: encuentros/6-TP integrador/index.qmd
       - text: "Ejercitación"

@@ -54,9 +54,9 @@ La programación no es un tema de mentes brillantes, sino de perseverancia. Con 
 |-------|-------|------|
 | 1 | 27/01 | Introducción a R y RStudio |
 | 2 | 03/02 | Proyectos de trabajo y paquetes |
-| 3 | 10/02 | Procesamiento de datos con tidyverse |
-| 4 | 17/02 | Visualización con ggplot2 |
-| 5 | 24/02 | Reportes con RMarkdown/Quarto |
+| 3 | 10/02 | tidyverse I: Importación y selección de datos |
+| 4 | 17/02 | tidyverse II: Transformación y resumen |
+| 5 | 24/02 | Visualización con ggplot2 |
 | 6 | 03/03 | Trabajo práctico integrador |
 
 ## Inscripción
