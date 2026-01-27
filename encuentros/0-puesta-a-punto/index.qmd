@@ -1,0 +1,121 @@
+---
+title: "Clase 0 - Puesta a punto"
+author: Estación R
+image: featured.png
+description: Guía de instalación y configuración del entorno de trabajo para el curso
+---
+
+## Descripción
+
+Antes de comenzar el curso, es necesario tener instalado R y RStudio en tu computadora. Esta guía te ayudará a preparar todo lo necesario para trabajar sin problemas desde el primer encuentro.
+
+**Tiempo estimado:** 30-45 minutos
+
+## Slides
+
+<iframe class="slide-deck" src="puesta-a-punto.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+
+## Pasos a seguir
+
+### 1. Instalar R
+
+Descargar desde: [cloud.r-project.org](https://cloud.r-project.org/)
+
+- **Windows:** Download R for Windows → base → Download R-x.x.x
+- **Mac:** Download R for macOS → elegir según procesador
+- **Linux:** Seguir instrucciones según distribución
+
+### 2. Instalar RStudio
+
+Descargar desde: [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+
+### 3. Solo Windows: Instalar Rtools
+
+Descargar desde: [cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/)
+
+### 4. Ejecutar script de puesta a punto
+
+Descargá y ejecutá el siguiente script en RStudio:
+
+```{r}
+#| eval: false
+#| code-fold: false
+
+# ============================================
+# SCRIPT DE PUESTA A PUNTO
+# Curso: Intro al Procesamiento de Datos con R
+# ============================================
+
+# 1. Instalar pacman (gestor de paquetes)
+if (!require("pacman")) {
+  install.packages("pacman")
+}
+library(pacman)
+
+# 2. Instalar y cargar paquetes del curso
+p_load(
+  "tidyverse",   # Manipulación y visualización de datos
+  "haven",       # Leer archivos SPSS, Stata, SAS
+  "readxl",      # Leer archivos Excel
+  "janitor",     # Limpieza de datos
+  "eph",         # Datos de la EPH Argentina
+  "gt",          # Tablas elegantes
+  "scales"       # Formateo de escalas
+)
+
+# 3. Verificar instalación
+cat("\n✓ ¡Paquetes instalados correctamente!\n")
+cat("Versión de R:", R.version.string, "\n")
+cat("Versión de tidyverse:", as.character(packageVersion("tidyverse")), "\n")
+
+# 4. Prueba rápida
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "#2E86AB", size = 3) +
+  labs(
+    title = "¡Todo funciona!",
+    subtitle = "Estás listo/a para el curso"
+  ) +
+  theme_minimal()
+```
+
+También podés descargar el script directamente: [00-puesta_a_punto.R](00-puesta_a_punto.R)
+
+### 5. Instalar Slack
+
+Descargar desde: [slack.com/downloads](https://slack.com/downloads)
+
+Unirse al workspace de Estación R con la invitación enviada por email.
+
+## Problemas frecuentes
+
+### Error al instalar paquetes en Windows
+
+Si tenés errores al instalar `tidyverse`, asegurate de:
+
+1. Tener **Rtools** instalado
+2. Reiniciar RStudio después de instalar Rtools
+3. Verificar conexión a internet
+
+### RStudio no encuentra R
+
+1. Cerrar RStudio
+2. Verificar que R esté instalado correctamente
+3. Reinstalar R si es necesario
+4. Abrir RStudio nuevamente
+
+### Problemas con caracteres especiales (tildes, ñ)
+
+En RStudio: Tools → Global Options → Code → Saving → Default text encoding: **UTF-8**
+
+## Ayuda
+
+Si tenés problemas con la instalación:
+
+- Escribinos por **Slack** en el canal #intro-r-sociales
+- Enviá un email a [pablotiscornia@estacion-r.com](mailto:pablotiscornia@estacion-r.com)
+
+## Docente
+
+![](../1-intro-r/images/docente.jpg){style="float: right; padding-left: 10px;" fig-alt="Foto de Pablo Tiscornia" width="180"}
+
+[Pablo Tiscornia](https://www.linkedin.com/in/pablotiscornia/)

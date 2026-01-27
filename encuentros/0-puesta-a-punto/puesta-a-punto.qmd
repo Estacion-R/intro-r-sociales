@@ -1,0 +1,574 @@
+---
+title: "⚙️ Puesta a punto"
+subtitle: "Clase 0 - Preparación del entorno de trabajo"
+author: "Pablo Tiscornia"
+institute: "[Estación R](https://estacion-r.com/)"
+date: today
+format:
+  revealjs:
+    theme: [default, ../1-intro-r/intro-r.scss]
+    logo: "../../img/Logo_PNG_Baja_Mesa de trabajo 1.png"
+    footer: "[Introducción al Procesamiento de Datos con R para Ciencias Sociales](https://estacion-r.github.io/intro-r-sociales/)"
+    slide-number: true
+    embed-resources: true
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    code-line-numbers: true
+    code-copy: true
+    scrollable: true
+    navigation-mode: vertical
+    controls-layout: bottom-right
+    controls-tutorial: true
+    width: 1280
+    height: 720
+    margin: 0.1
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Bienvenidos y bienvenidas a Estación R
+
+## Contacto con Estación R
+
+<br><br>
+
+::: columns
+::: {.column width="33%"}
+#### 💬 [Slack](https://estacion-r.slack.com/)
+
+#### 🔗 [Web](https://estacion-r.com)
+
+#### ✉️ [Correo](mailto:pablotiscornia@estacion-r.com)
+:::
+
+::: {.column width="33%"}
+#### 🐘 [Mastodon](https://botsin.space/@r_tips)
+
+#### 𝕏 [X](https://twitter.com/estacion_erre)
+:::
+
+::: {.column width="33%"}
+#### [in] [LinkedIn](https://www.linkedin.com/company/estacion-r/)
+
+#### [ig] [Instagram](https://instagram.com/estacion_ere)
+:::
+:::
+
+# Puesta a punto ⚙️ {background-color="#4F7CFF"}
+
+## ¿Qué necesitamos?
+
+Para poder trabajar en el curso necesitamos:
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### 1. R 📊
+El lenguaje de programación
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### 2. RStudio 💻
+El entorno de desarrollo (IDE)
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### 3. Paquetes 📦
+Herramientas adicionales
+:::
+
+<br>
+
+::: {.fragment}
+### 4. Slack 💬
+Para comunicarnos
+:::
+
+# Instalación de R {background-color="#F5F5F5"}
+
+## ¿Qué es R?
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- **R** es un lenguaje de programación especializado en estadística y análisis de datos
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- Es **gratuito** y de **código abierto**
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- Tiene una **comunidad enorme** de usuarios en todo el mundo
+:::
+
+<br>
+
+::: {.fragment}
+- Ideal para **ciencias sociales**, economía, salud pública, etc.
+:::
+
+## Descargar R
+
+### Paso 1: Ir a [cloud.r-project.org](https://cloud.r-project.org/)
+
+<br>
+
+::: {.fragment}
+### Paso 2: Elegir tu sistema operativo
+
+- **Windows:** "Download R for Windows" → "base" → "Download R-x.x.x"
+- **Mac:** "Download R for macOS" → elegir según procesador
+- **Linux:** Seguir instrucciones según distribución
+:::
+
+<br>
+
+::: {.fragment}
+### Paso 3: Ejecutar el instalador con opciones por defecto
+:::
+
+## Para usuarios de Windows ⚠️ {background-color="#FFE4E1"}
+
+<br>
+
+### Importante: Instalar también **Rtools**
+
+<br>
+
+::: {.fragment}
+👉 Ir a [cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/)
+:::
+
+<br>
+
+::: {.fragment}
+👉 Descargar la versión que corresponda a tu versión de R
+:::
+
+<br>
+
+::: {.fragment}
+👉 Necesario para compilar algunos paquetes (como `tidyverse`)
+:::
+
+# Instalación de RStudio {background-color="#F5F5F5"}
+
+## ¿Qué es RStudio?
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### **RStudio** es un IDE (Entorno de Desarrollo Integrado) para R
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### Hace que trabajar con R sea **mucho más fácil**
+:::
+
+<br>
+
+::: {.fragment}
+### Incluye:
+- Editor de código con autocompletado
+- Visualizador de datos y gráficos
+- Gestor de archivos y proyectos
+- Terminal integrada
+:::
+
+## Descargar RStudio
+
+<br>
+
+### 1. Ir a [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+
+<br>
+
+::: {.fragment}
+### 2. Descargar la versión gratuita "RStudio Desktop"
+:::
+
+<br>
+
+::: {.fragment}
+### 3. Elegir tu sistema operativo
+:::
+
+<br>
+
+::: {.fragment}
+### 4. Ejecutar el instalador
+:::
+
+## Verificar la instalación
+
+<br>
+
+### 1. Abrir **RStudio** (no R directamente)
+
+<br>
+
+::: {.fragment}
+### 2. En la **consola** (panel inferior izquierdo), escribir:
+
+```{r}
+#| eval: false
+R.version.string
+```
+:::
+
+<br>
+
+::: {.fragment}
+### 3. Debería mostrar algo como:
+`"R version 4.x.x (2024-xx-xx)"`
+:::
+
+# Los paneles de RStudio {background-color="#4F7CFF"}
+
+## Conociendo RStudio {.smaller}
+
+RStudio tiene **4 paneles principales**:
+
+::: columns
+::: {.column width="50%"}
+
+<br>
+
+::: {.fragment}
+### 1. Editor (arriba izquierda)
+Donde escribimos código
+:::
+
+<br>
+
+::: {.fragment}
+### 2. Consola (abajo izquierda)
+Donde se ejecuta el código
+:::
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+::: {.fragment}
+### 3. Entorno (arriba derecha)
+Objetos en memoria
+:::
+
+<br>
+
+::: {.fragment}
+### 4. Archivos/Plots/Ayuda (abajo derecha)
+Navegación y visualización
+:::
+:::
+:::
+
+## Consola vs Editor
+
+::: columns
+::: {.column width="50%"}
+### Consola 💻
+
+- Ejecuta código inmediatamente
+- **No guarda** el código
+- Útil para pruebas rápidas
+:::
+
+::: {.column width="50%"}
+### Editor 📝
+
+- **Guarda** el código en archivos `.R`
+- Permite ejecutar línea por línea
+- **Siempre trabajar desde el editor**
+:::
+:::
+
+# Instalación de paquetes 📦 {background-color="#F5F5F5"}
+
+## ¿Qué son los paquetes?
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### Los **paquetes** son extensiones que agregan funcionalidades a R
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### R base viene con funciones básicas
+:::
+
+<br>
+
+::: {.fragment}
+### Los paquetes nos dan herramientas especializadas:
+- `tidyverse` para manipulación de datos
+- `ggplot2` para visualización
+- `haven` para leer archivos de SPSS/Stata
+- `eph` para datos de la EPH Argentina
+:::
+
+## Instalar paquetes
+
+En la **consola** de RStudio:
+
+```{r}
+#| eval: false
+# Instalar un paquete
+install.packages("tidyverse")
+```
+
+<br>
+
+::: {.fragment}
+### Solo necesitás hacer esto **una vez** por paquete
+:::
+
+<br>
+
+::: {.fragment}
+### ⏳ La instalación puede tardar algunos minutos
+:::
+
+## Cargar paquetes
+
+Cada vez que abras RStudio, tenés que **cargar** los paquetes:
+
+```{r}
+#| eval: false
+# Cargar el paquete
+library(tidyverse)
+```
+
+<br>
+
+::: {.fragment}
+### Analogía 📚
+
+| Acción | Analogía |
+|--------|----------|
+| **Instalar** | Comprar el libro (una vez) |
+| **Cargar** | Sacar el libro de la biblioteca (cada sesión) |
+:::
+
+## Paquetes del curso {background-color="#D4FF4F"}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|1-2|3-4|5-6|7-8"
+
+# Ecosistema tidyverse
+install.packages("tidyverse")  # Manipulación y visualización
+# Importación de datos
+install.packages("haven")      # Leer archivos SPSS/Stata
+install.packages("readxl")     # Leer archivos Excel
+# Datos de Argentina
+install.packages("eph")        # Encuesta Permanente de Hogares
+# Utilidades
+install.packages("janitor")    # Limpieza de datos
+```
+
+<br>
+
+::: {.fragment}
+### 💡 También podés ejecutar el script `00-puesta_a_punto.R`
+:::
+
+## Script de puesta a punto
+
+Descargá y ejecutá el script desde el sitio del curso:
+
+<br>
+
+### [estacion-r.github.io/intro-r-sociales/encuentros/0-puesta-a-punto/](https://estacion-r.github.io/intro-r-sociales/encuentros/0-puesta-a-punto/)
+
+<br>
+
+::: {.fragment}
+Este script:
+
+1. ✅ Verifica que R esté instalado correctamente
+2. ✅ Instala todos los paquetes necesarios
+3. ✅ Comprueba que todo funcione
+:::
+
+# Slack 💬 {background-color="#4F7CFF"}
+
+## Comunicación del curso
+
+Usamos **Slack** para:
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+- 💬 Consultas entre clases
+- 📎 Compartir código y recursos
+:::
+
+::: {.column width="50%"}
+- 📢 Anuncios importantes
+- 👥 Comunidad de estudiantes
+:::
+:::
+
+<br>
+
+::: {.fragment}
+### Descargar: [slack.com/downloads](https://slack.com/downloads)
+:::
+
+## Unirse al workspace
+
+<br>
+
+::: {.fragment}
+### 1. Recibirás una invitación por email
+:::
+
+<br>
+
+::: {.fragment}
+### 2. Crear cuenta o usar una existente
+:::
+
+<br>
+
+::: {.fragment}
+### 3. Buscar el canal **#intro-r-sociales**
+:::
+
+<br>
+
+::: {.fragment}
+### 4. ¡Presentate brevemente en el canal!
+:::
+
+# Problemas comunes 🔧 {background-color="#FFE4E1"}
+
+## R no se encuentra
+
+**Error:** RStudio no detecta R
+
+<br>
+
+::: {.fragment}
+### Solución:
+
+1. Verificar que R esté instalado
+2. Reinstalar R si es necesario
+3. En Windows: verificar que R está en el PATH
+:::
+
+## Error al instalar paquetes
+
+**Error:** `package 'xxx' is not available`
+
+<br>
+
+::: {.fragment}
+### Soluciones:
+
+- ✅ Verificar conexión a internet
+- ✅ En Windows: instalar Rtools
+- ✅ Probar con otro mirror:
+
+```{r}
+#| eval: false
+install.packages("xxx", repos = "https://cloud.r-project.org")
+```
+:::
+
+## Caracteres especiales
+
+**Error:** Problemas con tildes o ñ
+
+<br>
+
+::: {.fragment}
+### Solución:
+
+En RStudio ir a:
+
+**Tools → Global Options → Code → Saving → Default text encoding: UTF-8**
+:::
+
+# Verificación final ✅ {background-color="#D4FF4F"}
+
+## Checklist
+
+<br>
+
+| Item | Estado |
+|------|--------|
+| R instalado (versión 4.x o superior) | ⬜ |
+| RStudio instalado y funcionando | ⬜ |
+| Rtools instalado (solo Windows) | ⬜ |
+| Paquete `tidyverse` instalado | ⬜ |
+| Slack instalado y workspace unido | ⬜ |
+
+## Probar que todo funcione
+
+Ejecutá este código en RStudio:
+
+```{r}
+#| eval: false
+# Cargar tidyverse
+library(tidyverse)
+
+# Crear un gráfico simple
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "#4F7CFF", size = 3) +
+  labs(title = "¡Todo funciona!") +
+  theme_minimal()
+```
+
+<br>
+
+::: {.fragment}
+### Si ves el gráfico, **¡estás listo/a para el curso!** 🎉
+:::
+
+# ¡Listo! {background-color="#4F7CFF"}
+
+## Nos vemos en clase
+
+::: {style="text-align: center;"}
+
+<br>
+
+### 📅 Fecha: Martes 27 de enero, 19hs (ARG)
+
+<br>
+
+### 📚 Tema: Introducción al curso y a la EPH
+
+<br>
+
+::: {.fragment}
+### Si tenés problemas con la instalación, escribinos por **Slack**
+:::
+
+<br>
+
+::: {.fragment}
+### **¿Preguntas?** 🙋
+:::
+:::

@@ -17,12 +17,14 @@ website:
         text: "Inicio"
       - href: programa.qmd
         text: "Programa"
-      - href: puesta-punto.qmd
+      - href: encuentros/0-puesta-a-punto/index.qmd
         text: "Puesta a punto"
       - href: profesor.qmd
         text: "Docente"
       - text: "Encuentros"
         menu:
+          - text: "Clase 0: Puesta a punto"
+            href: encuentros/0-puesta-a-punto/index.qmd
           - text: "Módulo 1: Intro al curso y EPH"
             href: encuentros/1-intro-curso-eph/index.qmd
           - text: "Módulo 2: Intro a R + IA"
