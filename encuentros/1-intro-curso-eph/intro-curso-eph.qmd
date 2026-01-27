@@ -1,81 +1,152 @@
 ---
-title: "Introducción al curso y a la EPH"
-subtitle: "Encuentro 1 - Aspectos metodológicos de la encuesta"
-author: "[Estación R](https://estacion-r.com/)"
-institution: Estación R
-date: 2026-01-27
-footer: "[Introducción al Procesamiento de Datos con R para Ciencias Sociales](https://estacion-r.github.io/intro-r-sociales/)"
-logo: "../../img/Logo_PNG_Baja_Mesa de trabajo 1.png"
+title: "📊 Introducción al curso y a la EPH"
+subtitle: "Módulo 1 - Aspectos metodológicos de la encuesta"
+author: "Pablo Tiscornia"
+institute: "[Estación R](https://estacion-r.com/)"
+date: today
 format:
   revealjs:
-    theme: ../1-intro-r/intro-r.scss
-    multiplex: false
-    transition: fade
-    progress: true
-    highlight-style: printing
+    theme: [default, ../1-intro-r/intro-r.scss]
+    logo: "../../img/Logo_PNG_Baja_Mesa de trabajo 1.png"
+    footer: "[Introducción al Procesamiento de Datos con R para Ciencias Sociales](https://estacion-r.github.io/intro-r-sociales/)"
+    slide-number: true
     embed-resources: true
-    code-line-numbers: false
-    code-block-bg: true
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    code-line-numbers: true
     code-copy: true
+    scrollable: true
+    navigation-mode: vertical
+    controls-layout: bottom-right
+    controls-tutorial: true
+    width: 1280
+    height: 720
+    margin: 0.1
 execute:
   echo: true
-  freeze: auto
+  warning: false
+  message: false
 ---
 
 # Bienvenidos y bienvenidas a Estación R
 
-::::: columns
-::: {.column width="50%"}
-[Slack](https://join.slack.com/t/estacion-r/shared_invite/zt-2smy7t4ae-1KDZLHN1aqXmZXdKbc5buA)
+## Contacto con Estación R
 
-[Web](https://estacion-r.com/)
+<br><br>
 
-[Mastodon](https://botsin.space/@r_tips)
+::: columns
+::: {.column width="33%"}
+#### 💬 [Slack](https://estacion-r.slack.com/)
 
-[X](https://twitter.com/estacion_erre)
+#### 🔗 [Web](https://estacion-r.com)
 
-[Correo](mailto:pablotiscornia@estacion-r.com)
+#### ✉️ [Correo](mailto:pablotiscornia@estacion-r.com)
 :::
 
-::: {.column width="50%"}
-[Instagram](https://www.instagram.com/estacion_ere)
+::: {.column width="33%"}
+#### 🐘 [Mastodon](https://botsin.space/@r_tips)
 
-[LinkedIn](https://www.linkedin.com/company/estacion-r/)
+#### 𝕏 [X](https://twitter.com/estacion_erre)
 :::
-:::::
 
-# Sobre el curso
+::: {.column width="33%"}
+#### [in] [LinkedIn](https://www.linkedin.com/company/estacion-r/)
 
-## Dinámica de trabajo
+#### [ig] [Instagram](https://instagram.com/estacion_ere)
+:::
+:::
 
--   **6 encuentros** de 2:30 hs cada uno (martes 19hs ARG)
--   Ejercitación semanal (no obligatoria)
--   Trabajo práctico integrador al final
--   Grabación de todos los encuentros
--   Comunicación por **Slack**
+# El curso 📚 {background-color="#4F7CFF"}
 
 ## Programa del curso
 
-| Clase | Tema                                       |
-|-------|--------------------------------------------|
-| 1     | Introducción al curso y a la EPH           |
-| 2     | Introducción a R + IA en análisis de datos |
-| 3     | tidyverse I: Importación y selección       |
-| 4     | tidyverse II: Transformación y resumen     |
-| 5     | Proyectos y organización de trabajo        |
-| 6     | Visualización con ggplot2 + TP integrador  |
+<br>
 
-## Presentémonos
+| Módulo | Tema                                       |
+|--------|--------------------------------------------|
+| **1**  | Introducción al curso y a la EPH           |
+| **2**  | Introducción a R + IA en análisis de datos |
+| **3**  | tidyverse I: Importación y selección       |
+| **4**  | tidyverse II: Transformación y resumen     |
+| **5**  | Proyectos y organización de trabajo        |
+| **6**  | Visualización con ggplot2 + TP integrador  |
+
+## Dinámica de trabajo
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### 📅 6 encuentros de 2:30 hs cada uno (martes 19hs ARG)
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### 📝 Ejercitación semanal (no obligatoria)
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### 🎯 Trabajo práctico integrador al final
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### 🎥 Grabación de todos los encuentros
+:::
+
+<br>
+
+::: {.fragment}
+### 💬 Comunicación por **Slack**
+:::
+
+## Página de Estación R {background-color="#D4FF4F"}
+
+<br><br>
+
+::: {style="text-align: center; font-size: 1.5em;"}
+### 🔗 [estacion-r.github.io/intro-r-sociales](https://estacion-r.github.io/intro-r-sociales/)
+:::
+
+<br><br>
+
+::: {.fragment}
+::: {style="text-align: center;"}
+*Vamos a recorrer la página juntos...*
+:::
+:::
+
+## Presentémonos 🙋
 
 Contanos en el chat o en voz:
 
--   Tu nombre
--   De dónde sos
--   ¿Qué hacés? (trabajo, estudio)
--   ¿Por qué te interesa R?
--   ¿Tenés experiencia previa con R u otro lenguaje?
+<br>
 
-# ¿Qué es la EPH?
+::: {.fragment .fade-in-then-semi-out}
+- 👤 Tu **nombre**
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+- 🌍 De dónde **sos**
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+- 💼 ¿Qué **hacés**? (trabajo, estudio)
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+- 🤔 ¿Por qué te **interesa R**?
+:::
+
+::: {.fragment}
+- 💻 ¿Tenés **experiencia previa** con R u otro lenguaje?
+:::
+
+# ¿Qué es la EPH? 📋 {background-color="#4F7CFF"}
 
 ------------------------------------------------------------------------
 
@@ -87,57 +158,71 @@ Contanos en el chat o en voz:
 
 ![](images/marco_analitico_coneptual_eph.jpg){fig-align="center" width="80%"}
 
-# Fuentes de datos
+# Fuentes de datos {background-color="#F5F5F5"}
 
 ## Tipos de fuentes
 
-. . .
+<br>
 
-### Censos
+::: {.fragment .fade-in-then-semi-out}
+### 📊 Censos
 
 *Le pregunto a TODA la población sobre sus características*
+:::
 
-. . .
+<br>
 
-### Registros administrativos
+::: {.fragment .fade-in-then-semi-out}
+### 📁 Registros administrativos
 
 *La población está registrada en formularios (con fines estadísticos o no)*
+:::
 
-. . .
+<br>
 
-### Encuestas
+::: {.fragment .fade-in-then-semi-out}
+### 📝 Encuestas
 
 *No puedo acceder a toda la población, le pregunto sólo a una porción*
+:::
 
-. . .
+<br>
 
-### Dispositivos interconectados
+::: {.fragment}
+### 📱 Dispositivos interconectados
 
 *La población "deja" rastros en celulares, internet, operaciones digitales*
+:::
 
-# Objetivos de la EPH
+# Objetivos de la EPH {background-color="#4F7CFF"}
 
 ## Objetivo general
 
+<br>
+
 El **objetivo general** de la encuesta es el análisis de la **inserción de la población en la estructura económico-social**.
 
-. . .
+<br>
 
+::: {.fragment}
 Dicha inserción puede ser analizada a partir de tres ejes:
+:::
 
-. . .
+<br>
 
-1.  Características **demográficas**
+::: {.fragment .fade-in-then-semi-out}
+1. Características **demográficas**
+:::
 
-. . .
+::: {.fragment .fade-in-then-semi-out}
+2. Inserción en la **producción** de bienes y servicios
+:::
 
-2.  Inserción en la **producción** de bienes y servicios
+::: {.fragment}
+3. Participación en la **distribución** del producto social
+:::
 
-. . .
-
-3.  Participación en la **distribución** del producto social
-
-# Características de la EPH
+# Características de la EPH {background-color="#F5F5F5"}
 
 ## Historia de la EPH
 
@@ -145,30 +230,55 @@ Dicha inserción puede ser analizada a partir de tres ejes:
 
 ## Cobertura geográfica
 
--   **Dominio de estimación:** Principales aglomerados urbanos
+<br>
 
--   Fue creciendo progresivamente hasta llegar a **31 aglomerados urbanos**:
+::: {.fragment .fade-in-then-semi-out}
+- **Dominio de estimación:** Principales aglomerados urbanos
+:::
 
-    -   Todas las capitales de provincia
-    -   Aglomerados con +100.000 habitantes
+<br>
 
-. . .
+::: {.fragment .fade-in-then-semi-out}
+- Fue creciendo progresivamente hasta llegar a **31 aglomerados urbanos**:
+    - Todas las capitales de provincia
+    - Aglomerados con +100.000 habitantes
+:::
 
--   **Concepto de aglomerado:** *"Dos localidades distintas pero próximas que conforman un único mercado de trabajo"*
+<br>
+
+::: {.fragment}
+- **Concepto de aglomerado:** *"Dos localidades distintas pero próximas que conforman un único mercado de trabajo"*
+:::
 
 ## ¿A quiénes representa?
 
--   La encuesta representa al **65%** del total de la población argentina
+<br>
 
--   Una vez al año se releva la **EAHU** (extensión al 100% de población urbana)
+::: {.fragment .fade-in-then-semi-out}
+- La encuesta representa al **65%** del total de la población argentina
+:::
 
--   Proyecto en pruebas: cobertura del ámbito rural
+<br>
 
-# La Muestra
+::: {.fragment .fade-in-then-semi-out}
+- Una vez al año se releva la **EAHU** (extensión al 100% de población urbana)
+:::
+
+<br>
+
+::: {.fragment}
+- Proyecto en pruebas: cobertura del ámbito rural
+:::
+
+# La Muestra 🎯 {background-color="#4F7CFF"}
 
 ## ¿Qué es una muestra?
 
+<br>
+
 La EPH es una **encuesta por muestreo**: se selecciona un grupo de hogares que representan al conjunto del universo.
+
+<br>
 
 ![](images/poblacion_muestra.PNG){fig-align="center" width="70%"}
 
@@ -178,158 +288,289 @@ Fuente: Hernández-Sampieri, "Metodología de la Investigación"
 
 ## Tamaño de la muestra
 
+<br>
+
 Por cada trimestre se relevan aproximadamente:
 
-. . .
+<br>
 
--   **\~18.000 hogares** (representan a más de 9 millones)
+::: {.fragment .fade-in-then-semi-out}
+- **~18.000 hogares** (representan a más de 9 millones)
+:::
 
-. . .
+<br>
 
--   **\~58.000 personas** (representan a más de 27 millones)
+::: {.fragment}
+- **~58.000 personas** (representan a más de 27 millones)
+:::
 
 ## Diseño muestral
 
+<br>
+
 **Diseño bietápico estratificado:**
 
-. . .
+<br>
 
-1.  **Primera etapa:** Se seleccionan **radios censales** (áreas) dentro de cada aglomerado
+::: {.fragment .fade-in-then-semi-out}
+1. **Primera etapa:** Se seleccionan **radios censales** (áreas) dentro de cada aglomerado
+:::
 
-. . .
+<br>
 
-2.  **Segunda etapa:** Se listan las **viviendas** del área y se seleccionan aleatoriamente
+::: {.fragment .fade-in-then-semi-out}
+2. **Segunda etapa:** Se listan las **viviendas** del área y se seleccionan aleatoriamente
+:::
 
-. . .
+<br>
 
+::: {.fragment}
 **Esquema de rotación:** 2-2-2
 
 *(Un hogar está en muestra 2 trimestres, sale 2 trimestres, y vuelve 2 trimestres)*
+:::
 
-# Principales temáticas
+# Principales temáticas 📊 {background-color="#F5F5F5"}
 
 ## ¿Qué mide la EPH?
 
-. . .
+<br>
 
--   Características **demográficas** básicas
+::: columns
+::: {.column width="50%"}
+::: {.fragment .fade-in-then-semi-out}
+- Características **demográficas** básicas
+:::
 
-. . .
+::: {.fragment .fade-in-then-semi-out}
+- Características **ocupacionales** (empleo, desempleo, informalidad)
+:::
 
--   Características **ocupacionales** (empleo, desempleo, informalidad)
+::: {.fragment .fade-in-then-semi-out}
+- Características **migratorias**
+:::
+:::
 
-. . .
+::: {.column width="50%"}
+::: {.fragment .fade-in-then-semi-out}
+- Características **habitacionales**
+:::
 
--   Características **migratorias**
+::: {.fragment .fade-in-then-semi-out}
+- Características **educacionales**
+:::
 
-. . .
+::: {.fragment}
+- Características de **ingreso**
+:::
+:::
+:::
 
--   Características **habitacionales**
+# Tres cuestionarios 📝 {background-color="#4F7CFF"}
 
-. . .
+## Cuestionario de Vivienda 🏠
 
--   Características **educacionales**
-
-. . .
-
--   Características de **ingreso**
-
-# Tres cuestionarios
-
-## Cuestionario de Vivienda
+<br>
 
 **Definición:** *"Cualquier recinto fijo o móvil construido o adaptado para alojar personas"*
 
-. . .
+<br>
 
+::: {.fragment}
 Principales dimensiones:
 
--   Identificación de viviendas y hogares
--   Características de la vivienda y hábitat
--   Condición de residencia
+- Identificación de viviendas y hogares
+- Características de la vivienda y hábitat
+- Condición de residencia
+:::
 
-## Cuestionario de Hogar
+## Cuestionario de Hogar 👨‍👩‍👧‍👦
+
+<br>
 
 **Definición:** *"Persona o grupo de personas, parientes o no, que viven bajo un mismo techo y comparten los gastos de alimentación"*
 
-. . .
+<br>
 
+::: {.fragment .fade-in-then-semi-out}
 ### El jefe/a de hogar
 
 *"Aquella persona reconocida como tal por los demás miembros del hogar"*
+:::
 
-. . .
+<br>
 
+::: {.fragment}
 Criterios de asignación (en orden):
 
-1.  Responsabilidad económica del hogar
-2.  Miembro más antiguo
-3.  Quien haya acudido al llamado
+1. Responsabilidad económica del hogar
+2. Miembro más antiguo
+3. Quien haya acudido al llamado
+:::
 
-## Cuestionario Individual
+## Cuestionario Individual 👤
 
--   **Aplicación:** Todas las personas residentes **mayores de 10 años**
+<br>
 
--   **Respondentes:** Mayores de 18 años (puede ser auto o no auto-respondente)
+::: {.fragment .fade-in-then-semi-out}
+- **Aplicación:** Todas las personas residentes **mayores de 10 años**
+:::
 
-# Indicadores clave
+<br>
+
+::: {.fragment}
+- **Respondentes:** Mayores de 18 años (puede ser auto o no auto-respondente)
+:::
+
+# Indicadores clave 📈 {background-color="#F5F5F5"}
 
 ## Indicadores de bienestar
 
--   \% de personas con **cobertura de salud** solo por sistema público
--   \% de hogares **sin agua de red** dentro de la vivienda
--   \% de hogares **sin acceso a red cloacal**
--   \% de población **asalariada informal** (sin descuento jubilatorio)
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- % de personas con **cobertura de salud** solo por sistema público
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- % de hogares **sin agua de red** dentro de la vivienda
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- % de hogares **sin acceso a red cloacal**
+:::
+
+<br>
+
+::: {.fragment}
+- % de población **asalariada informal** (sin descuento jubilatorio)
+:::
 
 ## Indicadores de empleo
 
--   Tasa de **desocupación**
--   \% de ocupados que trabajan **más de 45 horas semanales**
--   Tasa de participación en **trabajo doméstico no remunerado**
--   \% de población en edad de jubilarse que **cobra jubilación/pensión**
+<br>
 
-# Clasificadores
+::: {.fragment .fade-in-then-semi-out}
+- Tasa de **desocupación**
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- % de ocupados que trabajan **más de 45 horas semanales**
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- Tasa de participación en **trabajo doméstico no remunerado**
+:::
+
+<br>
+
+::: {.fragment}
+- % de población en edad de jubilarse que **cobra jubilación/pensión**
+:::
+
+# Clasificadores 🏷️ {background-color="#4F7CFF"}
 
 ## Clasificadores utilizados
 
--   **Actividad (rama):** [CAES-MERCOSUR](https://www.indec.gob.ar/ftp/cuadros/menusuperior/clasificadores/notas_explicativas_caes_v2018.pdf)
+<br>
 
--   **Ocupación:** [CNO-2001-INDEC](https://www.indec.gob.ar/ftp/cuadros/menusuperior/clasificadores/definiciones_conceptuales_cno.pdf)
+::: {.fragment .fade-in-then-semi-out}
+- **Actividad (rama):** [CAES-MERCOSUR](https://www.indec.gob.ar/ftp/cuadros/menusuperior/clasificadores/notas_explicativas_caes_v2018.pdf)
+:::
 
--   **Códigos geográficos:** [Países](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/codigospaises_09.pdf) y [Provincias](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/codigosprovincias_09.pdf)
+<br>
 
-# Documentación
+::: {.fragment .fade-in-then-semi-out}
+- **Ocupación:** [CNO-2001-INDEC](https://www.indec.gob.ar/ftp/cuadros/menusuperior/clasificadores/definiciones_conceptuales_cno.pdf)
+:::
+
+<br>
+
+::: {.fragment}
+- **Códigos geográficos:** [Países](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/codigospaises_09.pdf) y [Provincias](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/codigosprovincias_09.pdf)
+:::
+
+# Documentación 📖 {background-color="#F5F5F5"}
 
 ## Links útiles
 
--   [Diseño de registro](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_registro_1t19.pdf)
--   [Cuestionario individual](https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CIndividual.pdf)
--   [Cuestionario Hogar](https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CHogar.pdf)
--   [Cuestionario Vivienda](https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CVivienda.pdf)
--   [La nueva EPH continua (metodología)](https://www.indec.gob.ar/ftp/cuadros/sociedad/metodologia_eph_continua.pdf)
+<br>
 
-# Ejercicio para la semana
+::: columns
+::: {.column width="50%"}
+::: {.fragment .fade-in-then-semi-out}
+### Cuestionarios
+- [Cuestionario individual](https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CIndividual.pdf)
+- [Cuestionario Hogar](https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CHogar.pdf)
+- [Cuestionario Vivienda](https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CVivienda.pdf)
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+### Metodología
+- [Diseño de registro](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_registro_1t19.pdf)
+- [La nueva EPH continua](https://www.indec.gob.ar/ftp/cuadros/sociedad/metodologia_eph_continua.pdf)
+:::
+:::
+:::
+
+# Ejercicio para la semana 📝 {background-color="#D4FF4F"}
 
 ## Explorar la documentación
 
-1.  Descargar alguno de los cuestionarios de la EPH
-2.  Identificar preguntas relacionadas con:
-    -   Situación laboral
-    -   Nivel educativo
-    -   Ingresos
-3.  Pensar: ¿qué indicadores podrías construir con esas variables?
+<br>
 
-# ¡Listo!
+::: {.fragment .fade-in-then-semi-out}
+### 1. Descargar alguno de los cuestionarios de la EPH
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+### 2. Identificar preguntas relacionadas con:
+- Situación laboral
+- Nivel educativo
+- Ingresos
+:::
+
+<br>
+
+::: {.fragment}
+### 3. Pensar: ¿qué indicadores podrías construir con esas variables?
+:::
+
+# ¡Listo! {background-color="#4F7CFF"}
 
 ## Próximo encuentro
 
--   **Fecha:** Martes 3 de febrero, 19hs (ARG)
--   **Tema:** Introducción a R + IA en el análisis de datos
+::: {style="text-align: center;"}
 
-. . .
+<br>
 
-Seguimos la comunicación por **Slack**
+### 📅 Fecha: Martes 3 de febrero, 19hs (ARG)
 
-. . .
+<br>
 
-**¿Preguntas?**
+### 📚 Tema: Introducción a R + IA en el análisis de datos
+
+<br>
+
+::: {.fragment}
+### Seguimos la comunicación por **Slack**
+:::
+
+<br>
+
+::: {.fragment}
+### **¿Preguntas?** 🙋
+:::
+:::

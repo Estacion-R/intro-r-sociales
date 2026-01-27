@@ -2,6 +2,20 @@
   {
     "listing": "/cod_de_conducta.html",
     "items": [
+      "/encuentros/0-puesta-a-punto/index.html",
+      "/encuentros/1-intro-curso-eph/index.html",
+      "/encuentros/1-intro-r/index.html",
+      "/encuentros/2-proyectos/index.html",
+      "/encuentros/3-tidyverse/index.html",
+      "/encuentros/4-visualizacion/index.html",
+      "/encuentros/5-reportes/index.html",
+      "/encuentros/6-TP integrador/index.html"
+    ]
+  },
+  {
+    "listing": "/index_LANZAMIENTO.html",
+    "items": [
+      "/encuentros/0-puesta-a-punto/index.html",
       "/encuentros/1-intro-curso-eph/index.html",
       "/encuentros/1-intro-r/index.html",
       "/encuentros/2-proyectos/index.html",
