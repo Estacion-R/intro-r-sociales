@@ -1428,6 +1428,34 @@
     "text": "Antes del Encuentro 1:\n\nVerificar que Zoom esté listo para grabar\nTener slides abiertas: https://estacion-r.github.io/intro-r-sociales/encuentros/1-intro-curso-eph/intro-curso-eph.html\n\nDespués del Encuentro 1:\n\nSubir grabación\nEnviar mensaje por Slack con links\nPreparar Encuentro 2 (Intro a R + IA)\n\nTécnico:\n\nCompletar instalación de tidyverse\nHacer render completo del sitio cuando estén todas las dependencias"
   },
   {
+    "objectID": "ENCUENTROS_STATUS.html",
+    "href": "ENCUENTROS_STATUS.html",
+    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "section": "",
+    "text": "Este archivo trackea qué encuentros están activos en el sitio web. Actualizar después de cada clase y re-renderizar el sitio.\n\n\n\n\n\n\n\n\n\n\n\n\nMódulo\nFecha\nTema\nEstado\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n\n\n1\n2026-01-28\nIntro al curso y EPH\n✅ Activo\n\n\n2\n2026-02-04\nIntro a R + IA\n🔒 Bloqueado\n\n\n3\n2026-02-11\ntidyverse I: Importación\n🔒 Bloqueado\n\n\n4\n2026-02-18\ntidyverse II: Transformación\n🔒 Bloqueado\n\n\n5\n2026-02-25\nProyectos y organización\n🔒 Bloqueado\n\n\n6\n2026-03-04\nggplot2 + TP integrador\n🔒 Bloqueado\n\n\n\n\n\n\n\nCambiar el estado en la tabla de arriba de 🔒 a ✅\nEditar _quarto.yml y agregar el href al item del menú\nRenderizar el sitio: quarto render\nHacer commit y push a GitHub\n\n\n\n\n# Items ACTIVOS tienen href:\n- text: \"Módulo 1: Intro al curso y EPH\"\n  href: encuentros/1-intro-curso-eph/index.qmd\n\n# Items BLOQUEADOS no tienen href (aparecen como texto gris):\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n\nÚltima actualización: 2026-01-27"
+  },
+  {
+    "objectID": "ENCUENTROS_STATUS.html#calendario-del-curso",
+    "href": "ENCUENTROS_STATUS.html#calendario-del-curso",
+    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "section": "",
+    "text": "Módulo\nFecha\nTema\nEstado\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n\n\n1\n2026-01-28\nIntro al curso y EPH\n✅ Activo\n\n\n2\n2026-02-04\nIntro a R + IA\n🔒 Bloqueado\n\n\n3\n2026-02-11\ntidyverse I: Importación\n🔒 Bloqueado\n\n\n4\n2026-02-18\ntidyverse II: Transformación\n🔒 Bloqueado\n\n\n5\n2026-02-25\nProyectos y organización\n🔒 Bloqueado\n\n\n6\n2026-03-04\nggplot2 + TP integrador\n🔒 Bloqueado"
+  },
+  {
+    "objectID": "ENCUENTROS_STATUS.html#cómo-activar-un-encuentro",
+    "href": "ENCUENTROS_STATUS.html#cómo-activar-un-encuentro",
+    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "section": "",
+    "text": "Cambiar el estado en la tabla de arriba de 🔒 a ✅\nEditar _quarto.yml y agregar el href al item del menú\nRenderizar el sitio: quarto render\nHacer commit y push a GitHub"
+  },
+  {
+    "objectID": "ENCUENTROS_STATUS.html#estructura-del-menú-en-_quarto.yml",
+    "href": "ENCUENTROS_STATUS.html#estructura-del-menú-en-_quarto.yml",
+    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "section": "",
+    "text": "# Items ACTIVOS tienen href:\n- text: \"Módulo 1: Intro al curso y EPH\"\n  href: encuentros/1-intro-curso-eph/index.qmd\n\n# Items BLOQUEADOS no tienen href (aparecen como texto gris):\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n\nÚltima actualización: 2026-01-27"
+  },
+  {
     "objectID": "encuentros/4-visualizacion/index_ACTIVAR.html",
     "href": "encuentros/4-visualizacion/index_ACTIVAR.html",
     "title": "Quarto and automation in teaching statistical computing",
