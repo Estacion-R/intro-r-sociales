@@ -1,11 +1,11 @@
 # Estado del Curso - Intro R Ciencias Sociales
 
-> Última actualización: 2026-01-27
+> Última actualización: 2026-01-27 (post sesión de preparación)
 
 ## Información General
 
 - **Curso:** Introducción al Procesamiento de Datos con R para Ciencias Sociales
-- **Inicio:** Martes 27 de enero de 2026, 19hs ARG
+- **Inicio:** Martes 28 de enero de 2026, 19hs ARG
 - **Duración:** 6 encuentros de 2:30 hs
 - **Alumnos inscriptos:** 14
 - **Docente:** Pablo Tiscornia
@@ -16,87 +16,96 @@
 - **Repositorio:** https://github.com/Estacion-R/intro-r-sociales
 - **Inscripciones:** https://estacion-r.com/courses/8c7c8213-9b25-48d2-a9a7-e58e1cc80e25/detail?type=sync
 
-## Programa (6 encuentros)
+## Estado de Encuentros en el Sitio Web
 
-| # | Fecha | Tema | Estado |
-|---|-------|------|--------|
-| 1 | 27/01 | Introducción al curso y a la EPH | ✅ Listo |
-| 2 | 03/02 | Introducción a R + IA en análisis de datos | 🟡 Material existente |
-| 3 | 10/02 | tidyverse I: Importación y selección | 🟡 Material existente |
-| 4 | 17/02 | tidyverse II: Transformación y resumen | 🟡 Material existente |
-| 5 | 24/02 | Proyectos y organización de trabajo | 🟡 Material existente |
-| 6 | 03/03 | Visualización con ggplot2 + TP integrador | 🟡 Material existente |
+| Módulo | Fecha | Tema | Web | Contenido |
+|--------|-------|------|-----|-----------|
+| 0 | - | Puesta a punto | ✅ Activo | ✅ Nuevo formato |
+| 1 | 28/01 | Intro al curso y EPH | ✅ Activo | ✅ Nuevo formato |
+| 2 | 04/02 | Intro a R + IA | 🔒 Bloqueado | 🟡 Por adaptar |
+| 3 | 11/02 | tidyverse I | 🔒 Bloqueado | 🟡 Por adaptar |
+| 4 | 18/02 | tidyverse II | 🔒 Bloqueado | 🟡 Por adaptar |
+| 5 | 25/02 | Proyectos y organización | 🔒 Bloqueado | 🟡 Por adaptar |
+| 6 | 04/03 | ggplot2 + TP integrador | 🔒 Bloqueado | 🟡 Por adaptar |
 
-## Encuentro 1 - EPH (27/01/2026)
+**Nota:** Los módulos bloqueados aparecen en el menú como "(próximamente)" sin link.
 
-### Archivos creados
-- `encuentros/1-intro-curso-eph/intro-curso-eph.qmd` - Slides principales
-- `encuentros/1-intro-curso-eph/index.qmd` - Página índice del encuentro
-- `encuentros/1-intro-curso-eph/images/` - Imágenes (ni_idea.gif, marco_analitico_coneptual_eph.jpg, etc.)
+## Tareas Completadas Esta Sesión
 
-### Contenido de las slides
-1. Bienvenida y redes de Estación R
-2. Dinámica del curso (6 encuentros, Slack, grabaciones)
-3. Programa del curso
-4. Presentación de estudiantes
-5. ¿Qué es la EPH? (marco conceptual)
-6. Fuentes de datos (censos, registros, encuestas, dispositivos)
-7. Objetivos de la EPH
-8. Características: historia, cobertura geográfica (31 aglomerados)
-9. La muestra: ~18.000 hogares, ~58.000 personas por trimestre
-10. Diseño muestral bietápico estratificado, rotación 2-2-2
-11. Principales temáticas (demográficas, ocupacionales, migratorias, etc.)
-12. Los tres cuestionarios (vivienda, hogar, individual)
-13. Indicadores clave (bienestar, empleo)
-14. Clasificadores (CAES-MERCOSUR, CNO-2001)
-15. Documentación y links útiles
-16. Ejercicio para la semana
-17. Próximo encuentro
+### Clase 0 - Puesta a punto (NUEVA)
+- ✅ Creada desde cero con formato del curso Intro Viz
+- ✅ Slides: `encuentros/0-puesta-a-punto/puesta-a-punto.qmd`
+- ✅ Script R: `encuentros/0-puesta-a-punto/00-puesta_a_punto.R`
+- ✅ Index: `encuentros/0-puesta-a-punto/index.qmd`
 
-### Fuente de referencia
-- Repo: https://github.com/pablotis/r_intro_eph
-- Archivo adaptado: `0a_diapositivas/01a_r_intro_eph.Rmd`
-- Conversión: xaringan → Quarto revealjs
+### Clase 1 - Intro al curso y EPH
+- ✅ Adaptada al nuevo formato (background colors, fragments, columns)
+- ✅ Agregadas slides: Programa del curso, "Página de Estación R"
+- ✅ Actualizado autor a Pablo Tiscornia
 
-## Configuración del Sitio
+### Configuración del sitio
+- ✅ Sistema de encuentros activos/bloqueados en `_quarto.yml`
+- ✅ Ejercitaciones bloqueadas hasta que se dicten
+- ✅ Archivo `ENCUENTROS_STATUS.md` para tracking
+- ✅ Foto del docente actualizada en todas las carpetas
 
-### GitHub Pages
-- **Branch:** main
-- **Path:** /docs
-- **Status:** ✅ Desplegado
+## Cómo Activar un Módulo (después de cada clase)
 
-### Dependencias R instaladas
-- rmarkdown ✅
-- downloadthis ✅
-- tidyverse ⏳ (instalando en background)
+1. Editar `_quarto.yml`:
+   ```yaml
+   # Cambiar de:
+   - text: "Módulo 2: Intro a R + IA (próximamente)"
+   # A:
+   - text: "Módulo 2: Intro a R + IA"
+     href: encuentros/1-intro-r/index.qmd
+   ```
 
-### Archivos pendientes de render completo
-El render completo del sitio falla en `encuentros/5-reportes/analizando_puna.Rmd` por falta de tidyverse.
-Las páginas esenciales están renderizadas y publicadas.
+2. Hacer lo mismo con la ejercitación correspondiente
 
-## Checklist de Arranque
+3. Actualizar `ENCUENTROS_STATUS.md`
 
-Ver `_gestion/CHECKLIST_ARRANQUE_CURSO.md` para la plantilla reutilizable.
+4. Ejecutar:
+   ```bash
+   quarto render
+   git add -A && git commit -m "Activar Módulo X" && git push
+   ```
 
-### Estado actual (Encuentro 1)
-- [x] Slides listas
-- [x] Sitio publicado
-- [x] Link de Zoom (confirmado por usuario)
-- [x] Slack con 14 alumnos invitados
-- [x] Programa actualizado en sitio
-- [ ] Grabación configurada (hacer antes de la clase)
+## Formato de Presentaciones (Nuevo Estilo)
 
-## Próximos pasos
+```yaml
+format:
+  revealjs:
+    theme: [default, ../1-intro-r/intro-r.scss]
+    slide-number: true
+    embed-resources: true
+    navigation-mode: vertical
+    width: 1280
+    height: 720
+```
 
-1. **Antes del Encuentro 1:**
-   - Verificar que Zoom esté listo para grabar
-   - Tener slides abiertas: https://estacion-r.github.io/intro-r-sociales/encuentros/1-intro-curso-eph/intro-curso-eph.html
+**Background colors:**
+- Secciones principales: `{background-color="#4F7CFF"}` (azul)
+- Secciones secundarias: `{background-color="#F5F5F5"}` (gris)
+- Ejercicios/destacados: `{background-color="#D4FF4F"}` (verde lima)
 
-2. **Después del Encuentro 1:**
-   - Subir grabación
-   - Enviar mensaje por Slack con links
-   - Preparar Encuentro 2 (Intro a R + IA)
+**Fragments:**
+```markdown
+::: {.fragment .fade-in-then-semi-out}
+Contenido animado
+:::
+```
 
-3. **Técnico:**
-   - Completar instalación de tidyverse
-   - Hacer render completo del sitio cuando estén todas las dependencias
+## Próximos Pasos
+
+### Después del Encuentro 1:
+- [ ] Subir grabación a la plataforma
+- [ ] Enviar mensaje por Slack con resumen y links
+- [ ] Activar Módulo 2 en el sitio (un día antes del encuentro)
+
+### Pendientes técnicos:
+- [ ] Adaptar Módulos 2-6 al nuevo formato de slides
+- [ ] Verificar ejercitaciones actualizadas
+- [ ] Agregar TP integrador en Módulo 6
+
+---
+*Última actualización: 2026-01-27*
