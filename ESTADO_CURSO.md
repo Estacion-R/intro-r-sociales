@@ -1,6 +1,8 @@
 # Estado del Curso - Intro R Ciencias Sociales
 
-> Última actualización: 2026-01-27 (post sesión de preparación)
+> **Año del curso: 2026** - Todas las fechas corresponden a este año.
+>
+> Última actualización: 2026-02-03
 
 ## Información General
 
@@ -22,7 +24,7 @@
 |--------|-------|------|-----|-----------|
 | 0 | - | Puesta a punto | ✅ Activo | ✅ Nuevo formato |
 | 1 | 28/01 | Intro al curso y EPH | ✅ Activo | ✅ Nuevo formato |
-| 2 | 04/02 | Intro a R + IA | 🔒 Bloqueado | 🟡 Por adaptar |
+| 2 | 04/02 | Intro a R + IA | ✅ Activo | ✅ Nuevo formato |
 | 3 | 11/02 | tidyverse I | 🔒 Bloqueado | 🟡 Por adaptar |
 | 4 | 18/02 | tidyverse II | 🔒 Bloqueado | 🟡 Por adaptar |
 | 5 | 25/02 | Proyectos y organización | 🔒 Bloqueado | 🟡 Por adaptar |
@@ -108,4 +110,4 @@ Contenido animado
 - [ ] Agregar TP integrador en Módulo 6
 
 ---
-*Última actualización: 2026-01-27*
+*Última actualización: 2026-02-02*

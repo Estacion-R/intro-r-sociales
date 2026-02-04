@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -116,7 +150,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./encuentros/1-intro-curso-eph/index.html">
  <span class="dropdown-text">Módulo 1: Intro al curso y EPH</span></a>
   </li>  
-        <li class="dropdown-header">Módulo 2: Intro a R + IA (próximamente)</li>
+        <li>
+    <a class="dropdown-item" href="./encuentros/2-intro-r-ia/index.html">
+ <span class="dropdown-text">Módulo 2: Intro a R + IA</span></a>
+  </li>  
         <li class="dropdown-header">Módulo 3: tidyverse I (próximamente)</li>
         <li class="dropdown-header">Módulo 4: tidyverse II (próximamente)</li>
         <li class="dropdown-header">Módulo 5: Proyectos y organización (próximamente)</li>
@@ -128,7 +165,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Ejercitación</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ejercitación">    
-        <li class="dropdown-header">Módulo 2: Intro a R (próximamente)</li>
+        <li>
+    <a class="dropdown-item" href="./encuentros/2-intro-r-ia/intro-r-ia_ejercitacion.html">
+ <span class="dropdown-text">Módulo 2: Intro a R + IA</span></a>
+  </li>  
         <li class="dropdown-header">Módulo 3: tidyverse I (próximamente)</li>
         <li class="dropdown-header">Módulo 4: tidyverse II (próximamente)</li>
         <li class="dropdown-header">Módulo 5: Proyectos (próximamente)</li>
@@ -161,24 +201,20 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#información-general" id="toc-información-general" class="nav-link" data-scroll-target="#información-general">Información General</a></li>
   <li><a href="#urls" id="toc-urls" class="nav-link" data-scroll-target="#urls">URLs</a></li>
-  <li><a href="#programa-6-encuentros" id="toc-programa-6-encuentros" class="nav-link" data-scroll-target="#programa-6-encuentros">Programa (6 encuentros)</a></li>
-  <li><a href="#encuentro-1---eph-27012026" id="toc-encuentro-1---eph-27012026" class="nav-link" data-scroll-target="#encuentro-1---eph-27012026">Encuentro 1 - EPH (27/01/2026)</a>
+  <li><a href="#estado-de-encuentros-en-el-sitio-web" id="toc-estado-de-encuentros-en-el-sitio-web" class="nav-link" data-scroll-target="#estado-de-encuentros-en-el-sitio-web">Estado de Encuentros en el Sitio Web</a></li>
+  <li><a href="#tareas-completadas-esta-sesión" id="toc-tareas-completadas-esta-sesión" class="nav-link" data-scroll-target="#tareas-completadas-esta-sesión">Tareas Completadas Esta Sesión</a>
   <ul class="collapse">
-  <li><a href="#archivos-creados" id="toc-archivos-creados" class="nav-link" data-scroll-target="#archivos-creados">Archivos creados</a></li>
-  <li><a href="#contenido-de-las-slides" id="toc-contenido-de-las-slides" class="nav-link" data-scroll-target="#contenido-de-las-slides">Contenido de las slides</a></li>
-  <li><a href="#fuente-de-referencia" id="toc-fuente-de-referencia" class="nav-link" data-scroll-target="#fuente-de-referencia">Fuente de referencia</a></li>
+  <li><a href="#clase-0---puesta-a-punto-nueva" id="toc-clase-0---puesta-a-punto-nueva" class="nav-link" data-scroll-target="#clase-0---puesta-a-punto-nueva">Clase 0 - Puesta a punto (NUEVA)</a></li>
+  <li><a href="#clase-1---intro-al-curso-y-eph" id="toc-clase-1---intro-al-curso-y-eph" class="nav-link" data-scroll-target="#clase-1---intro-al-curso-y-eph">Clase 1 - Intro al curso y EPH</a></li>
+  <li><a href="#configuración-del-sitio" id="toc-configuración-del-sitio" class="nav-link" data-scroll-target="#configuración-del-sitio">Configuración del sitio</a></li>
   </ul></li>
-  <li><a href="#configuración-del-sitio" id="toc-configuración-del-sitio" class="nav-link" data-scroll-target="#configuración-del-sitio">Configuración del Sitio</a>
+  <li><a href="#cómo-activar-un-módulo-después-de-cada-clase" id="toc-cómo-activar-un-módulo-después-de-cada-clase" class="nav-link" data-scroll-target="#cómo-activar-un-módulo-después-de-cada-clase">Cómo Activar un Módulo (después de cada clase)</a></li>
+  <li><a href="#formato-de-presentaciones-nuevo-estilo" id="toc-formato-de-presentaciones-nuevo-estilo" class="nav-link" data-scroll-target="#formato-de-presentaciones-nuevo-estilo">Formato de Presentaciones (Nuevo Estilo)</a></li>
+  <li><a href="#próximos-pasos" id="toc-próximos-pasos" class="nav-link" data-scroll-target="#próximos-pasos">Próximos Pasos</a>
   <ul class="collapse">
-  <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages">GitHub Pages</a></li>
-  <li><a href="#dependencias-r-instaladas" id="toc-dependencias-r-instaladas" class="nav-link" data-scroll-target="#dependencias-r-instaladas">Dependencias R instaladas</a></li>
-  <li><a href="#archivos-pendientes-de-render-completo" id="toc-archivos-pendientes-de-render-completo" class="nav-link" data-scroll-target="#archivos-pendientes-de-render-completo">Archivos pendientes de render completo</a></li>
+  <li><a href="#después-del-encuentro-1" id="toc-después-del-encuentro-1" class="nav-link" data-scroll-target="#después-del-encuentro-1">Después del Encuentro 1:</a></li>
+  <li><a href="#pendientes-técnicos" id="toc-pendientes-técnicos" class="nav-link" data-scroll-target="#pendientes-técnicos">Pendientes técnicos:</a></li>
   </ul></li>
-  <li><a href="#checklist-de-arranque" id="toc-checklist-de-arranque" class="nav-link" data-scroll-target="#checklist-de-arranque">Checklist de Arranque</a>
-  <ul class="collapse">
-  <li><a href="#estado-actual-encuentro-1" id="toc-estado-actual-encuentro-1" class="nav-link" data-scroll-target="#estado-actual-encuentro-1">Estado actual (Encuentro 1)</a></li>
-  </ul></li>
-  <li><a href="#próximos-pasos" id="toc-próximos-pasos" class="nav-link" data-scroll-target="#próximos-pasos">Próximos pasos</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -192,13 +228,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="estado-del-curso---intro-r-ciencias-sociales" class="level1">
 <h1>Estado del Curso - Intro R Ciencias Sociales</h1>
 <blockquote class="blockquote">
-<p>Última actualización: 2026-01-27</p>
+<p><strong>Año del curso: 2026</strong> - Todas las fechas corresponden a este año.</p>
+<p>Última actualización: 2026-02-03</p>
 </blockquote>
 <section id="información-general" class="level2">
 <h2 class="anchored" data-anchor-id="información-general">Información General</h2>
 <ul>
 <li><strong>Curso:</strong> Introducción al Procesamiento de Datos con R para Ciencias Sociales</li>
-<li><strong>Inicio:</strong> Martes 27 de enero de 2026, 19hs ARG</li>
+<li><strong>Inicio:</strong> Martes 28 de enero de 2026, 19hs ARG</li>
 <li><strong>Duración:</strong> 6 encuentros de 2:30 hs</li>
 <li><strong>Alumnos inscriptos:</strong> 14</li>
 <li><strong>Docente:</strong> Pablo Tiscornia</li>
@@ -212,164 +249,155 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Inscripciones:</strong> https://estacion-r.com/courses/8c7c8213-9b25-48d2-a9a7-e58e1cc80e25/detail?type=sync</li>
 </ul>
 </section>
-<section id="programa-6-encuentros" class="level2">
-<h2 class="anchored" data-anchor-id="programa-6-encuentros">Programa (6 encuentros)</h2>
+<section id="estado-de-encuentros-en-el-sitio-web" class="level2">
+<h2 class="anchored" data-anchor-id="estado-de-encuentros-en-el-sitio-web">Estado de Encuentros en el Sitio Web</h2>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 29%">
-<col style="width: 25%">
-<col style="width: 33%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>#</th>
+<th>Módulo</th>
 <th>Fecha</th>
 <th>Tema</th>
-<th>Estado</th>
+<th>Web</th>
+<th>Contenido</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>0</td>
+<td>-</td>
+<td>Puesta a punto</td>
+<td>✅ Activo</td>
+<td>✅ Nuevo formato</td>
+</tr>
+<tr class="even">
 <td>1</td>
-<td>27/01</td>
-<td>Introducción al curso y a la EPH</td>
-<td>✅ Listo</td>
+<td>28/01</td>
+<td>Intro al curso y EPH</td>
+<td>✅ Activo</td>
+<td>✅ Nuevo formato</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2</td>
-<td>03/02</td>
-<td>Introducción a R + IA en análisis de datos</td>
-<td>🟡 Material existente</td>
+<td>04/02</td>
+<td>Intro a R + IA</td>
+<td>✅ Activo</td>
+<td>✅ Nuevo formato</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>3</td>
-<td>10/02</td>
-<td>tidyverse I: Importación y selección</td>
-<td>🟡 Material existente</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>17/02</td>
-<td>tidyverse II: Transformación y resumen</td>
-<td>🟡 Material existente</td>
+<td>11/02</td>
+<td>tidyverse I</td>
+<td>🔒 Bloqueado</td>
+<td>🟡 Por adaptar</td>
 </tr>
 <tr class="odd">
-<td>5</td>
-<td>24/02</td>
-<td>Proyectos y organización de trabajo</td>
-<td>🟡 Material existente</td>
+<td>4</td>
+<td>18/02</td>
+<td>tidyverse II</td>
+<td>🔒 Bloqueado</td>
+<td>🟡 Por adaptar</td>
 </tr>
 <tr class="even">
+<td>5</td>
+<td>25/02</td>
+<td>Proyectos y organización</td>
+<td>🔒 Bloqueado</td>
+<td>🟡 Por adaptar</td>
+</tr>
+<tr class="odd">
 <td>6</td>
-<td>03/03</td>
-<td>Visualización con ggplot2 + TP integrador</td>
-<td>🟡 Material existente</td>
+<td>04/03</td>
+<td>ggplot2 + TP integrador</td>
+<td>🔒 Bloqueado</td>
+<td>🟡 Por adaptar</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Nota:</strong> Los módulos bloqueados aparecen en el menú como “(próximamente)” sin link.</p>
 </section>
-<section id="encuentro-1---eph-27012026" class="level2">
-<h2 class="anchored" data-anchor-id="encuentro-1---eph-27012026">Encuentro 1 - EPH (27/01/2026)</h2>
-<section id="archivos-creados" class="level3">
-<h3 class="anchored" data-anchor-id="archivos-creados">Archivos creados</h3>
+<section id="tareas-completadas-esta-sesión" class="level2">
+<h2 class="anchored" data-anchor-id="tareas-completadas-esta-sesión">Tareas Completadas Esta Sesión</h2>
+<section id="clase-0---puesta-a-punto-nueva" class="level3">
+<h3 class="anchored" data-anchor-id="clase-0---puesta-a-punto-nueva">Clase 0 - Puesta a punto (NUEVA)</h3>
 <ul>
-<li><code>encuentros/1-intro-curso-eph/intro-curso-eph.qmd</code> - Slides principales</li>
-<li><code>encuentros/1-intro-curso-eph/index.qmd</code> - Página índice del encuentro</li>
-<li><code>encuentros/1-intro-curso-eph/images/</code> - Imágenes (ni_idea.gif, marco_analitico_coneptual_eph.jpg, etc.)</li>
+<li>✅ Creada desde cero con formato del curso Intro Viz</li>
+<li>✅ Slides: <code>encuentros/0-puesta-a-punto/puesta-a-punto.qmd</code></li>
+<li>✅ Script R: <code>encuentros/0-puesta-a-punto/00-puesta_a_punto.R</code></li>
+<li>✅ Index: <code>encuentros/0-puesta-a-punto/index.qmd</code></li>
 </ul>
 </section>
-<section id="contenido-de-las-slides" class="level3">
-<h3 class="anchored" data-anchor-id="contenido-de-las-slides">Contenido de las slides</h3>
+<section id="clase-1---intro-al-curso-y-eph" class="level3">
+<h3 class="anchored" data-anchor-id="clase-1---intro-al-curso-y-eph">Clase 1 - Intro al curso y EPH</h3>
+<ul>
+<li>✅ Adaptada al nuevo formato (background colors, fragments, columns)</li>
+<li>✅ Agregadas slides: Programa del curso, “Página de Estación R”</li>
+<li>✅ Actualizado autor a Pablo Tiscornia</li>
+</ul>
+</section>
+<section id="configuración-del-sitio" class="level3">
+<h3 class="anchored" data-anchor-id="configuración-del-sitio">Configuración del sitio</h3>
+<ul>
+<li>✅ Sistema de encuentros activos/bloqueados en <code>_quarto.yml</code></li>
+<li>✅ Ejercitaciones bloqueadas hasta que se dicten</li>
+<li>✅ Archivo <code>ENCUENTROS_STATUS.md</code> para tracking</li>
+<li>✅ Foto del docente actualizada en todas las carpetas</li>
+</ul>
+</section>
+</section>
+<section id="cómo-activar-un-módulo-después-de-cada-clase" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-activar-un-módulo-después-de-cada-clase">Cómo Activar un Módulo (después de cada clase)</h2>
 <ol type="1">
-<li>Bienvenida y redes de Estación R</li>
-<li>Dinámica del curso (6 encuentros, Slack, grabaciones)</li>
-<li>Programa del curso</li>
-<li>Presentación de estudiantes</li>
-<li>¿Qué es la EPH? (marco conceptual)</li>
-<li>Fuentes de datos (censos, registros, encuestas, dispositivos)</li>
-<li>Objetivos de la EPH</li>
-<li>Características: historia, cobertura geográfica (31 aglomerados)</li>
-<li>La muestra: ~18.000 hogares, ~58.000 personas por trimestre</li>
-<li>Diseño muestral bietápico estratificado, rotación 2-2-2</li>
-<li>Principales temáticas (demográficas, ocupacionales, migratorias, etc.)</li>
-<li>Los tres cuestionarios (vivienda, hogar, individual)</li>
-<li>Indicadores clave (bienestar, empleo)</li>
-<li>Clasificadores (CAES-MERCOSUR, CNO-2001)</li>
-<li>Documentación y links útiles</li>
-<li>Ejercicio para la semana</li>
-<li>Próximo encuentro</li>
+<li><p>Editar <code>_quarto.yml</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cambiar de:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Módulo 2: Intro a R + IA (próximamente)"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Módulo 2: Intro a R + IA"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">href</span><span class="kw">:</span><span class="at"> encuentros/1-intro-r/index.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Hacer lo mismo con la ejercitación correspondiente</p></li>
+<li><p>Actualizar <code>ENCUENTROS_STATUS.md</code></p></li>
+<li><p>Ejecutar:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Activar Módulo X"</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </section>
-<section id="fuente-de-referencia" class="level3">
-<h3 class="anchored" data-anchor-id="fuente-de-referencia">Fuente de referencia</h3>
-<ul>
-<li>Repo: https://github.com/pablotis/r_intro_eph</li>
-<li>Archivo adaptado: <code>0a_diapositivas/01a_r_intro_eph.Rmd</code></li>
-<li>Conversión: xaringan → Quarto revealjs</li>
-</ul>
-</section>
-</section>
-<section id="configuración-del-sitio" class="level2">
-<h2 class="anchored" data-anchor-id="configuración-del-sitio">Configuración del Sitio</h2>
-<section id="github-pages" class="level3">
-<h3 class="anchored" data-anchor-id="github-pages">GitHub Pages</h3>
-<ul>
-<li><strong>Branch:</strong> main</li>
-<li><strong>Path:</strong> /docs</li>
-<li><strong>Status:</strong> ✅ Desplegado</li>
-</ul>
-</section>
-<section id="dependencias-r-instaladas" class="level3">
-<h3 class="anchored" data-anchor-id="dependencias-r-instaladas">Dependencias R instaladas</h3>
-<ul>
-<li>rmarkdown ✅</li>
-<li>downloadthis ✅</li>
-<li>tidyverse ⏳ (instalando en background)</li>
-</ul>
-</section>
-<section id="archivos-pendientes-de-render-completo" class="level3">
-<h3 class="anchored" data-anchor-id="archivos-pendientes-de-render-completo">Archivos pendientes de render completo</h3>
-<p>El render completo del sitio falla en <code>encuentros/5-reportes/analizando_puna.Rmd</code> por falta de tidyverse. Las páginas esenciales están renderizadas y publicadas.</p>
-</section>
-</section>
-<section id="checklist-de-arranque" class="level2">
-<h2 class="anchored" data-anchor-id="checklist-de-arranque">Checklist de Arranque</h2>
-<p>Ver <code>_gestion/CHECKLIST_ARRANQUE_CURSO.md</code> para la plantilla reutilizable.</p>
-<section id="estado-actual-encuentro-1" class="level3">
-<h3 class="anchored" data-anchor-id="estado-actual-encuentro-1">Estado actual (Encuentro 1)</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Slides listas</label></li>
-<li><label><input type="checkbox" checked="">Sitio publicado</label></li>
-<li><label><input type="checkbox" checked="">Link de Zoom (confirmado por usuario)</label></li>
-<li><label><input type="checkbox" checked="">Slack con 14 alumnos invitados</label></li>
-<li><label><input type="checkbox" checked="">Programa actualizado en sitio</label></li>
-<li><label><input type="checkbox">Grabación configurada (hacer antes de la clase)</label></li>
-</ul>
-</section>
+<section id="formato-de-presentaciones-nuevo-estilo" class="level2">
+<h2 class="anchored" data-anchor-id="formato-de-presentaciones-nuevo-estilo">Formato de Presentaciones (Nuevo Estilo)</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">default</span><span class="kw">,</span><span class="at"> ../1-intro-r/intro-r.scss</span><span class="kw">]</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">navigation-mode</span><span class="kw">:</span><span class="at"> vertical</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">width</span><span class="kw">:</span><span class="at"> </span><span class="dv">1280</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">height</span><span class="kw">:</span><span class="at"> </span><span class="dv">720</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Background colors:</strong> - Secciones principales: <code>{background-color="#4F7CFF"}</code> (azul) - Secciones secundarias: <code>{background-color="#F5F5F5"}</code> (gris) - Ejercicios/destacados: <code>{background-color="#D4FF4F"}</code> (verde lima)</p>
+<p><strong>Fragments:</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: {.fragment .fade-in-then-semi-out}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Contenido animado</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="próximos-pasos" class="level2">
-<h2 class="anchored" data-anchor-id="próximos-pasos">Próximos pasos</h2>
-<ol type="1">
-<li><strong>Antes del Encuentro 1:</strong>
-<ul>
-<li>Verificar que Zoom esté listo para grabar</li>
-<li>Tener slides abiertas: https://estacion-r.github.io/intro-r-sociales/encuentros/1-intro-curso-eph/intro-curso-eph.html</li>
-</ul></li>
-<li><strong>Después del Encuentro 1:</strong>
-<ul>
-<li>Subir grabación</li>
-<li>Enviar mensaje por Slack con links</li>
-<li>Preparar Encuentro 2 (Intro a R + IA)</li>
-</ul></li>
-<li><strong>Técnico:</strong>
-<ul>
-<li>Completar instalación de tidyverse</li>
-<li>Hacer render completo del sitio cuando estén todas las dependencias</li>
-</ul></li>
-</ol>
+<h2 class="anchored" data-anchor-id="próximos-pasos">Próximos Pasos</h2>
+<section id="después-del-encuentro-1" class="level3">
+<h3 class="anchored" data-anchor-id="después-del-encuentro-1">Después del Encuentro 1:</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Subir grabación a la plataforma</label></li>
+<li><label><input type="checkbox">Enviar mensaje por Slack con resumen y links</label></li>
+<li><label><input type="checkbox">Activar Módulo 2 en el sitio (un día antes del encuentro)</label></li>
+</ul>
+</section>
+<section id="pendientes-técnicos" class="level3">
+<h3 class="anchored" data-anchor-id="pendientes-técnicos">Pendientes técnicos:</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Adaptar Módulos 2-6 al nuevo formato de slides</label></li>
+<li><label><input type="checkbox">Verificar ejercitaciones actualizadas</label></li>
+<li><label><input type="checkbox">Agregar TP integrador en Módulo 6</label></li>
+</ul>
+<hr>
+<p><em>Última actualización: 2026-02-02</em></p>
 
 
+</section>
 </section>
 </section>
 

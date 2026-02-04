@@ -3,6 +3,7 @@ project:
   output-dir: docs
   resources:
     - encuentros/1-intro-r/intro-r.scss
+    - encuentros/2-intro-r-ia/intro-r.scss
 
 website:
   #logo: jsm-logo.png
@@ -27,16 +28,18 @@ website:
             href: encuentros/0-puesta-a-punto/index.qmd
           - text: "Módulo 1: Intro al curso y EPH"
             href: encuentros/1-intro-curso-eph/index.qmd
+          - text: "Módulo 2: Intro a R + IA"
+            href: encuentros/2-intro-r-ia/index.qmd
           # --- ENCUENTROS BLOQUEADOS (sin href) ---
-          - text: "Módulo 2: Intro a R + IA (próximamente)"
           - text: "Módulo 3: tidyverse I (próximamente)"
           - text: "Módulo 4: tidyverse II (próximamente)"
           - text: "Módulo 5: Proyectos y organización (próximamente)"
           - text: "Módulo 6: ggplot2 + TP integrador (próximamente)"
       - text: "Ejercitación"
         menu:
+         - text: "Módulo 2: Intro a R + IA"
+           href: encuentros/2-intro-r-ia/intro-r-ia_ejercitacion.qmd
          # --- EJERCITACIONES BLOQUEADAS (sin href) ---
-         - text: "Módulo 2: Intro a R (próximamente)"
          - text: "Módulo 3: tidyverse I (próximamente)"
          - text: "Módulo 4: tidyverse II (próximamente)"
          - text: "Módulo 5: Proyectos (próximamente)"

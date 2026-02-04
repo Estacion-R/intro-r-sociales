@@ -1,0 +1,94 @@
+---
+title: "Intro a R + IA - Ejercitación"
+author: "Estación R"
+---
+
+## Parte 1: Práctica con R base
+
+### 1. Vectores
+
+a. Crear un vector llamado `apellido`, con los siguientes 7 apellidos:
+   - "García"
+   - "Sanchez"
+   - "Van Del Sar"
+   - "Mihatovich"
+   - "Lama"
+   - "Lugercio"
+   - "Messidona"
+
+b. Crear un vector llamado `cantidad`, con los siguientes 7 valores, que representen la frecuencia con la que existe cada apellido en nuestra base:
+   - 1
+   - 3
+   - 17
+   - 9
+   - 2
+   - 34
+   - 98
+
+### 2. Data Frame
+
+Con estos vectores, crear un `data.frame` llamado `base_apellidos` que los combine y:
+
+a. Sumar la cantidad total de apellidos en la base (la función `sum()` puede ayudar).
+
+b. Calcular el apellido con mayor frecuencia (la función `max()` puede ayudar).
+
+c. Calcular el apellido con menor frecuencia (la función `min()` puede ayudar).
+
+---
+
+## Parte 2: Aprender con IA como tutora
+
+**Importante:** El objetivo no es que la IA te dé el código, sino que te guíe para que vos lo escribas.
+
+### Paso 1: Configurar tu tutor IA
+
+Antes de empezar, enviá este mensaje a ChatGPT o Claude:
+
+> *"Estoy aprendiendo R desde cero. Quiero que seas mi tutor. Cuando te pregunte algo, no me des la solución directa: haceme preguntas, dame pistas, y dejá que yo escriba el código."*
+
+### Paso 2: Pedir ayuda con un ejercicio
+
+Elegí uno de los ejercicios de la Parte 1 donde te hayas trabado y probá este tipo de consulta:
+
+> *"Tengo que [describir el ejercicio]. Intenté escribir este código: [tu código]. Pero [describir el problema]. ¿Qué estoy haciendo mal? Dame pistas, no la solución."*
+
+**Anotá:**
+- ¿Qué pregunta le hiciste?
+- ¿La IA te dio pistas o te dio la respuesta directa?
+- ¿Pudiste resolver el ejercicio con las pistas?
+
+### Paso 3: Explorar funciones nuevas
+
+Preguntale a la IA:
+
+> *"Ya conozco las funciones `class()`, `length()` y `mean()`. ¿Qué otras funciones básicas me recomendás aprender para trabajar con vectores? Dame ejemplos para probar, pero dejá que yo escriba el código."*
+
+**Probá en RStudio** las funciones que te sugiera y anotá cuáles te resultaron útiles.
+
+### Paso 4: Entender un error
+
+Ejecutá este código en R (tiene un error a propósito):
+
+```r
+edades <- c(25, 30, 45
+mean(edades)
+```
+
+Copiá el mensaje de error y preguntale a la IA:
+
+> *"R me da este error: [pegar error]. ¿Qué significa? Explicamelo sin darme el código corregido."*
+
+**Intentá corregirlo vos** a partir de la explicación.
+
+---
+
+## Reflexión final
+
+Respondé brevemente:
+
+1. ¿Te resultó útil usar la IA como tutor en lugar de pedirle soluciones?
+
+2. ¿Qué diferencia notaste entre pedirle "la respuesta" vs "una pista"?
+
+3. ¿Vas a seguir usando este enfoque en el curso?

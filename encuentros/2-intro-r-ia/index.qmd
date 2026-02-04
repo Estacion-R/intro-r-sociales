@@ -1,0 +1,39 @@
+---
+title: "Encuentro 2 - Introducción a R + IA"
+author: Estación R
+image: featured.png
+description: Fundamentos de R (valores, vectores, funciones, data frames) y cómo usar la IA como asistente en el análisis de datos
+---
+
+## Descripción
+
+En este encuentro nos introducimos en los **fundamentos del lenguaje R**: valores, vectores, funciones, objetos y data frames. También exploramos cómo utilizar herramientas de **Inteligencia Artificial** (ChatGPT, Claude) como asistentes en el proceso de análisis de datos.
+
+Tendremos ejercitación para realizar durante el encuentro y se dejará práctica para poder continuar incorporando el lenguaje durante la semana.
+
+## Slides
+
+<iframe class="slide-deck" src="intro-r-ia.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+
+## Contenidos
+
+- ¿Qué es R y qué es la Ciencia de Datos?
+- R vs RStudio: diferencias y configuración
+- Valores y vectores
+- Funciones básicas (`class()`, `length()`, `mean()`)
+- Objetos y data frames
+- IA como asistente en el análisis de datos
+- Cómo hacer buenas preguntas a la IA
+
+## Links útiles
+
+- [Ciencia de Datos para Gente Sociable](https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/)
+- [R for Data Science (2da edición)](https://r4ds.hadley.nz/)
+- [ChatGPT](https://chat.openai.com/)
+- [Claude](https://claude.ai/)
+
+## Docente
+
+![](images/docente.jpg){style="float: right; padding-left: 10px;" fig-alt="Foto de Pablo Tiscornia" width="180"}
+
+[Pablo Tiscornia](https://www.linkedin.com/in/pablotiscornia/)
