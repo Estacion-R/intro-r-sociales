@@ -234,4 +234,24 @@ format:
 
 ---
 
+---
+
+## 8. Próximo Paso: Template de Curso Estación R
+
+> **PENDIENTE para futuro:** Crear un template estandarizado de curso basado en esta estructura.
+
+**Componentes del template:**
+- Sistema de 3+1 archivos de documentación (CLAUDE, ESTADO, ENCUENTROS, APRENDIZAJES)
+- `_quarto.yml` con sistema de módulos bloqueados
+- Estructura de carpetas `encuentros/N-nombre/`
+- CSS compartido para slides (`slides.scss`)
+- Checklists de setup, por-encuentro y cierre
+
+**Limpiar antes de crear template:**
+- Archivos `index_ACTIVAR.qmd` con contenido genérico
+- URLs antiguas (`intro-r-quarto` → `intro-r-sociales`)
+- Carpetas legacy duplicadas
+
+---
+
 *Última actualización: 2026-02-03*
