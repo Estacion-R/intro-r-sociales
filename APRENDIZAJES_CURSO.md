@@ -161,6 +161,31 @@ format:
 
 **Mensaje Slack validado:** Ver sección 2
 
+### Encuentro 2 (2026-02-04) - PRE-CLASE ✅
+**Tema:** Introducción a R + IA en el análisis de datos
+
+**Preparación realizada (2026-02-03):**
+- [x] Slides creadas desde cero con nuevo formato
+- [x] Contenido sobre R, RStudio, consola, scripts
+- [x] Sección de IA en el análisis de datos
+- [x] Ejercitación creada (`intro-r-ia_ejercitacion.qmd`)
+- [x] Módulo 2 activado en navegación del sitio
+- [x] Push a GitHub realizado
+
+**Estructura de la presentación:**
+1. Bienvenida y repaso Encuentro 1
+2. Introducción a R (qué es, para qué sirve)
+3. RStudio: entorno de trabajo
+4. La consola y el script
+5. Tipos de datos básicos
+6. IA en el análisis de datos
+7. Cierre y próximos pasos
+
+**Decisiones técnicas:**
+- Presentación usa `intro-r.scss` (CSS compartido)
+- Imágenes almacenadas en `images/` local
+- Audio de ejemplo para engagement (`inst_adlibs_birdman1.wav`)
+
 ---
 
 ## 6. Lecciones Aprendidas
@@ -171,6 +196,16 @@ format:
 - El sistema de "(próximamente)" en el menú funciona para generar expectativa sin dar acceso
 - Importante separar el archivo de tracking (`ENCUENTROS_STATUS.md`) del contexto general (`ESTADO_CURSO.md`)
 - El tono "personal pero no cursi" es el punto justo para comunicación con alumnos
+
+### Sesión 2026-02-03 (Preparación Encuentro 2)
+- Workflow de preparación pre-clase funciona: crear contenido → activar módulo → render → push
+- El CSS compartido (`intro-r.scss`) facilita consistencia visual entre módulos
+- Los archivos de gestión (`ESTADO_CURSO.md`, `APRENDIZAJES_CURSO.md`, `ENCUENTROS_STATUS.md`) mantienen el tracking ordenado
+- Sistema de 3 archivos de documentación es escalable:
+  - `ESTADO_CURSO.md`: qué hay que hacer (operativo)
+  - `APRENDIZAJES_CURSO.md`: qué aprendimos (retrospectivo)
+  - `ENCUENTROS_STATUS.md`: qué está activo (técnico)
+- La estructura de carpetas por encuentro (`encuentros/N-nombre/`) es clara y replicable
 
 ---
 
@@ -199,4 +234,4 @@ format:
 
 ---
 
-*Última actualización: 2026-01-28*
+*Última actualización: 2026-02-03*

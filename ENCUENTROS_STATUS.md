@@ -9,7 +9,7 @@
 |--------|------------|-----------------------------------|----------|
 | 0      | -          | Puesta a punto                    | ✅ Activo |
 | 1      | 2026-01-28 | Intro al curso y EPH              | ✅ Activo |
-| 2      | 2026-02-04 | Intro a R + IA                    | 🔒 Bloqueado |
+| 2      | 2026-02-04 | Intro a R + IA                    | ✅ Activo |
 | 3      | 2026-02-11 | tidyverse I: Importación          | 🔒 Bloqueado |
 | 4      | 2026-02-18 | tidyverse II: Transformación      | 🔒 Bloqueado |
 | 5      | 2026-02-25 | Proyectos y organización          | 🔒 Bloqueado |
@@ -34,4 +34,4 @@
 ```
 
 ---
-*Última actualización: 2026-01-27*
+*Última actualización: 2026-02-03*

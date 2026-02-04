@@ -99,15 +99,21 @@ Contenido animado
 
 ## Próximos Pasos
 
-### Después del Encuentro 1:
+### Después del Encuentro 1: ✅ COMPLETADO
+- [x] Subir grabación a la plataforma
+- [x] Enviar mensaje por Slack con resumen y links
+- [x] Activar Módulo 2 en el sitio
+
+### Después del Encuentro 2 (pendiente post-clase):
 - [ ] Subir grabación a la plataforma
-- [ ] Enviar mensaje por Slack con resumen y links
-- [ ] Activar Módulo 2 en el sitio (un día antes del encuentro)
+- [ ] Enviar mensaje por Slack con resumen y ejercitación
+- [ ] Activar Módulo 3 en el sitio (un día antes: 10/02)
 
 ### Pendientes técnicos:
-- [ ] Adaptar Módulos 2-6 al nuevo formato de slides
+- [x] Adaptar Módulo 2 al nuevo formato de slides
+- [ ] Adaptar Módulos 3-6 al nuevo formato de slides
 - [ ] Verificar ejercitaciones actualizadas
 - [ ] Agregar TP integrador en Módulo 6
 
 ---
-*Última actualización: 2026-02-02*
+*Última actualización: 2026-02-03*
