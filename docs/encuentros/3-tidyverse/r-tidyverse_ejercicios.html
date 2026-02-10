@@ -155,7 +155,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../../encuentros/2-intro-r-ia/index.html">
  <span class="dropdown-text">Módulo 2: Intro a R + IA</span></a>
   </li>  
-        <li class="dropdown-header">Módulo 3: tidyverse I (próximamente)</li>
+        <li>
+    <a class="dropdown-item" href="../../encuentros/3-tidyverse/index.html">
+ <span class="dropdown-text">Módulo 3: tidyverse I</span></a>
+  </li>  
         <li class="dropdown-header">Módulo 4: tidyverse II (próximamente)</li>
         <li class="dropdown-header">Módulo 5: Proyectos y organización (próximamente)</li>
         <li class="dropdown-header">Módulo 6: ggplot2 + TP integrador (próximamente)</li>
@@ -170,7 +173,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../../encuentros/2-intro-r-ia/intro-r-ia_ejercitacion.html">
  <span class="dropdown-text">Módulo 2: Intro a R + IA</span></a>
   </li>  
-        <li class="dropdown-header">Módulo 3: tidyverse I (próximamente)</li>
+        <li>
+    <a class="dropdown-item" href="../../encuentros/3-tidyverse/r-tidyverse_ejercicios.html">
+ <span class="dropdown-text">Módulo 3: tidyverse I</span></a>
+  </li>  
         <li class="dropdown-header">Módulo 4: tidyverse II (próximamente)</li>
         <li class="dropdown-header">Módulo 5: Proyectos (próximamente)</li>
         <li class="dropdown-header">Módulo 6: ggplot2 (próximamente)</li>
@@ -198,7 +204,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#consigna" id="toc-consigna" class="nav-link active" data-scroll-target="#consigna">Consigna:</a></li>
+  <li><a href="#referencia-de-variables" id="toc-referencia-de-variables" class="nav-link active" data-scroll-target="#referencia-de-variables">Referencia de variables</a></li>
+  <li><a href="#consigna" id="toc-consigna" class="nav-link" data-scroll-target="#consigna">Consigna:</a></li>
   </ul>
 </nav>
     </div>
@@ -231,42 +238,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <blockquote class="blockquote">
-<p>Preparación: Para resolver los siguientes ejercicios es necesario abrir un proyecto de trabajo con la base de PUNA cargada en el ambiente.</p>
+<p><strong>Preparación:</strong> Para resolver los siguientes ejercicios es necesario tener la base de la EPH individual cargada en el ambiente de R. Podés cargarla con <code>read_csv()</code> o con el paquete <code>{eph}</code>.</p>
 </blockquote>
+<section id="referencia-de-variables" class="level2">
+<h2 class="anchored" data-anchor-id="referencia-de-variables">Referencia de variables</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 40%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Significado</th>
+<th>Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>CH04</code></td>
+<td>Sexo</td>
+<td>1=Varón, 2=Mujer</td>
+</tr>
+<tr class="even">
+<td><code>CH06</code></td>
+<td>Edad</td>
+<td>Años cumplidos</td>
+</tr>
+<tr class="odd">
+<td><code>ESTADO</code></td>
+<td>Condición de actividad</td>
+<td>1=Ocupado, 2=Desocupado, 3=Inactivo</td>
+</tr>
+<tr class="even">
+<td><code>CAT_OCUP</code></td>
+<td>Categoría ocupacional</td>
+<td>1=Patrón, 2=Cta. propia, 3=Asalariado</td>
+</tr>
+<tr class="odd">
+<td><code>NIVEL_ED</code></td>
+<td>Nivel educativo</td>
+<td>1 a 7</td>
+</tr>
+<tr class="even">
+<td><code>P21</code></td>
+<td>Ingreso ocupación principal</td>
+<td>En pesos</td>
+</tr>
+<tr class="odd">
+<td><code>REGION</code></td>
+<td>Región estadística</td>
+<td>1=GBA, 40=NOA, 41=NEA, 42=Cuyo, 43=Pampeana, 44=Patagonia</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="consigna" class="level2">
 <h2 class="anchored" data-anchor-id="consigna">Consigna:</h2>
 <ol type="a">
-<li>Estoy necesitando quedarme con los casos de tipo <em>Parahoteleros</em>. Reemplazar el campo ´_____´ de la siguiente sentencia y comprobar que la operación fué exitosa:</li>
+<li>Necesito quedarme con la <strong>población ocupada</strong> (<code>ESTADO == 1</code>). Reemplazar los campos <code>_____</code> de la siguiente sentencia y comprobar que la operación fue exitosa:</li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Cargo el paquete</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">### Cargo la base de datos</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df_puna <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"_____/puna_base_agregada.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>eph_ind <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"datos/eph_individual.csv"</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df_parahoteleros <span class="ot">&lt;-</span> df_puna <span class="sc">%&gt;%</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">______</span>(indice_tiempo, tipo, plazas) <span class="sc">%&gt;%</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(_____ <span class="sc">==</span> <span class="st">"Parahoteleros"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>eph_ocupados <span class="ot">&lt;-</span> eph_ind <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">______</span>(CH04, CH06, ESTADO, _____) <span class="sc">|&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(_____ <span class="sc">==</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>¿Cuántas personas ocupadas hay? (<em>Tip: usar <code>nrow()</code></em>)</li>
+</ul>
 <ol start="2" type="a">
-<li>Crear otro objeto que contenga sólo las variables ´indice_tiempo´, ´localidad´ y ´habitaciones´ y los casos de la <em>localidad</em> de <em>Belen de Escobar</em>, unicamente.</li>
+<li>Crear un objeto que contenga sólo las variables <code>CH04</code>, <code>CH06</code>, <code>NIVEL_ED</code> y <code>P21</code>, y los casos de <strong>mujeres</strong> (<code>CH04 == 2</code>), únicamente.</li>
 </ol>
 <ul>
-<li>Chequear que la operación fue exitosa (en columnas y filas).</li>
+<li>Chequear que la operación fue exitosa (verificar columnas y filas).</li>
 </ul>
 <ol start="3" type="a">
-<li>Crear la variable ´region_agrupada´ que permita analizar al país en unicamente dos nuevas regiones: <strong>Norte</strong> y <strong>Sur</strong>.</li>
+<li>Filtrar la base para quedarse con la población <strong>desocupada</strong> (<code>ESTADO == 2</code>) de la <strong>región pampeana</strong> (<code>REGION == 43</code>).</li>
 </ol>
 <ul>
-<li><p>Las categorías deberán conformarse de la siguiente forma:</p>
-<ul>
-<li><p>Norte: <em>Norte, Litoral, Cordoba, Buenos Aires y ciudad Autonoma de Buenos Aires</em></p></li>
-<li><p>Sur: <em>Cuyo y Patagonia</em></p></li>
-</ul></li>
+<li>¿Cuántas personas desocupadas hay en esa región?</li>
 </ul>
 <ol start="4" type="a">
-<li>Crear una variable nueva (llamar a gusto) que unifique las categorías ´Buenos Aires´ y ´Ciudad Autonoma de Buenos Aires´ en una única categoría, llamada ´Buenos Aires´, dejando al resto de las categorías tal como está.</li>
+<li><strong>Desafío:</strong> Usando <code>select()</code> y <code>filter()</code>, crear un objeto con las variables <code>CH04</code>, <code>CH06</code>, <code>ESTADO</code>, <code>REGION</code> y <code>P21</code>, que contenga solamente a los <strong>varones ocupados mayores de 30 años de GBA y Patagonia</strong> (<code>REGION %in% c(1, 44)</code>).</li>
 </ol>
+<ul>
+<li>¿Cuántas personas cumplen todas esas condiciones?</li>
+</ul>
 
 
 </section>

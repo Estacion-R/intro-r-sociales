@@ -3,35 +3,46 @@ title: "Tidyverse, parte I - Ejercitación"
 author: "Estación R"
 ---
 
-> Preparación: Para resolver los siguientes ejercicios es necesario abrir un proyecto de trabajo con la base de PUNA cargada en el ambiente.
+> **Preparación:** Para resolver los siguientes ejercicios es necesario tener la base de la EPH individual cargada en el ambiente de R. Podés cargarla con `read_csv()` o con el paquete `{eph}`.
+
+## Referencia de variables
+
+| Variable | Significado | Valores |
+|----------|-------------|---------|
+| `CH04` | Sexo | 1=Varón, 2=Mujer |
+| `CH06` | Edad | Años cumplidos |
+| `ESTADO` | Condición de actividad | 1=Ocupado, 2=Desocupado, 3=Inactivo |
+| `CAT_OCUP` | Categoría ocupacional | 1=Patrón, 2=Cta. propia, 3=Asalariado |
+| `NIVEL_ED` | Nivel educativo | 1 a 7 |
+| `P21` | Ingreso ocupación principal | En pesos |
+| `REGION` | Región estadística | 1=GBA, 40=NOA, 41=NEA, 42=Cuyo, 43=Pampeana, 44=Patagonia |
 
 ## Consigna:
 
-a.  Estoy necesitando quedarme con los casos de tipo *Parahoteleros*. Reemplazar el campo ´\_\_\_\_\_´ de la siguiente sentencia y comprobar que la operación fué exitosa:
+a. Necesito quedarme con la **población ocupada** (`ESTADO == 1`). Reemplazar los campos `_____` de la siguiente sentencia y comprobar que la operación fue exitosa:
 
 ``` r
 ### Cargo el paquete
 library(tidyverse)
 
 ### Cargo la base de datos
-df_puna <- read_csv("_____/puna_base_agregada.csv")
+eph_ind <- read_csv("datos/eph_individual.csv")
 
-df_parahoteleros <- df_puna %>%
-  ______(indice_tiempo, tipo, plazas) %>%
-  filter(_____ == "Parahoteleros")
- 
+eph_ocupados <- eph_ind |>
+  ______(CH04, CH06, ESTADO, _____) |>
+  filter(_____ == 1)
 ```
 
-b.  Crear otro objeto que contenga sólo las variables ´indice_tiempo´, ´localidad´ y ´habitaciones´ y los casos de la *localidad* de *Belen de Escobar*, unicamente.
+- ¿Cuántas personas ocupadas hay? (*Tip: usar `nrow()`*)
 
--   Chequear que la operación fue exitosa (en columnas y filas).
+b. Crear un objeto que contenga sólo las variables `CH04`, `CH06`, `NIVEL_ED` y `P21`, y los casos de **mujeres** (`CH04 == 2`), únicamente.
 
-c.  Crear la variable ´region_agrupada´ que permita analizar al país en unicamente dos nuevas regiones: **Norte** y **Sur**.
+- Chequear que la operación fue exitosa (verificar columnas y filas).
 
--   Las categorías deberán conformarse de la siguiente forma:
+c. Filtrar la base para quedarse con la población **desocupada** (`ESTADO == 2`) de la **región pampeana** (`REGION == 43`).
 
-    -   Norte: *Norte, Litoral, Cordoba, Buenos Aires y ciudad Autonoma de Buenos Aires*
+- ¿Cuántas personas desocupadas hay en esa región?
 
-    -   Sur: *Cuyo y Patagonia*
+d. **Desafío:** Usando `select()` y `filter()`, crear un objeto con las variables `CH04`, `CH06`, `ESTADO`, `REGION` y `P21`, que contenga solamente a los **varones ocupados mayores de 30 años de GBA y Patagonia** (`REGION %in% c(1, 44)`).
 
-d.  Crear una variable nueva (llamar a gusto) que unifique las categorías ´Buenos Aires´ y ´Ciudad Autonoma de Buenos Aires´ en una única categoría, llamada ´Buenos Aires´, dejando al resto de las categorías tal como está.
+- ¿Cuántas personas cumplen todas esas condiciones?

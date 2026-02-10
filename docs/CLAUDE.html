@@ -120,7 +120,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./encuentros/2-intro-r-ia/index.html">
  <span class="dropdown-text">Módulo 2: Intro a R + IA</span></a>
   </li>  
-        <li class="dropdown-header">Módulo 3: tidyverse I (próximamente)</li>
+        <li>
+    <a class="dropdown-item" href="./encuentros/3-tidyverse/index.html">
+ <span class="dropdown-text">Módulo 3: tidyverse I</span></a>
+  </li>  
         <li class="dropdown-header">Módulo 4: tidyverse II (próximamente)</li>
         <li class="dropdown-header">Módulo 5: Proyectos y organización (próximamente)</li>
         <li class="dropdown-header">Módulo 6: ggplot2 + TP integrador (próximamente)</li>
@@ -135,7 +138,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./encuentros/2-intro-r-ia/intro-r-ia_ejercitacion.html">
  <span class="dropdown-text">Módulo 2: Intro a R + IA</span></a>
   </li>  
-        <li class="dropdown-header">Módulo 3: tidyverse I (próximamente)</li>
+        <li>
+    <a class="dropdown-item" href="./encuentros/3-tidyverse/r-tidyverse_ejercicios.html">
+ <span class="dropdown-text">Módulo 3: tidyverse I</span></a>
+  </li>  
         <li class="dropdown-header">Módulo 4: tidyverse II (próximamente)</li>
         <li class="dropdown-header">Módulo 5: Proyectos (próximamente)</li>
         <li class="dropdown-header">Módulo 6: ggplot2 (próximamente)</li>
@@ -167,6 +173,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#contexto-temporal" id="toc-contexto-temporal" class="nav-link" data-scroll-target="#contexto-temporal">Contexto temporal</a></li>
   <li><a href="#calendario-de-encuentros-2026" id="toc-calendario-de-encuentros-2026" class="nav-link" data-scroll-target="#calendario-de-encuentros-2026">Calendario de encuentros 2026</a></li>
+  <li><a href="#reglas-de-consistencia" id="toc-reglas-de-consistencia" class="nav-link" data-scroll-target="#reglas-de-consistencia">Reglas de Consistencia</a></li>
   <li><a href="#archivos-importantes" id="toc-archivos-importantes" class="nav-link" data-scroll-target="#archivos-importantes">Archivos importantes</a></li>
   <li><a href="#convenciones" id="toc-convenciones" class="nav-link" data-scroll-target="#convenciones">Convenciones</a></li>
   </ul></li>
@@ -230,10 +237,19 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
+<section id="reglas-de-consistencia" class="level2">
+<h2 class="anchored" data-anchor-id="reglas-de-consistencia">Reglas de Consistencia</h2>
+<ul>
+<li><strong>Fuente única de verdad para fechas</strong>: La tabla “Calendario de encuentros” de este archivo</li>
+<li><strong>Antes de comunicar fechas a alumnos</strong>: SIEMPRE verificar contra el calendario de arriba</li>
+<li><strong>Si hay discrepancia entre archivos</strong>: Este CLAUDE.md tiene prioridad, corregir el otro archivo</li>
+<li><strong>ESTADO_CURSO.md</strong>: Archivo operativo para tareas, pero fechas canónicas están aquí</li>
+</ul>
+</section>
 <section id="archivos-importantes" class="level2">
 <h2 class="anchored" data-anchor-id="archivos-importantes">Archivos importantes</h2>
 <ul>
-<li><code>ESTADO_CURSO.md</code> - Estado actual y próximos pasos</li>
+<li><code>ESTADO_CURSO.md</code> - Estado actual y próximos pasos (fechas referencian a CLAUDE.md)</li>
 <li><code>_quarto.yml</code> - Configuración del sitio (activar/bloquear módulos)</li>
 <li><code>encuentros/</code> - Carpetas de cada módulo</li>
 </ul>

@@ -4,6 +4,7 @@ project:
   resources:
     - encuentros/1-intro-r/intro-r.scss
     - encuentros/2-intro-r-ia/intro-r.scss
+    - encuentros/3-tidyverse/intro-r.scss
 
 website:
   #logo: jsm-logo.png
@@ -31,7 +32,8 @@ website:
           - text: "Módulo 2: Intro a R + IA"
             href: encuentros/2-intro-r-ia/index.qmd
           # --- ENCUENTROS BLOQUEADOS (sin href) ---
-          - text: "Módulo 3: tidyverse I (próximamente)"
+          - text: "Módulo 3: tidyverse I"
+            href: encuentros/3-tidyverse/index.qmd
           - text: "Módulo 4: tidyverse II (próximamente)"
           - text: "Módulo 5: Proyectos y organización (próximamente)"
           - text: "Módulo 6: ggplot2 + TP integrador (próximamente)"
@@ -40,7 +42,8 @@ website:
          - text: "Módulo 2: Intro a R + IA"
            href: encuentros/2-intro-r-ia/intro-r-ia_ejercitacion.qmd
          # --- EJERCITACIONES BLOQUEADAS (sin href) ---
-         - text: "Módulo 3: tidyverse I (próximamente)"
+         - text: "Módulo 3: tidyverse I"
+           href: encuentros/3-tidyverse/r-tidyverse_ejercicios.qmd
          - text: "Módulo 4: tidyverse II (próximamente)"
          - text: "Módulo 5: Proyectos (próximamente)"
          - text: "Módulo 6: ggplot2 (próximamente)"

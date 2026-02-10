@@ -16,5 +16,8 @@ Thumbs.db
 *~
 *.swp
 
+# Datos grandes (EPH microdatos)
+data/eph_*.csv
+
 # Referencias externas (repos clonados)
 _referencias/
