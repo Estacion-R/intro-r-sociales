@@ -2,9 +2,11 @@ project:
   type: website
   output-dir: docs
   resources:
-    - encuentros/1-intro-r/intro-r.scss
+    - encuentros/0-puesta-a-punto/intro-r.scss
+    - encuentros/1-intro-curso-eph/intro-r.scss
     - encuentros/2-intro-r-ia/intro-r.scss
     - encuentros/3-tidyverse/intro-r.scss
+    - encuentros/4-tidyverse-2/intro-r.scss
 
 website:
   #logo: jsm-logo.png
@@ -34,7 +36,8 @@ website:
           # --- ENCUENTROS BLOQUEADOS (sin href) ---
           - text: "Módulo 3: tidyverse I"
             href: encuentros/3-tidyverse/index.qmd
-          - text: "Módulo 4: tidyverse II (próximamente)"
+          - text: "Módulo 4: tidyverse II"
+            href: encuentros/4-tidyverse-2/index.qmd
           - text: "Módulo 5: Proyectos y organización (próximamente)"
           - text: "Módulo 6: ggplot2 + TP integrador (próximamente)"
       - text: "Ejercitación"

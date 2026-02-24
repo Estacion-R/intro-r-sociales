@@ -1,0 +1,797 @@
+---
+title: "Procesando datos con `{tidyverse}` - Parte II"
+subtitle: "Módulo 4 - mutate(), summarise() y group_by()"
+author: "Pablo Tiscornia"
+institute: "[Estación R](https://estacion-r.com/)"
+date: today
+format:
+  revealjs:
+    theme: [default, intro-r.scss]
+    logo: "../../img/Logo_PNG_Baja_Mesa de trabajo 1.png"
+    footer: "[Introducción al Procesamiento de Datos con R para Ciencias Sociales](https://estacion-r.github.io/intro-r-sociales/)"
+    slide-number: true
+    embed-resources: true
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    code-line-numbers: true
+    code-copy: true
+    scrollable: true
+    navigation-mode: vertical
+    controls-layout: bottom-right
+    controls-tutorial: true
+    width: 1280
+    height: 720
+    margin: 0.1
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Bienvenidos y bienvenidas {background-color="#4F7CFF"}
+
+## Contacto con Estación R
+
+<br><br>
+
+::: columns
+::: {.column width="33%"}
+#### [Slack](https://estacion-r.slack.com/)
+
+#### [Web](https://estacion-r.com)
+
+#### [Correo](mailto:pablotiscornia@estacion-r.com)
+:::
+
+::: {.column width="33%"}
+#### [Mastodon](https://botsin.space/@r_tips)
+
+#### [X](https://twitter.com/estacion_erre)
+:::
+
+::: {.column width="33%"}
+#### [LinkedIn](https://www.linkedin.com/company/estacion-r/)
+
+#### [Instagram](https://instagram.com/estacion_ere)
+:::
+:::
+
+## ¿Qué vimos hasta ahora?
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+✅ La **EPH**: qué mide, cómo se estructura, cuestionarios
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+✅ Conceptos básicos de **R**: valores, vectores, funciones, objetos
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+✅ **Tidyverse**: paquetes, importación, la pipa (`|>`)
+:::
+
+<br>
+
+::: {.fragment}
+✅ `select()` y `filter()`: elegir columnas y filtrar filas
+:::
+
+## Hoja de Ruta - Hoy {background-color="#F5F5F5"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+::: {.fragment .fade-in-then-semi-out}
+🔧 `mutate()` - crear y editar variables
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+🔧 `case_when()` - recodificar categorías
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.fragment .fade-in-then-semi-out}
+🔧 `summarise()` - resumir información
+:::
+
+<br>
+
+::: {.fragment}
+🔧 `group_by()` - operar por grupos
+:::
+
+:::
+:::
+
+## Recordatorio: nuestros datos {background-color="#F5F5F5"}
+
+```{r}
+#| include: false
+#| echo: false
+library(tidyverse)
+eph_ind <- read_csv(here::here("data/eph_individual.csv"))
+```
+
+``` r
+library(tidyverse)
+eph_ind <- read_csv("datos/eph_individual.csv")
+```
+
+<br>
+
+| Variable | Significado | Valores |
+|----------|-------------|---------|
+| `CH04` | **Sexo** | 1=Varón, 2=Mujer |
+| `CH06` | **Edad** | Años cumplidos |
+| `ESTADO` | **Condición de actividad** | 1=Ocupado, 2=Desocupado, 3=Inactivo |
+| `NIVEL_ED` | **Nivel educativo** | 1 a 7 |
+| `P21` | **Ingreso ocupación principal** | En pesos |
+| `REGION` | **Región estadística** | 1=GBA, 40=NOA, 41=NEA, 42=Cuyo, 43=Pampeana, 44=Patagonia |
+
+# `mutate()` {background-color="#4F7CFF"}
+
+##
+
+```{r echo=FALSE, out.width = '30%', fig.align = 'center'}
+knitr::include_graphics("images/logo dplyr.png")
+```
+
+## Funciones del paquete `{dplyr}`
+
+<br>
+
+| **Función**   |                            **Acción** |
+|:--------------|--------------------------------------:|
+| `select()`    |     *selecciona o descarta columnas* |
+| `filter()`    |                    *selecciona filas* |
+| **`mutate()`**    |              ***crea / edita variables*** |
+| `group_by()`  | *segmenta en función de una variable* |
+| **`summarise()`** |         ***genera una tabla de resumen*** |
+
+::: {.fragment}
+> La clase pasada cubrimos `select()` y `filter()`. Hoy completamos el kit de herramientas.
+:::
+
+## `mutate()` - Crear o editar variables {background-color="#F5F5F5"}
+
+<br>
+
+- La función tiene la siguiente estructura:
+
+```{r}
+#| eval: false
+base_de_datos |>
+  mutate(variable_nueva = operacion)
+```
+
+<br>
+
+::: {.fragment}
+> `mutate()` agrega una columna nueva (o modifica una existente) al data frame.
+:::
+
+## Caso práctico - Variable numérica
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- Queremos calcular la **edad al cuadrado** (como ejercicio simple):
+:::
+
+<br>
+
+::: {.fragment}
+```{r}
+eph_ind |>
+  select(CH04, CH06) |>
+  mutate(edad_cuadrado = CH06 * CH06)
+```
+:::
+
+## Caso práctico - Variable de texto
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- Queremos agregar una columna que indique la **fuente** de los datos:
+:::
+
+<br>
+
+::: {.fragment}
+```{r}
+eph_ind |>
+  select(CH04, CH06, ESTADO) |>
+  mutate(fuente = "EPH - T1 2024")
+```
+:::
+
+## `mutate()` + `case_when()` = Recodificación {background-color="#F5F5F5"}
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+Muchas veces necesitamos **transformar códigos numéricos en etiquetas legibles**.
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+La variable `ESTADO` tiene valores 1, 2, 3 y 4... ¿qué significa cada uno?
+:::
+
+<br>
+
+::: {.fragment}
+Para eso combinamos `mutate()` con `case_when()`:
+
+```{r}
+#| eval: false
+mutate(variable_nueva = case_when(
+  condicion1 ~ "resultado1",
+  condicion2 ~ "resultado2",
+  .default = "otro"
+))
+```
+:::
+
+## Caso práctico - Recodificar ESTADO
+
+<br>
+
+::: columns
+::: {.column width="55%"}
+```{r}
+#| eval: false
+#| code-line-numbers: "3,4,5,6,7"
+eph_ind |>
+  select(CH04, CH06, ESTADO) |>
+  mutate(actividad = case_when(
+    ESTADO == 1 ~ "Ocupado",
+    ESTADO == 2 ~ "Desocupado",
+    ESTADO == 3 ~ "Inactivo",
+    ESTADO == 4 ~ "Menor de 10"
+  ))
+```
+:::
+
+::: {.column width="45%"}
+```{r}
+#| echo: false
+eph_ind |>
+  select(CH04, CH06, ESTADO) |>
+  mutate(actividad = case_when(
+    ESTADO == 1 ~ "Ocupado",
+    ESTADO == 2 ~ "Desocupado",
+    ESTADO == 3 ~ "Inactivo",
+    ESTADO == 4 ~ "Menor de 10"
+  ))
+```
+:::
+:::
+
+## Caso práctico - Crear grupos de edad
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- Para un informe necesitamos agrupar a la población en **rangos de edad**:
+:::
+
+<br>
+
+::: {.fragment}
+```{r}
+#| code-line-numbers: "3,4,5,6,7"
+eph_ind |>
+  select(CH04, CH06) |>
+  mutate(grupo_edad = case_when(
+    CH06 < 18              ~ "Menor de 18",
+    CH06 >= 18 & CH06 < 65 ~ "18 a 64",
+    CH06 >= 65             ~ "65 y más"
+  ))
+```
+:::
+
+## `case_when()` con `.default` {background-color="#F5F5F5"}
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- `.default` asigna un valor a **todo lo que no matcheó** con las condiciones anteriores:
+:::
+
+<br>
+
+::: {.fragment}
+```{r}
+#| code-line-numbers: "4,5"
+eph_ind |>
+  select(CH04, CH06, ESTADO) |>
+  mutate(es_ocupado = case_when(
+    ESTADO == 1 ~ "Ocupado",
+    .default = "No ocupado"
+  ))
+```
+:::
+
+## Tip: recodificar sexo con `case_when()`
+
+<br>
+
+```{r}
+eph_ind |>
+  select(CH04, CH06, ESTADO) |>
+  mutate(sexo = case_when(
+    CH04 == 1 ~ "Varón",
+    CH04 == 2 ~ "Mujer"
+  ))
+```
+
+# Ejercitación {background-color="#D4FF4F"}
+
+## Ejercitación `mutate()` + `case_when()`
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+1. Seleccionar las variables `CH04`, `CH06`, `NIVEL_ED` y `ESTADO`. Crear una variable llamada `sexo` que recodifique `CH04` (1 = "Varón", 2 = "Mujer").
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+2. Crear una variable `grupo_actividad` que agrupe `ESTADO` en dos categorías: **"Activo"** (1 y 2) y **"No activo"** (3 y 4). *Tip: recordar el operador `%in%`*.
+:::
+
+<br>
+
+::: {.fragment}
+3. **Desafío:** Crear una variable `mayor_de_edad` que valga `"Sí"` cuando `CH06 >= 18` y `"No"` en caso contrario.
+:::
+
+# `summarise()` {background-color="#4F7CFF"}
+
+## `summarise()` - Resumir información
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- Hasta ahora trabajamos con cada **fila** del data frame.
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- Pero muchas veces necesitamos **resumir**: ¿cuál es el promedio? ¿cuántos hay? ¿cuál es el máximo?
+:::
+
+<br>
+
+::: {.fragment}
+- `summarise()` colapsa todas las filas en **una sola fila** con el resumen pedido.
+:::
+
+## `summarise()` - Estructura {background-color="#F5F5F5"}
+
+<br>
+
+```{r}
+#| eval: false
+base_de_datos |>
+  summarise(nombre_resumen = funcion(variable))
+```
+
+<br>
+
+::: {.fragment}
+Funciones comunes para resumir:
+
+| Función | Acción |
+|---------|--------|
+| `mean()` | Promedio |
+| `sum()` | Suma total |
+| `min()` / `max()` | Mínimo / Máximo |
+| `n()` | Cantidad de filas |
+:::
+
+## Caso práctico - Promedio de edad
+
+<br>
+
+- ¿Cuál es la **edad promedio** de los encuestados?
+
+```{r}
+eph_ind |>
+  summarise(edad_promedio = mean(CH06))
+```
+
+<br>
+
+::: {.fragment}
+> Pasamos de 46.050 filas a **una sola fila** con el resultado.
+:::
+
+## Caso práctico - Múltiples resúmenes
+
+<br>
+
+```{r}
+#| code-line-numbers: "2,3,4,5"
+eph_ind |>
+  summarise(edad_promedio = mean(CH06),
+            edad_minima   = min(CH06),
+            edad_maxima   = max(CH06),
+            total_personas = n())
+```
+
+<br>
+
+::: {.fragment}
+> `n()` es especial: no recibe argumentos, simplemente cuenta las filas.
+:::
+
+## Caso práctico - Ingreso de ocupados
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- Para calcular el ingreso promedio, filtramos primero a los **ocupados con ingreso positivo**:
+:::
+
+<br>
+
+::: {.fragment}
+```{r}
+#| code-line-numbers: "2,3,4"
+eph_ind |>
+  filter(ESTADO == 1, P21 > 0) |>
+  summarise(ingreso_promedio = mean(P21),
+            ingreso_mediana  = median(P21))
+```
+:::
+
+<br>
+
+::: {.fragment}
+> Combinamos `filter()` + `summarise()` con la pipa. Cada paso se encadena.
+:::
+
+# `group_by()` {background-color="#4F7CFF"}
+
+## `group_by()` - Operar por grupos
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- `summarise()` nos da **un resumen general**. Pero muchas veces queremos comparar **entre grupos**.
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- ¿Cuál es el ingreso promedio **por sexo**?
+- ¿Cuántas personas hay **por región**?
+:::
+
+<br>
+
+::: {.fragment}
+- `group_by()` divide el data frame en grupos **antes** de resumir.
+:::
+
+## Sin agrupar vs. agrupado {background-color="#F5F5F5"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+**Sin agrupar:**
+```{r}
+eph_ind |>
+  summarise(
+    edad_prom = mean(CH06)
+  )
+```
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+**Agrupado por sexo:**
+```{r}
+eph_ind |>
+  group_by(CH04) |>
+  summarise(
+    edad_prom = mean(CH06)
+  )
+```
+:::
+:::
+:::
+
+## Caso práctico - Ingreso por sexo
+
+<br>
+
+```{r}
+#| code-line-numbers: "2,3"
+eph_ind |>
+  filter(ESTADO == 1, P21 > 0) |>
+  group_by(CH04) |>
+  summarise(ingreso_promedio = mean(P21),
+            cantidad = n())
+```
+
+<br>
+
+::: {.fragment}
+> Recordar: `CH04` = 1 (Varón), 2 (Mujer). Podemos mejorar esto con `mutate()` + `case_when()`.
+:::
+
+## Combinando todo: un análisis más completo
+
+<br>
+
+```{r}
+#| code-line-numbers: "2,3,4,5,6"
+eph_ind |>
+  filter(ESTADO == 1, P21 > 0) |>
+  mutate(sexo = case_when(CH04 == 1 ~ "Varón",
+                          CH04 == 2 ~ "Mujer")) |>
+  group_by(sexo) |>
+  summarise(ingreso_promedio = mean(P21),
+            cantidad = n())
+```
+
+## Agrupar por más de una variable {background-color="#F5F5F5"}
+
+<br>
+
+- Podemos agrupar por **dos o más variables** a la vez:
+
+```{r}
+#| code-line-numbers: "5"
+eph_ind |>
+  filter(ESTADO == 1, P21 > 0) |>
+  mutate(sexo = case_when(CH04 == 1 ~ "Varón",
+                          CH04 == 2 ~ "Mujer")) |>
+  group_by(sexo, REGION) |>
+  summarise(ingreso_promedio = mean(P21),
+            cantidad = n())
+```
+
+## Alternativa moderna: `.by` {background-color="#F5F5F5"}
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+Desde dplyr 1.1.0, existe una forma más directa: el argumento **`.by`** dentro de `summarise()`.
+:::
+
+<br>
+
+::: {.fragment}
+::: columns
+::: {.column width="50%"}
+**Forma clásica:**
+```{r}
+#| eval: false
+eph_ind |>
+  group_by(CH04) |>
+  summarise(
+    edad_prom = mean(CH06)
+  )
+```
+:::
+
+::: {.column width="50%"}
+**Con `.by`:**
+```{r}
+#| eval: false
+eph_ind |>
+  summarise(
+    edad_prom = mean(CH06),
+    .by = CH04
+  )
+```
+:::
+:::
+:::
+
+<br>
+
+::: {.fragment}
+> Ambas hacen lo mismo. `.by` es más conciso y no requiere un paso extra. Van a encontrar ambas formas en la práctica.
+:::
+
+## `.by` con múltiples variables
+
+<br>
+
+```{r}
+#| code-line-numbers: "5"
+eph_ind |>
+  filter(ESTADO == 1, P21 > 0) |>
+  mutate(sexo = case_when(CH04 == 1 ~ "Varón",
+                          CH04 == 2 ~ "Mujer")) |>
+  summarise(ingreso_promedio = mean(P21),
+            cantidad = n(),
+            .by = c(sexo, REGION))
+```
+
+# Ejercitación {background-color="#D4FF4F"}
+
+## Ejercitación `summarise()` + `group_by()`
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+1. Calcular la **edad promedio** y la **cantidad de personas** para toda la base.
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+2. Calcular la **cantidad de personas por condición de actividad** (`ESTADO`). *Tip: `summarise(n = n(), .by = ESTADO)`*.
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+3. Filtrar la población **ocupada** (`ESTADO == 1`) con ingreso positivo (`P21 > 0`). Calcular el **ingreso promedio por región** (`REGION`).
+:::
+
+<br>
+
+::: {.fragment}
+4. **Desafío:** Al ejercicio anterior, agregarle una recodificación de `CH04` a `sexo` ("Varón"/"Mujer") y calcular el ingreso promedio **por sexo y región**.
+:::
+
+# `tidyverse` en acción {background-color="#4F7CFF"}
+
+## Un análisis completo con la EPH
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+**Pregunta:** ¿Cuál es el ingreso promedio de la población ocupada por sexo y grupo de edad?
+:::
+
+<br>
+
+::: {.fragment}
+Combinamos **todo** lo aprendido en un solo pipeline:
+:::
+
+## Paso a paso
+
+<br>
+
+::: columns
+::: {.column width="55%"}
+```{r}
+#| eval: false
+#| code-line-numbers: "1|2|3,4|5,6,7|8,9,10"
+eph_ind |>
+  filter(ESTADO == 1, P21 > 0) |>
+  select(CH04, CH06, P21) |>
+  mutate(
+    sexo = case_when(
+      CH04 == 1 ~ "Varón",
+      CH04 == 2 ~ "Mujer"),
+    grupo_edad = case_when(
+      CH06 < 30             ~ "Joven",
+      CH06 >= 30 & CH06 < 50 ~ "Adulto",
+      CH06 >= 50             ~ "Mayor")
+  ) |>
+  summarise(
+    ingreso_promedio = mean(P21),
+    personas = n(),
+    .by = c(sexo, grupo_edad)
+  )
+```
+:::
+
+::: {.column width="45%"}
+```{r}
+#| echo: false
+eph_ind |>
+  filter(ESTADO == 1, P21 > 0) |>
+  select(CH04, CH06, P21) |>
+  mutate(
+    sexo = case_when(
+      CH04 == 1 ~ "Varón",
+      CH04 == 2 ~ "Mujer"),
+    grupo_edad = case_when(
+      CH06 < 30             ~ "Joven",
+      CH06 >= 30 & CH06 < 50 ~ "Adulto",
+      CH06 >= 50             ~ "Mayor")
+  ) |>
+  summarise(
+    ingreso_promedio = mean(P21),
+    personas = n(),
+    .by = c(sexo, grupo_edad)
+  )
+```
+:::
+:::
+
+## Lo que logramos hoy {background-color="#F5F5F5"}
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+✅ `mutate()` + `case_when()` — crear variables y recodificar
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+✅ `summarise()` — resumir datos (promedios, conteos, etc.)
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+✅ `group_by()` / `.by` — operar por grupos
+:::
+
+<br>
+
+::: {.fragment}
+✅ Combinar todo en un **pipeline** completo con la EPH
+:::
+
+# Para la semana que viene... {background-color="#F5F5F5"}
+
+## Próximo encuentro: Proyectos y organización
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+📁 Cómo organizar un **proyecto de R** profesionalmente
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+📦 **RStudio Projects** y carpetas de trabajo
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+🔄 Buenas prácticas de **reproducibilidad**
+:::
+
+<br>
+
+::: {.fragment}
+🎯 Integración con todo lo aprendido
+:::
+
+## ¡Gracias! {background-color="#4F7CFF"}
+
+<br><br>
+
+### Nos vemos el **martes 4 de marzo**
+
+<br>
+
+📧 [pablotiscornia@estacion-r.com](mailto:pablotiscornia@estacion-r.com)
+
+💬 [Slack de Estación R](https://estacion-r.slack.com/)

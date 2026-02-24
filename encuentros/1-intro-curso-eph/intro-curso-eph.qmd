@@ -6,7 +6,7 @@ institute: "[Estación R](https://estacion-r.com/)"
 date: today
 format:
   revealjs:
-    theme: [default, ../1-intro-r/intro-r.scss]
+    theme: [default, intro-r.scss]
     logo: "../../img/Logo_PNG_Baja_Mesa de trabajo 1.png"
     footer: "[Introducción al Procesamiento de Datos con R para Ciencias Sociales](https://estacion-r.github.io/intro-r-sociales/)"
     slide-number: true

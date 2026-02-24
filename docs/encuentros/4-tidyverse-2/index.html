@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Estación R">
+<meta name="description" content="mutate() y case_when() para crear y recodificar variables, summarise() para resumir, y group_by() para operar por grupos. Todo con datos de la EPH.">
 
-<title>Introducción al Procesamiento de Datos con R para Ciencias Sociales</title>
+<title>Encuentro 4 - Procesando datos con tidyverse (Parte II)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fb2fadb37cca87c2928f21703c6d6225.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-fb2fadb37cca87c2928f21703c6d6225.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,8 +79,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/Logo_PNG_Baja_Mesa de trabajo 1.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/Logo_PNG_Baja_Mesa de trabajo 1.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -88,19 +90,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./programa.html"> 
+    <a class="nav-link" href="../../programa.html"> 
 <span class="menu-text">Programa</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./encuentros/0-puesta-a-punto/index.html"> 
+    <a class="nav-link" href="../../encuentros/0-puesta-a-punto/index.html"> 
 <span class="menu-text">Puesta a punto</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./profesor.html"> 
+    <a class="nav-link" href="../../profesor.html"> 
 <span class="menu-text">Docente</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -109,23 +111,23 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-encuentros">    
         <li>
-    <a class="dropdown-item" href="./encuentros/0-puesta-a-punto/index.html">
+    <a class="dropdown-item" href="../../encuentros/0-puesta-a-punto/index.html">
  <span class="dropdown-text">Clase 0: Puesta a punto</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./encuentros/1-intro-curso-eph/index.html">
+    <a class="dropdown-item" href="../../encuentros/1-intro-curso-eph/index.html">
  <span class="dropdown-text">Módulo 1: Intro al curso y EPH</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./encuentros/2-intro-r-ia/index.html">
+    <a class="dropdown-item" href="../../encuentros/2-intro-r-ia/index.html">
  <span class="dropdown-text">Módulo 2: Intro a R + IA</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./encuentros/3-tidyverse/index.html">
+    <a class="dropdown-item" href="../../encuentros/3-tidyverse/index.html">
  <span class="dropdown-text">Módulo 3: tidyverse I</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./encuentros/4-tidyverse-2/index.html">
+    <a class="dropdown-item" href="../../encuentros/4-tidyverse-2/index.html">
  <span class="dropdown-text">Módulo 4: tidyverse II</span></a>
   </li>  
         <li class="dropdown-header">Módulo 5: Proyectos y organización (próximamente)</li>
@@ -138,11 +140,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ejercitación">    
         <li>
-    <a class="dropdown-item" href="./encuentros/2-intro-r-ia/intro-r-ia_ejercitacion.html">
+    <a class="dropdown-item" href="../../encuentros/2-intro-r-ia/intro-r-ia_ejercitacion.html">
  <span class="dropdown-text">Módulo 2: Intro a R + IA</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./encuentros/3-tidyverse/r-tidyverse_ejercicios.html">
+    <a class="dropdown-item" href="../../encuentros/3-tidyverse/r-tidyverse_ejercicios.html">
  <span class="dropdown-text">Módulo 3: tidyverse I</span></a>
   </li>  
         <li class="dropdown-header">Módulo 4: tidyverse II (próximamente)</li>
@@ -153,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./cod_de_conducta.html"> 
+    <a class="nav-link" href="../../cod_de_conducta.html"> 
 <span class="menu-text">Código de conducta</span></a>
   </li>  
 </ul>
@@ -172,12 +174,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#presentación" id="toc-presentación" class="nav-link active" data-scroll-target="#presentación">Presentación</a></li>
-  <li><a href="#para-quién-es" id="toc-para-quién-es" class="nav-link" data-scroll-target="#para-quién-es">¿Para quién es?</a></li>
-  <li><a href="#qué-vas-a-lograr" id="toc-qué-vas-a-lograr" class="nav-link" data-scroll-target="#qué-vas-a-lograr">¿Qué vas a lograr?</a></li>
-  <li><a href="#modalidad" id="toc-modalidad" class="nav-link" data-scroll-target="#modalidad">Modalidad</a></li>
-  <li><a href="#cronograma" id="toc-cronograma" class="nav-link" data-scroll-target="#cronograma">Cronograma</a></li>
-  <li><a href="#inscripción" id="toc-inscripción" class="nav-link" data-scroll-target="#inscripción">Inscripción</a></li>
+  <li><a href="#descripción" id="toc-descripción" class="nav-link active" data-scroll-target="#descripción">Descripción</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#contenidos" id="toc-contenidos" class="nav-link" data-scroll-target="#contenidos">Contenidos</a></li>
+  <li><a href="#links-útiles" id="toc-links-útiles" class="nav-link" data-scroll-target="#links-útiles">Links útiles</a></li>
+  <li><a href="#docente" id="toc-docente" class="nav-link" data-scroll-target="#docente">Docente</a></li>
   </ul>
 </nav>
     </div>
@@ -186,13 +187,24 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción al Procesamiento de Datos con R para Ciencias Sociales</h1>
+<h1 class="title">Encuentro 4 - Procesando datos con tidyverse (Parte II)</h1>
 </div>
 
+<div>
+  <div class="description">
+    mutate() y case_when() para crear y recodificar variables, summarise() para resumir, y group_by() para operar por grupos. Todo con datos de la EPH.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Estación R </p>
+          </div>
+  </div>
     
   
     
@@ -203,96 +215,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="img/Logo_PNG_Baja_Mesa de trabajo 1.png" class="img-fluid" style="float: right;" alt="Logo Estación R" width="150"></p>
-<blockquote class="blockquote">
-<p>Modalidad virtual sincrónica con grabaciones disponibles.</p>
-</blockquote>
-<section id="presentación" class="level2">
-<h2 class="anchored" data-anchor-id="presentación">Presentación</h2>
-<p>Este curso tiene como objetivo introducir a profesionales e investigadores/as de las ciencias sociales en el uso de R para el análisis y procesamiento de datos. Trabajaremos con la <strong>Encuesta Permanente de Hogares (EPH)</strong> del INDEC como hilo conductor, aprendiendo a importar, limpiar, procesar y visualizar datos de forma profesional.</p>
-<p>El enfoque es 100% práctico: vas a trabajar con datos reales desde la primera clase.</p>
+<section id="descripción" class="level2">
+<h2 class="anchored" data-anchor-id="descripción">Descripción</h2>
+<p>En este encuentro completamos las herramientas fundamentales de <code>{dplyr}</code> para el procesamiento de datos. Aprendemos a <strong>crear y transformar variables</strong> con <code>mutate()</code> y <code>case_when()</code>, a <strong>resumir información</strong> con <code>summarise()</code>, y a <strong>operar por grupos</strong> con <code>group_by()</code> y el argumento <code>.by</code>.</p>
+<p>Cerramos con un pipeline completo que combina todas las funciones aprendidas hasta ahora para analizar la <strong>Encuesta Permanente de Hogares (EPH)</strong>.</p>
 </section>
-<section id="para-quién-es" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es">¿Para quién es?</h2>
-<ul>
-<li>Investigadores/as en ciencias sociales</li>
-<li>Estudiantes de grado y posgrado</li>
-<li>Profesionales del sector público</li>
-<li>Analistas que trabajan con encuestas y datos socioeconómicos</li>
-</ul>
-<p><strong>No se requiere experiencia previa en programación.</strong> Vamos desde cero.</p>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<iframe class="slide-deck" src="r-tidyverse-2.html" height="420" width="747" style="border: 1px solid #2e3846;">
+</iframe>
 </section>
-<section id="qué-vas-a-lograr" class="level2">
-<h2 class="anchored" data-anchor-id="qué-vas-a-lograr">¿Qué vas a lograr?</h2>
+<section id="contenidos" class="level2">
+<h2 class="anchored" data-anchor-id="contenidos">Contenidos</h2>
 <ul>
-<li>✅ Importar y limpiar bases de la EPH de forma profesional</li>
-<li>✅ Procesar miles de registros en minutos (vs.&nbsp;horas en Excel)</li>
-<li>✅ Crear visualizaciones de calidad con <code>{ggplot2}</code></li>
-<li>✅ Automatizar análisis con código reutilizable</li>
-<li>✅ Construir indicadores socioeconómicos con criterios sólidos</li>
+<li><code>mutate()</code>: crear y editar variables</li>
+<li><code>case_when()</code>: recodificar variables con condiciones</li>
+<li><code>summarise()</code>: resumir datos (promedios, conteos, totales)</li>
+<li><code>group_by()</code> y <code>.by</code>: operar por grupos</li>
+<li>Combinando todo: pipeline completo con la EPH</li>
+<li>Novedad dplyr 1.2.0: <code>filter_out()</code></li>
 </ul>
 </section>
-<section id="modalidad" class="level2">
-<h2 class="anchored" data-anchor-id="modalidad">Modalidad</h2>
-<p><strong>Modalidad híbrida:</strong> 6 clases en vivo de 2:30 hs + grabaciones con acceso de por vida. Lo podés hacer a tu ritmo si se te complica asistir.</p>
-<p>La programación no es un tema de mentes brillantes, sino de perseverancia. Con este lema, el curso se focaliza en lo práctico: ejercicios para resolver entre clase y clase, materiales de apoyo y soporte continuo.</p>
-<p><strong>Tip:</strong> Recomendamos traer tu proyecto de datos para trabajar durante el curso. ¡Todas las consultas son bienvenidas!</p>
-</section>
-<section id="cronograma" class="level2">
-<h2 class="anchored" data-anchor-id="cronograma">Cronograma</h2>
-<p><strong>Edición:</strong> Enero - Marzo 2026</p>
-<p><strong>Día y horario:</strong> Martes</p>
+<section id="links-útiles" class="level2">
+<h2 class="anchored" data-anchor-id="links-útiles">Links útiles</h2>
 <ul>
-<li>🇦🇷 Argentina: 19:00 a 21:30 hs (UTC-3)</li>
-<li>🇲🇽 México: 16:00 a 18:30 hs (UTC-6)</li>
+<li><a href="https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/poniendo-los-datos-en-forma.html#transformando-los-datos">Ciencia de Datos para Gente Sociable - Transformación de datos</a></li>
+<li><a href="https://es.r4ds.hadley.nz/05-transform.html">R para Ciencia de Datos - Transformación de datos</a></li>
+<li><a href="https://tidyverse.org/blog/2026/02/dplyr-1-2-0/">dplyr 1.2.0 - Blog de tidyverse</a></li>
+<li><a href="https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_registro_1t19.pdf">Diseño de registro EPH</a></li>
 </ul>
-<p><strong>Fecha de inicio:</strong> Martes 27 de enero de 2026</p>
-<p><strong>Cantidad de encuentros:</strong> 6 clases de 2:30 hs cada una</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Clase</th>
-<th>Fecha</th>
-<th>Tema</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>27/01</td>
-<td>Introducción al curso e Introducción a la EPH</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>03/02</td>
-<td>Introducción a R + IA en el análisis de datos</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>10/02</td>
-<td>tidyverse I: Importación y selección</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>17/02</td>
-<td>tidyverse II: Transformación y resumen</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>24/02</td>
-<td>Proyectos y organización de trabajo</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>03/03</td>
-<td>Visualización con ggplot2 + TP integrador</td>
-</tr>
-</tbody>
-</table>
 </section>
-<section id="inscripción" class="level2">
-<h2 class="anchored" data-anchor-id="inscripción">Inscripción</h2>
-<p>Info y registro: <a href="https://estacion-r.com/courses/8c7c8213-9b25-48d2-a9a7-e58e1cc80e25/detail?type=sync">estacion-r.com</a></p>
+<section id="docente" class="level2">
+<h2 class="anchored" data-anchor-id="docente">Docente</h2>
+<p><img src="images/docente.jpg" class="img-fluid" style="float: right; padding-left: 10px;" alt="Foto de Pablo Tiscornia" width="180"></p>
+<p><a href="https://www.linkedin.com/in/pablotiscornia/">Pablo Tiscornia</a></p>
 
 
 </section>

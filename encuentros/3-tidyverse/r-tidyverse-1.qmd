@@ -201,7 +201,7 @@ library(nombre_del_paquete)
 
 <br>
 
-![](../1-intro-r/images/circuito_del_dato_tidy.png){fig-align="center"}
+![](images/circuito_del_dato_tidy.png){fig-align="center"}
 
 ## `{tidyverse}` - Instalación y carga
 
@@ -809,6 +809,39 @@ table(eph_gba_pat$REGION)
 
 ::: {.fragment}
 > `%in%` es más prolijo que escribir `REGION == 1 | REGION == 44`, especialmente cuando son varias categorías.
+:::
+
+## Novedad: `filter_out()` {background-color="#F5F5F5"}
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+Desde febrero 2026, dplyr incluye `filter_out()`: el complemento de `filter()`.
+:::
+
+<br>
+
+::: {.fragment .fade-in-then-semi-out}
+- `filter()` = **me quedo con** las filas que cumplen la condición
+- `filter_out()` = **saco** las filas que cumplen la condición
+:::
+
+<br>
+
+::: {.fragment}
+```{r}
+#| eval: false
+# Estas dos líneas hacen lo mismo:
+eph_ind |> filter(ESTADO != 4)
+
+eph_ind |> filter_out(ESTADO == 4)
+```
+:::
+
+<br>
+
+::: {.fragment}
+> Para usarlo, actualizar dplyr: `install.packages("dplyr")`
 :::
 
 # Combinando `select()` + `filter()` {background-color="#4F7CFF"}

@@ -116,6 +116,6 @@ Si tenés problemas con la instalación:
 
 ## Docente
 
-![](../1-intro-r/images/docente.jpg){style="float: right; padding-left: 10px;" fig-alt="Foto de Pablo Tiscornia" width="180"}
+![](images/docente.jpg){style="float: right; padding-left: 10px;" fig-alt="Foto de Pablo Tiscornia" width="180"}
 
 [Pablo Tiscornia](https://www.linkedin.com/in/pablotiscornia/)

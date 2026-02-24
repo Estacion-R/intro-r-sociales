@@ -21,3 +21,6 @@ data/eph_*.csv
 
 # Referencias externas (repos clonados)
 _referencias/
+
+# Material archivado (ediciones anteriores, disponible en historial git)
+encuentros/_archivo/
