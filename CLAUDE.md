@@ -20,9 +20,16 @@ Todas las fechas de este curso corresponden al año 2026. Al trabajar con fechas
 | 5 | 25/02 | Proyectos y organización |
 | 6 | 04/03 | ggplot2 + TP integrador |
 
+## Reglas de Consistencia
+
+- **Fuente única de verdad para fechas**: La tabla "Calendario de encuentros" de este archivo
+- **Antes de comunicar fechas a alumnos**: SIEMPRE verificar contra el calendario de arriba
+- **Si hay discrepancia entre archivos**: Este CLAUDE.md tiene prioridad, corregir el otro archivo
+- **ESTADO_CURSO.md**: Archivo operativo para tareas, pero fechas canónicas están aquí
+
 ## Archivos importantes
 
-- `ESTADO_CURSO.md` - Estado actual y próximos pasos
+- `ESTADO_CURSO.md` - Estado actual y próximos pasos (fechas referencian a CLAUDE.md)
 - `_quarto.yml` - Configuración del sitio (activar/bloquear módulos)
 - `encuentros/` - Carpetas de cada módulo
 
