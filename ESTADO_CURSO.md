@@ -2,7 +2,7 @@
 
 > **Año del curso: 2026** - Todas las fechas corresponden a este año.
 >
-> Última actualización: 2026-02-24
+> Última actualización: 2026-03-03
 
 ## Información General
 
@@ -52,18 +52,19 @@ Carpeta: `_difusion/`
 - `infografia_inscriptos.png` - Infografía 1080x1920
 - `mapa_editorial.png` - Estilo editorial con colores Estación R
 
-## Calendario actualizado (clase 4 suspendida y recuperada)
+## Calendario actualizado
 
-> **Nota:** La clase del 18/02 se suspendió. Se recupera el 24/02, corriendo el resto una semana.
+> **Nota:** La clase del 18/02 se suspendió. Se recuperó el 24/02 con contenido ajustado.
+> El contenido real se corrió: select/filter se dieron en Encuentro 4 (no en 3).
 
-| Módulo | Fecha original | Fecha real | Tema |
-|--------|---------------|------------|------|
-| 1 | 28/01 | 28/01 | Intro al curso y EPH |
-| 2 | 04/02 | 04/02 | Intro a R + IA |
-| 3 | 10/02 | 10/02 | tidyverse I |
-| 4 | 18/02 | **24/02** | tidyverse II |
-| 5 | 25/02 | **04/03** | Proyectos y organización |
-| 6 | 04/03 | **11/03** | ggplot2 + TP integrador |
+| Encuentro | Fecha | Tema planificado | Contenido real |
+|-----------|-------|------------------|----------------|
+| 1 | 28/01 | Intro al curso y EPH | = planificado |
+| 2 | 04/02 | Intro a R + IA | = planificado |
+| 3 | 10/02 | tidyverse I | Paquetes, tidyverse, importación EPH |
+| 4 | 24/02 | tidyverse II | Pipa, select(), filter() |
+| 5 | **03/03** | Proyectos | **tidyverse II: mutate, summarise, group_by** |
+| 6 | **10/03** | ggplot2 + TP | **Proyectos + ggplot2 + TP integrador** |
 
 ## Estado de Encuentros en el Sitio Web
 
@@ -74,8 +75,8 @@ Carpeta: `_difusion/`
 | 2 | 04/02 | Intro a R + IA | ✅ Activo | ✅ Nuevo formato |
 | 3 | 10/02 | tidyverse I | ✅ Activo | ✅ Nuevo formato (EPH) |
 | 4 | 24/02 | tidyverse II | ✅ Activo | ✅ Nuevo formato (EPH + dplyr 1.2.0) |
-| 5 | 04/03 | Proyectos y organización | 🔒 Bloqueado | 🟡 Por adaptar |
-| 6 | 11/03 | ggplot2 + TP integrador | 🔒 Bloqueado | 🟡 Por adaptar |
+| 5 | 03/03 | tidyverse II: mutate, summarise, group_by | ✅ Activo | ✅ Slides Módulo 4 |
+| 6 | 10/03 | Proyectos + ggplot2 + TP integrador | 🔒 Bloqueado | 🟡 Por adaptar |
 
 **Nota:** Los módulos bloqueados aparecen en el menú como "(próximamente)" sin link.
 
@@ -197,14 +198,23 @@ Contenido animado
 - [x] Crear carpeta `encuentros/4-tidyverse-2/` con nuevo formato
 - [x] Activar Módulo 4 en `_quarto.yml`
 
-### Después del Encuentro 4 (24/02):
-- [ ] Subir grabación a la plataforma
-- [ ] Enviar mensaje por Slack con resumen
-- [ ] Activar Módulo 5 en el sitio
+### Después del Encuentro 4 (24/02): ✅ COMPLETADO
+- [x] Subir grabación a la plataforma (con título + descripción)
+- [x] Enviar mensaje por Slack con resumen y links
+- [ ] No se activa Módulo 5 en el sitio (el próximo encuentro usa slides del Módulo 4 ya activo)
 
-### Antes del Encuentro 5 (04/03):
-- [ ] Adaptar slides de Proyectos y organización
-- [ ] Migrar ejemplos de la carpeta `5-reportes/` al tema de proyectos
+### Antes del Encuentro 5 (03/03) — tidyverse II: ✅ COMPLETADO
+- [x] Verificar que slides del Módulo 4 (`r-tidyverse-2.qmd`) estén correctas
+- [x] Activar ejercitación del Módulo 4 en `_quarto.yml`
+- [x] Crear ejercitación standalone (`r-tidyverse-2_ejercitacion.qmd`)
+- [x] Verificar que los datos EPH estén disponibles localmente
+- [x] Actualizar slide de cierre (fecha 10/03, contenido Enc 6)
+
+### Antes del Encuentro 6 (10/03) — Proyectos + ggplot2:
+- [ ] Adaptar slides de Proyectos y organización al nuevo formato
+- [ ] Adaptar/crear slides de ggplot2
+- [ ] Agregar TP integrador
+- [ ] Migrar ejemplos de la carpeta `5-reportes/` si corresponde
 
 ### Pendientes técnicos:
 - [x] Adaptar Módulo 2 al nuevo formato de slides
@@ -215,4 +225,4 @@ Contenido animado
 - [ ] Agregar TP integrador en Módulo 6
 
 ---
-*Última actualización: 2026-02-24*
+*Última actualización: 2026-02-25*

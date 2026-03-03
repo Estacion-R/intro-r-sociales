@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Estación R">
-<meta name="description" content="Fundamentos de R (valores, vectores, funciones, data frames) y cómo usar la IA como asistente en el análisis de datos">
 
-<title>Encuentro 2 - Introducción a R + IA</title>
+<title>Tidyverse, parte II - Ejercitación</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -177,11 +176,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#descripción" id="toc-descripción" class="nav-link active" data-scroll-target="#descripción">Descripción</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#contenidos" id="toc-contenidos" class="nav-link" data-scroll-target="#contenidos">Contenidos</a></li>
-  <li><a href="#links-útiles" id="toc-links-útiles" class="nav-link" data-scroll-target="#links-útiles">Links útiles</a></li>
-  <li><a href="#docente" id="toc-docente" class="nav-link" data-scroll-target="#docente">Docente</a></li>
+  <li><a href="#referencia-de-variables" id="toc-referencia-de-variables" class="nav-link active" data-scroll-target="#referencia-de-variables">Referencia de variables</a></li>
+  <li><a href="#parte-1-mutate-case_when" id="toc-parte-1-mutate-case_when" class="nav-link" data-scroll-target="#parte-1-mutate-case_when">Parte 1: <code>mutate()</code> + <code>case_when()</code></a></li>
+  <li><a href="#parte-2-summarise-group_by" id="toc-parte-2-summarise-group_by" class="nav-link" data-scroll-target="#parte-2-summarise-group_by">Parte 2: <code>summarise()</code> + <code>group_by()</code></a></li>
+  <li><a href="#parte-3-pipeline-completo" id="toc-parte-3-pipeline-completo" class="nav-link" data-scroll-target="#parte-3-pipeline-completo">Parte 3: Pipeline completo</a></li>
   </ul>
 </nav>
     </div>
@@ -190,14 +188,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Encuentro 2 - Introducción a R + IA</h1>
+<h1 class="title">Tidyverse, parte II - Ejercitación</h1>
 </div>
 
-<div>
-  <div class="description">
-    Fundamentos de R (valores, vectores, funciones, data frames) y cómo usar la IA como asistente en el análisis de datos
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -218,41 +211,85 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="descripción" class="level2">
-<h2 class="anchored" data-anchor-id="descripción">Descripción</h2>
-<p>En este encuentro nos introducimos en los <strong>fundamentos del lenguaje R</strong>: valores, vectores, funciones, objetos y data frames. También exploramos cómo utilizar herramientas de <strong>Inteligencia Artificial</strong> (ChatGPT, Claude) como asistentes en el proceso de análisis de datos.</p>
-<p>Tendremos ejercitación para realizar durante el encuentro y se dejará práctica para poder continuar incorporando el lenguaje durante la semana.</p>
+<blockquote class="blockquote">
+<p><strong>Preparación:</strong> Para resolver los siguientes ejercicios es necesario tener la base de la EPH individual cargada en el ambiente de R. Podés cargarla con <code>read_csv()</code> o con el paquete <code>{eph}</code>.</p>
+</blockquote>
+<section id="referencia-de-variables" class="level2">
+<h2 class="anchored" data-anchor-id="referencia-de-variables">Referencia de variables</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 40%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Significado</th>
+<th>Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>CH04</code></td>
+<td>Sexo</td>
+<td>1=Varón, 2=Mujer</td>
+</tr>
+<tr class="even">
+<td><code>CH06</code></td>
+<td>Edad</td>
+<td>Años cumplidos</td>
+</tr>
+<tr class="odd">
+<td><code>ESTADO</code></td>
+<td>Condición de actividad</td>
+<td>1=Ocupado, 2=Desocupado, 3=Inactivo, 4=Menor de 10</td>
+</tr>
+<tr class="even">
+<td><code>NIVEL_ED</code></td>
+<td>Nivel educativo</td>
+<td>1 a 7</td>
+</tr>
+<tr class="odd">
+<td><code>P21</code></td>
+<td>Ingreso ocupación principal</td>
+<td>En pesos</td>
+</tr>
+<tr class="even">
+<td><code>REGION</code></td>
+<td>Región estadística</td>
+<td>1=GBA, 40=NOA, 41=NEA, 42=Cuyo, 43=Pampeana, 44=Patagonia</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<iframe class="slide-deck" src="intro-r-ia.html" height="420" width="747" style="border: 1px solid #2e3846;">
-</iframe>
+<section id="parte-1-mutate-case_when" class="level2">
+<h2 class="anchored" data-anchor-id="parte-1-mutate-case_when">Parte 1: <code>mutate()</code> + <code>case_when()</code></h2>
+<ol type="a">
+<li><p>Seleccionar las variables <code>CH04</code>, <code>CH06</code>, <code>NIVEL_ED</code> y <code>ESTADO</code>. Crear una variable llamada <code>sexo</code> que recodifique <code>CH04</code> (1 = “Varón”, 2 = “Mujer”).</p></li>
+<li><p>Crear una variable <code>grupo_actividad</code> que agrupe <code>ESTADO</code> en dos categorías: <strong>“Activo”</strong> (1 y 2) y <strong>“No activo”</strong> (3 y 4). <em>Tip: recordar el operador <code>%in%</code></em>.</p></li>
+<li><p><strong>Desafío:</strong> Crear una variable <code>mayor_de_edad</code> que valga <code>"Sí"</code> cuando <code>CH06 &gt;= 18</code> y <code>"No"</code> en caso contrario.</p></li>
+</ol>
 </section>
-<section id="contenidos" class="level2">
-<h2 class="anchored" data-anchor-id="contenidos">Contenidos</h2>
-<ul>
-<li>¿Qué es R y qué es la Ciencia de Datos?</li>
-<li>R vs RStudio: diferencias y configuración</li>
-<li>Valores y vectores</li>
-<li>Funciones básicas (<code>class()</code>, <code>length()</code>, <code>mean()</code>)</li>
-<li>Objetos y data frames</li>
-<li>IA como asistente en el análisis de datos</li>
-<li>Cómo hacer buenas preguntas a la IA</li>
-</ul>
+<section id="parte-2-summarise-group_by" class="level2">
+<h2 class="anchored" data-anchor-id="parte-2-summarise-group_by">Parte 2: <code>summarise()</code> + <code>group_by()</code></h2>
+<ol type="a">
+<li><p>Calcular la <strong>edad promedio</strong> y la <strong>cantidad de personas</strong> para toda la base.</p></li>
+<li><p>Calcular la <strong>cantidad de personas por condición de actividad</strong> (<code>ESTADO</code>). <em>Tip: <code>summarise(n = n(), .by = ESTADO)</code></em>.</p></li>
+<li><p>Filtrar la población <strong>ocupada</strong> (<code>ESTADO == 1</code>) con ingreso positivo (<code>P21 &gt; 0</code>). Calcular el <strong>ingreso promedio por región</strong> (<code>REGION</code>).</p></li>
+<li><p><strong>Desafío:</strong> Al ejercicio anterior, agregarle una recodificación de <code>CH04</code> a <code>sexo</code> (“Varón”/“Mujer”) y calcular el ingreso promedio <strong>por sexo y región</strong>.</p></li>
+</ol>
 </section>
-<section id="links-útiles" class="level2">
-<h2 class="anchored" data-anchor-id="links-útiles">Links útiles</h2>
-<ul>
-<li><a href="https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/">Ciencia de Datos para Gente Sociable</a></li>
-<li><a href="https://r4ds.hadley.nz/">R for Data Science (2da edición)</a></li>
-<li><a href="https://chat.openai.com/">ChatGPT</a></li>
-<li><a href="https://claude.ai/">Claude</a></li>
-</ul>
-</section>
-<section id="docente" class="level2">
-<h2 class="anchored" data-anchor-id="docente">Docente</h2>
-<p><img src="images/docente.jpg" class="img-fluid" style="float: right; padding-left: 10px;" alt="Foto de Pablo Tiscornia" width="180"></p>
-<p><a href="https://www.linkedin.com/in/pablotiscornia/">Pablo Tiscornia</a></p>
+<section id="parte-3-pipeline-completo" class="level2">
+<h2 class="anchored" data-anchor-id="parte-3-pipeline-completo">Parte 3: Pipeline completo</h2>
+<p><strong>Desafío integrador:</strong> Construir un pipeline que, partiendo de <code>eph_ind</code>:</p>
+<ol type="1">
+<li>Filtre a la población <strong>ocupada</strong> con ingreso positivo</li>
+<li>Seleccione las variables <code>CH04</code>, <code>CH06</code>, <code>P21</code> y <code>REGION</code></li>
+<li>Cree las variables <code>sexo</code> y <code>grupo_edad</code> (Joven: &lt;30, Adulto: 30-49, Mayor: 50+)</li>
+<li>Calcule el <strong>ingreso promedio</strong> y la <strong>cantidad de personas</strong> por <code>sexo</code> y <code>grupo_edad</code></li>
+</ol>
+<p><em>Tip: combinar <code>filter()</code>, <code>select()</code>, <code>mutate()</code> con <code>case_when()</code>, y <code>summarise()</code> con <code>.by</code>.</em></p>
 
 
 </section>

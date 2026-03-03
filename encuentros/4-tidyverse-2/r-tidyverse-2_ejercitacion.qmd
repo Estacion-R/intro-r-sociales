@@ -1,0 +1,46 @@
+---
+title: "Tidyverse, parte II - Ejercitación"
+author: "Estación R"
+---
+
+> **Preparación:** Para resolver los siguientes ejercicios es necesario tener la base de la EPH individual cargada en el ambiente de R. Podés cargarla con `read_csv()` o con el paquete `{eph}`.
+
+## Referencia de variables
+
+| Variable | Significado | Valores |
+|----------|-------------|---------|
+| `CH04` | Sexo | 1=Varón, 2=Mujer |
+| `CH06` | Edad | Años cumplidos |
+| `ESTADO` | Condición de actividad | 1=Ocupado, 2=Desocupado, 3=Inactivo, 4=Menor de 10 |
+| `NIVEL_ED` | Nivel educativo | 1 a 7 |
+| `P21` | Ingreso ocupación principal | En pesos |
+| `REGION` | Región estadística | 1=GBA, 40=NOA, 41=NEA, 42=Cuyo, 43=Pampeana, 44=Patagonia |
+
+## Parte 1: `mutate()` + `case_when()`
+
+a. Seleccionar las variables `CH04`, `CH06`, `NIVEL_ED` y `ESTADO`. Crear una variable llamada `sexo` que recodifique `CH04` (1 = "Varón", 2 = "Mujer").
+
+b. Crear una variable `grupo_actividad` que agrupe `ESTADO` en dos categorías: **"Activo"** (1 y 2) y **"No activo"** (3 y 4). *Tip: recordar el operador `%in%`*.
+
+c. **Desafío:** Crear una variable `mayor_de_edad` que valga `"Sí"` cuando `CH06 >= 18` y `"No"` en caso contrario.
+
+## Parte 2: `summarise()` + `group_by()`
+
+a. Calcular la **edad promedio** y la **cantidad de personas** para toda la base.
+
+b. Calcular la **cantidad de personas por condición de actividad** (`ESTADO`). *Tip: `summarise(n = n(), .by = ESTADO)`*.
+
+c. Filtrar la población **ocupada** (`ESTADO == 1`) con ingreso positivo (`P21 > 0`). Calcular el **ingreso promedio por región** (`REGION`).
+
+d. **Desafío:** Al ejercicio anterior, agregarle una recodificación de `CH04` a `sexo` ("Varón"/"Mujer") y calcular el ingreso promedio **por sexo y región**.
+
+## Parte 3: Pipeline completo
+
+**Desafío integrador:** Construir un pipeline que, partiendo de `eph_ind`:
+
+1. Filtre a la población **ocupada** con ingreso positivo
+2. Seleccione las variables `CH04`, `CH06`, `P21` y `REGION`
+3. Cree las variables `sexo` y `grupo_edad` (Joven: <30, Adulto: 30-49, Mayor: 50+)
+4. Calcule el **ingreso promedio** y la **cantidad de personas** por `sexo` y `grupo_edad`
+
+*Tip: combinar `filter()`, `select()`, `mutate()` con `case_when()`, y `summarise()` con `.by`.*

@@ -47,7 +47,8 @@ website:
          # --- EJERCITACIONES BLOQUEADAS (sin href) ---
          - text: "Módulo 3: tidyverse I"
            href: encuentros/3-tidyverse/r-tidyverse_ejercicios.qmd
-         - text: "Módulo 4: tidyverse II (próximamente)"
+         - text: "Módulo 4: tidyverse II"
+           href: encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.qmd
          - text: "Módulo 5: Proyectos (próximamente)"
          - text: "Módulo 6: ggplot2 (próximamente)"
     right: 

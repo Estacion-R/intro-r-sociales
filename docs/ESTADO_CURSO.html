@@ -179,7 +179,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./encuentros/3-tidyverse/r-tidyverse_ejercicios.html">
  <span class="dropdown-text">Módulo 3: tidyverse I</span></a>
   </li>  
-        <li class="dropdown-header">Módulo 4: tidyverse II (próximamente)</li>
+        <li>
+    <a class="dropdown-item" href="./encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html">
+ <span class="dropdown-text">Módulo 4: tidyverse II</span></a>
+  </li>  
         <li class="dropdown-header">Módulo 5: Proyectos (próximamente)</li>
         <li class="dropdown-header">Módulo 6: ggplot2 (próximamente)</li>
     </ul>
@@ -212,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#urls" id="toc-urls" class="nav-link" data-scroll-target="#urls">URLs</a></li>
   <li><a href="#inscriptos---resumen-16-total" id="toc-inscriptos---resumen-16-total" class="nav-link" data-scroll-target="#inscriptos---resumen-16-total">Inscriptos - Resumen (16 total)</a></li>
   <li><a href="#material-de-difusión" id="toc-material-de-difusión" class="nav-link" data-scroll-target="#material-de-difusión">Material de Difusión</a></li>
-  <li><a href="#calendario-actualizado-clase-4-suspendida-y-recuperada" id="toc-calendario-actualizado-clase-4-suspendida-y-recuperada" class="nav-link" data-scroll-target="#calendario-actualizado-clase-4-suspendida-y-recuperada">Calendario actualizado (clase 4 suspendida y recuperada)</a></li>
+  <li><a href="#calendario-actualizado" id="toc-calendario-actualizado" class="nav-link" data-scroll-target="#calendario-actualizado">Calendario actualizado</a></li>
   <li><a href="#estado-de-encuentros-en-el-sitio-web" id="toc-estado-de-encuentros-en-el-sitio-web" class="nav-link" data-scroll-target="#estado-de-encuentros-en-el-sitio-web">Estado de Encuentros en el Sitio Web</a></li>
   <li><a href="#tareas-completadas-esta-sesión" id="toc-tareas-completadas-esta-sesión" class="nav-link" data-scroll-target="#tareas-completadas-esta-sesión">Tareas Completadas Esta Sesión</a>
   <ul class="collapse">
@@ -231,8 +234,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#antes-del-encuentro-3-1002-completado" id="toc-antes-del-encuentro-3-1002-completado" class="nav-link" data-scroll-target="#antes-del-encuentro-3-1002-completado">Antes del Encuentro 3 (10/02): ✅ COMPLETADO</a></li>
   <li><a href="#después-del-encuentro-3-1002" id="toc-después-del-encuentro-3-1002" class="nav-link" data-scroll-target="#después-del-encuentro-3-1002">Después del Encuentro 3 (10/02):</a></li>
   <li><a href="#antes-del-encuentro-4-2402---recuperatorio-completado" id="toc-antes-del-encuentro-4-2402---recuperatorio-completado" class="nav-link" data-scroll-target="#antes-del-encuentro-4-2402---recuperatorio-completado">Antes del Encuentro 4 (24/02 - recuperatorio): ✅ COMPLETADO</a></li>
-  <li><a href="#después-del-encuentro-4-2402" id="toc-después-del-encuentro-4-2402" class="nav-link" data-scroll-target="#después-del-encuentro-4-2402">Después del Encuentro 4 (24/02):</a></li>
-  <li><a href="#antes-del-encuentro-5-0403" id="toc-antes-del-encuentro-5-0403" class="nav-link" data-scroll-target="#antes-del-encuentro-5-0403">Antes del Encuentro 5 (04/03):</a></li>
+  <li><a href="#después-del-encuentro-4-2402-completado" id="toc-después-del-encuentro-4-2402-completado" class="nav-link" data-scroll-target="#después-del-encuentro-4-2402-completado">Después del Encuentro 4 (24/02): ✅ COMPLETADO</a></li>
+  <li><a href="#antes-del-encuentro-5-0303-tidyverse-ii-completado" id="toc-antes-del-encuentro-5-0303-tidyverse-ii-completado" class="nav-link" data-scroll-target="#antes-del-encuentro-5-0303-tidyverse-ii-completado">Antes del Encuentro 5 (03/03) — tidyverse II: ✅ COMPLETADO</a></li>
+  <li><a href="#antes-del-encuentro-6-1003-proyectos-ggplot2" id="toc-antes-del-encuentro-6-1003-proyectos-ggplot2" class="nav-link" data-scroll-target="#antes-del-encuentro-6-1003-proyectos-ggplot2">Antes del Encuentro 6 (10/03) — Proyectos + ggplot2:</a></li>
   <li><a href="#pendientes-técnicos" id="toc-pendientes-técnicos" class="nav-link" data-scroll-target="#pendientes-técnicos">Pendientes técnicos:</a></li>
   </ul></li>
   </ul></li>
@@ -249,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Estado del Curso - Intro R Ciencias Sociales</h1>
 <blockquote class="blockquote">
 <p><strong>Año del curso: 2026</strong> - Todas las fechas corresponden a este año.</p>
-<p>Última actualización: 2026-02-24</p>
+<p>Última actualización: 2026-03-03</p>
 </blockquote>
 <section id="información-general" class="level2">
 <h2 class="anchored" data-anchor-id="información-general">Información General</h2>
@@ -346,56 +350,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p><strong>Outputs generados</strong> (<code>_difusion/outputs/</code>): - <code>grafico_paises.png</code> - Barras por país - <code>grafico_profesiones.png</code> - Barras por profesión - <code>mapa_inscriptos.png</code> - Mapa de Sudamérica - <code>mapa_con_insights.png</code> - Mapa con insights (colorido) - <code>infografia_inscriptos.png</code> - Infografía 1080x1920 - <code>mapa_editorial.png</code> - Estilo editorial con colores Estación R</p>
 </section>
-<section id="calendario-actualizado-clase-4-suspendida-y-recuperada" class="level2">
-<h2 class="anchored" data-anchor-id="calendario-actualizado-clase-4-suspendida-y-recuperada">Calendario actualizado (clase 4 suspendida y recuperada)</h2>
+<section id="calendario-actualizado" class="level2">
+<h2 class="anchored" data-anchor-id="calendario-actualizado">Calendario actualizado</h2>
 <blockquote class="blockquote">
-<p><strong>Nota:</strong> La clase del 18/02 se suspendió. Se recupera el 24/02, corriendo el resto una semana.</p>
+<p><strong>Nota:</strong> La clase del 18/02 se suspendió. Se recuperó el 24/02 con contenido ajustado. El contenido real se corrió: select/filter se dieron en Encuentro 4 (no en 3).</p>
 </blockquote>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 13%">
+<col style="width: 34%">
+<col style="width: 30%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Módulo</th>
-<th>Fecha original</th>
-<th>Fecha real</th>
-<th>Tema</th>
+<th>Encuentro</th>
+<th>Fecha</th>
+<th>Tema planificado</th>
+<th>Contenido real</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
 <td>28/01</td>
-<td>28/01</td>
 <td>Intro al curso y EPH</td>
+<td>= planificado</td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td>04/02</td>
-<td>04/02</td>
 <td>Intro a R + IA</td>
+<td>= planificado</td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td>10/02</td>
-<td>10/02</td>
 <td>tidyverse I</td>
+<td>Paquetes, tidyverse, importación EPH</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>18/02</td>
-<td><strong>24/02</strong></td>
+<td>24/02</td>
 <td>tidyverse II</td>
+<td>Pipa, select(), filter()</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>25/02</td>
-<td><strong>04/03</strong></td>
-<td>Proyectos y organización</td>
+<td><strong>03/03</strong></td>
+<td>Proyectos</td>
+<td><strong>tidyverse II: mutate, summarise, group_by</strong></td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>04/03</td>
-<td><strong>11/03</strong></td>
-<td>ggplot2 + TP integrador</td>
+<td><strong>10/03</strong></td>
+<td>ggplot2 + TP</td>
+<td><strong>Proyectos + ggplot2 + TP integrador</strong></td>
 </tr>
 </tbody>
 </table>
@@ -457,15 +467,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td>5</td>
-<td>04/03</td>
-<td>Proyectos y organización</td>
-<td>🔒 Bloqueado</td>
-<td>🟡 Por adaptar</td>
+<td>03/03</td>
+<td>tidyverse II: mutate, summarise, group_by</td>
+<td>✅ Activo</td>
+<td>✅ Slides Módulo 4</td>
 </tr>
 <tr class="odd">
 <td>6</td>
-<td>11/03</td>
-<td>ggplot2 + TP integrador</td>
+<td>10/03</td>
+<td>Proyectos + ggplot2 + TP integrador</td>
 <td>🔒 Bloqueado</td>
 <td>🟡 Por adaptar</td>
 </tr>
@@ -610,19 +620,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><label><input type="checkbox" checked="">Activar Módulo 4 en <code>_quarto.yml</code></label></li>
 </ul>
 </section>
-<section id="después-del-encuentro-4-2402" class="level3">
-<h3 class="anchored" data-anchor-id="después-del-encuentro-4-2402">Después del Encuentro 4 (24/02):</h3>
+<section id="después-del-encuentro-4-2402-completado" class="level3">
+<h3 class="anchored" data-anchor-id="después-del-encuentro-4-2402-completado">Después del Encuentro 4 (24/02): ✅ COMPLETADO</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Subir grabación a la plataforma</label></li>
-<li><label><input type="checkbox">Enviar mensaje por Slack con resumen</label></li>
-<li><label><input type="checkbox">Activar Módulo 5 en el sitio</label></li>
+<li><label><input type="checkbox" checked="">Subir grabación a la plataforma (con título + descripción)</label></li>
+<li><label><input type="checkbox" checked="">Enviar mensaje por Slack con resumen y links</label></li>
+<li><label><input type="checkbox">No se activa Módulo 5 en el sitio (el próximo encuentro usa slides del Módulo 4 ya activo)</label></li>
 </ul>
 </section>
-<section id="antes-del-encuentro-5-0403" class="level3">
-<h3 class="anchored" data-anchor-id="antes-del-encuentro-5-0403">Antes del Encuentro 5 (04/03):</h3>
+<section id="antes-del-encuentro-5-0303-tidyverse-ii-completado" class="level3">
+<h3 class="anchored" data-anchor-id="antes-del-encuentro-5-0303-tidyverse-ii-completado">Antes del Encuentro 5 (03/03) — tidyverse II: ✅ COMPLETADO</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Adaptar slides de Proyectos y organización</label></li>
-<li><label><input type="checkbox">Migrar ejemplos de la carpeta <code>5-reportes/</code> al tema de proyectos</label></li>
+<li><label><input type="checkbox" checked="">Verificar que slides del Módulo 4 (<code>r-tidyverse-2.qmd</code>) estén correctas</label></li>
+<li><label><input type="checkbox" checked="">Activar ejercitación del Módulo 4 en <code>_quarto.yml</code></label></li>
+<li><label><input type="checkbox" checked="">Crear ejercitación standalone (<code>r-tidyverse-2_ejercitacion.qmd</code>)</label></li>
+<li><label><input type="checkbox" checked="">Verificar que los datos EPH estén disponibles localmente</label></li>
+<li><label><input type="checkbox" checked="">Actualizar slide de cierre (fecha 10/03, contenido Enc 6)</label></li>
+</ul>
+</section>
+<section id="antes-del-encuentro-6-1003-proyectos-ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="antes-del-encuentro-6-1003-proyectos-ggplot2">Antes del Encuentro 6 (10/03) — Proyectos + ggplot2:</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Adaptar slides de Proyectos y organización al nuevo formato</label></li>
+<li><label><input type="checkbox">Adaptar/crear slides de ggplot2</label></li>
+<li><label><input type="checkbox">Agregar TP integrador</label></li>
+<li><label><input type="checkbox">Migrar ejemplos de la carpeta <code>5-reportes/</code> si corresponde</label></li>
 </ul>
 </section>
 <section id="pendientes-técnicos" class="level3">
@@ -636,7 +658,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><label><input type="checkbox">Agregar TP integrador en Módulo 6</label></li>
 </ul>
 <hr>
-<p><em>Última actualización: 2026-02-24</em></p>
+<p><em>Última actualización: 2026-02-25</em></p>
 
 
 </section>

@@ -137,7 +137,7 @@
     "href": "encuentros/3-tidyverse/index.html#contenidos",
     "title": "Encuentro 3 - Procesando datos con tidyverse (Parte I)",
     "section": "Contenidos",
-    "text": "Contenidos\n\nImportación de datos: desde el INDEC y con el paquete {eph}\n{tidyverse}: filosofía, instalación y carga\nLa pipa (|&gt; y %&gt;%)\nselect(): seleccionar columnas por nombre, posición y patrones\nfilter(): filtrar filas con operadores de comparación\nCombinando select() + filter()"
+    "text": "Contenidos\n\nImportación de datos: desde el INDEC y con el paquete {eph}\n{tidyverse}: filosofía, instalación y carga\nLa pipa (|&gt; y %&gt;%)\nselect(): seleccionar columnas por nombre, posición y patrones\nfilter(): filtrar filas con operadores de comparación\nNovedad dplyr 1.2.0: filter_out()\nCombinando select() + filter()"
   },
   {
     "objectID": "encuentros/3-tidyverse/index.html#links-útiles",
@@ -529,7 +529,7 @@
     "href": "encuentros/4-tidyverse-2/index.html#contenidos",
     "title": "Encuentro 4 - Procesando datos con tidyverse (Parte II)",
     "section": "Contenidos",
-    "text": "Contenidos\n\nmutate(): crear y editar variables\ncase_when(): recodificar variables con condiciones\nsummarise(): resumir datos (promedios, conteos, totales)\ngroup_by() y .by: operar por grupos\nCombinando todo: pipeline completo con la EPH\nNovedad dplyr 1.2.0: filter_out()"
+    "text": "Contenidos\n\nmutate(): crear y editar variables\ncase_when(): recodificar variables con condiciones\nsummarise(): resumir datos (promedios, conteos, totales)\ngroup_by() y .by: operar por grupos\nCombinando todo: pipeline completo con la EPH"
   },
   {
     "objectID": "encuentros/4-tidyverse-2/index.html#links-útiles",
@@ -546,88 +546,452 @@
     "text": "Docente\n\nPablo Tiscornia"
   },
   {
-    "objectID": "encuentros/0-puesta-a-punto/index.html",
-    "href": "encuentros/0-puesta-a-punto/index.html",
-    "title": "Clase 0 - Puesta a punto",
+    "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html",
+    "href": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html",
+    "title": "Tidyverse, parte II - Ejercitación",
     "section": "",
-    "text": "Antes de comenzar el curso, es necesario tener instalado R y RStudio en tu computadora. Esta guía te ayudará a preparar todo lo necesario para trabajar sin problemas desde el primer encuentro.\nTiempo estimado: 30-45 minutos"
+    "text": "Preparación: Para resolver los siguientes ejercicios es necesario tener la base de la EPH individual cargada en el ambiente de R. Podés cargarla con read_csv() o con el paquete {eph}."
   },
   {
-    "objectID": "encuentros/0-puesta-a-punto/index.html#descripción",
-    "href": "encuentros/0-puesta-a-punto/index.html#descripción",
-    "title": "Clase 0 - Puesta a punto",
-    "section": "",
-    "text": "Antes de comenzar el curso, es necesario tener instalado R y RStudio en tu computadora. Esta guía te ayudará a preparar todo lo necesario para trabajar sin problemas desde el primer encuentro.\nTiempo estimado: 30-45 minutos"
+    "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html#referencia-de-variables",
+    "href": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html#referencia-de-variables",
+    "title": "Tidyverse, parte II - Ejercitación",
+    "section": "Referencia de variables",
+    "text": "Referencia de variables\n\n\n\n\n\n\n\n\nVariable\nSignificado\nValores\n\n\n\n\nCH04\nSexo\n1=Varón, 2=Mujer\n\n\nCH06\nEdad\nAños cumplidos\n\n\nESTADO\nCondición de actividad\n1=Ocupado, 2=Desocupado, 3=Inactivo, 4=Menor de 10\n\n\nNIVEL_ED\nNivel educativo\n1 a 7\n\n\nP21\nIngreso ocupación principal\nEn pesos\n\n\nREGION\nRegión estadística\n1=GBA, 40=NOA, 41=NEA, 42=Cuyo, 43=Pampeana, 44=Patagonia"
   },
   {
-    "objectID": "encuentros/0-puesta-a-punto/index.html#slides",
-    "href": "encuentros/0-puesta-a-punto/index.html#slides",
-    "title": "Clase 0 - Puesta a punto",
+    "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html#parte-1-mutate-case_when",
+    "href": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html#parte-1-mutate-case_when",
+    "title": "Tidyverse, parte II - Ejercitación",
+    "section": "Parte 1: mutate() + case_when()",
+    "text": "Parte 1: mutate() + case_when()\n\nSeleccionar las variables CH04, CH06, NIVEL_ED y ESTADO. Crear una variable llamada sexo que recodifique CH04 (1 = “Varón”, 2 = “Mujer”).\nCrear una variable grupo_actividad que agrupe ESTADO en dos categorías: “Activo” (1 y 2) y “No activo” (3 y 4). Tip: recordar el operador %in%.\nDesafío: Crear una variable mayor_de_edad que valga \"Sí\" cuando CH06 &gt;= 18 y \"No\" en caso contrario."
+  },
+  {
+    "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html#parte-2-summarise-group_by",
+    "href": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html#parte-2-summarise-group_by",
+    "title": "Tidyverse, parte II - Ejercitación",
+    "section": "Parte 2: summarise() + group_by()",
+    "text": "Parte 2: summarise() + group_by()\n\nCalcular la edad promedio y la cantidad de personas para toda la base.\nCalcular la cantidad de personas por condición de actividad (ESTADO). Tip: summarise(n = n(), .by = ESTADO).\nFiltrar la población ocupada (ESTADO == 1) con ingreso positivo (P21 &gt; 0). Calcular el ingreso promedio por región (REGION).\nDesafío: Al ejercicio anterior, agregarle una recodificación de CH04 a sexo (“Varón”/“Mujer”) y calcular el ingreso promedio por sexo y región."
+  },
+  {
+    "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html#parte-3-pipeline-completo",
+    "href": "encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html#parte-3-pipeline-completo",
+    "title": "Tidyverse, parte II - Ejercitación",
+    "section": "Parte 3: Pipeline completo",
+    "text": "Parte 3: Pipeline completo\nDesafío integrador: Construir un pipeline que, partiendo de eph_ind:\n\nFiltre a la población ocupada con ingreso positivo\nSeleccione las variables CH04, CH06, P21 y REGION\nCree las variables sexo y grupo_edad (Joven: &lt;30, Adulto: 30-49, Mayor: 50+)\nCalcule el ingreso promedio y la cantidad de personas por sexo y grupo_edad\n\nTip: combinar filter(), select(), mutate() con case_when(), y summarise() con .by."
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#contacto-con-estación-r",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#contacto-con-estación-r",
+    "title": "⚙️ Puesta a punto",
+    "section": "Contacto con Estación R",
+    "text": "Contacto con Estación R\n\n\n\n💬 Slack\n🔗 Web\n✉️ Correo\n\n🐘 Mastodon\n𝕏 X\n\n[in] LinkedIn\n[ig] Instagram"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-necesitamos",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-necesitamos",
+    "title": "⚙️ Puesta a punto",
+    "section": "¿Qué necesitamos?",
+    "text": "¿Qué necesitamos?\nPara poder trabajar en el curso necesitamos:\n\n\n1. R 📊\nEl lenguaje de programación\n\n\n\n2. RStudio 💻\nEl entorno de desarrollo (IDE)\n\n\n\n3. Paquetes 📦\nHerramientas adicionales\n\n\n\n4. Slack 💬\nPara comunicarnos"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-es-r",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-es-r",
+    "title": "⚙️ Puesta a punto",
+    "section": "¿Qué es R?",
+    "text": "¿Qué es R?\n\n\n\nR es un lenguaje de programación especializado en estadística y análisis de datos\n\n\n\n\n\nEs gratuito y de código abierto\n\n\n\n\n\nTiene una comunidad enorme de usuarios en todo el mundo\n\n\n\n\n\nIdeal para ciencias sociales, economía, salud pública, etc."
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#descargar-r",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#descargar-r",
+    "title": "⚙️ Puesta a punto",
+    "section": "Descargar R",
+    "text": "Descargar R\nPaso 1: Ir a cloud.r-project.org\n\n\nPaso 2: Elegir tu sistema operativo\n\nWindows: “Download R for Windows” → “base” → “Download R-x.x.x”\nMac: “Download R for macOS” → elegir según procesador\nLinux: Seguir instrucciones según distribución\n\n\n\n\nPaso 3: Ejecutar el instalador con opciones por defecto"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#para-usuarios-de-windows",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#para-usuarios-de-windows",
+    "title": "⚙️ Puesta a punto",
+    "section": "Para usuarios de Windows ⚠️",
+    "text": "Para usuarios de Windows ⚠️\n\nImportante: Instalar también Rtools\n\n\n👉 Ir a cran.r-project.org/bin/windows/Rtools/\n\n\n\n👉 Descargar la versión que corresponda a tu versión de R\n\n\n\n👉 Necesario para compilar algunos paquetes (como tidyverse)"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-es-rstudio",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-es-rstudio",
+    "title": "⚙️ Puesta a punto",
+    "section": "¿Qué es RStudio?",
+    "text": "¿Qué es RStudio?\n\n\nRStudio es un IDE (Entorno de Desarrollo Integrado) para R\n\n\n\nHace que trabajar con R sea mucho más fácil\n\n\n\nIncluye:\n\nEditor de código con autocompletado\nVisualizador de datos y gráficos\nGestor de archivos y proyectos\nTerminal integrada"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#descargar-rstudio",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#descargar-rstudio",
+    "title": "⚙️ Puesta a punto",
+    "section": "Descargar RStudio",
+    "text": "Descargar RStudio\n\n1. Ir a posit.co/download/rstudio-desktop/\n\n\n2. Descargar la versión gratuita “RStudio Desktop”\n\n\n\n3. Elegir tu sistema operativo\n\n\n\n4. Ejecutar el instalador"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#verificar-la-instalación",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#verificar-la-instalación",
+    "title": "⚙️ Puesta a punto",
+    "section": "Verificar la instalación",
+    "text": "Verificar la instalación\n\n1. Abrir RStudio (no R directamente)\n\n\n2. En la consola (panel inferior izquierdo), escribir:\n\nR.version.string\n\n\n\n\n3. Debería mostrar algo como:\n\"R version 4.x.x (2024-xx-xx)\""
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#conociendo-rstudio",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#conociendo-rstudio",
+    "title": "⚙️ Puesta a punto",
+    "section": "Conociendo RStudio",
+    "text": "Conociendo RStudio\nRStudio tiene 4 paneles principales:\n\n\n\n\n1. Editor (arriba izquierda)\nDonde escribimos código\n\n\n\n2. Consola (abajo izquierda)\nDonde se ejecuta el código\n\n\n\n\n3. Entorno (arriba derecha)\nObjetos en memoria\n\n\n\n4. Archivos/Plots/Ayuda (abajo derecha)\nNavegación y visualización"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#consola-vs-editor",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#consola-vs-editor",
+    "title": "⚙️ Puesta a punto",
+    "section": "Consola vs Editor",
+    "text": "Consola vs Editor\n\n\nConsola 💻\n\nEjecuta código inmediatamente\nNo guarda el código\nÚtil para pruebas rápidas\n\n\nEditor 📝\n\nGuarda el código en archivos .R\nPermite ejecutar línea por línea\nSiempre trabajar desde el editor"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-son-los-paquetes",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-son-los-paquetes",
+    "title": "⚙️ Puesta a punto",
+    "section": "¿Qué son los paquetes?",
+    "text": "¿Qué son los paquetes?\n\n\nLos paquetes son extensiones que agregan funcionalidades a R\n\n\n\nR base viene con funciones básicas\n\n\n\nLos paquetes nos dan herramientas especializadas:\n\ntidyverse para manipulación de datos\nggplot2 para visualización\nhaven para leer archivos de SPSS/Stata\neph para datos de la EPH Argentina"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#instalar-paquetes",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#instalar-paquetes",
+    "title": "⚙️ Puesta a punto",
+    "section": "Instalar paquetes",
+    "text": "Instalar paquetes\nEn la consola de RStudio:\n\n# Instalar un paquete\ninstall.packages(\"tidyverse\")\n\n\n\nSolo necesitás hacer esto una vez por paquete\n\n\n\n⏳ La instalación puede tardar algunos minutos"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#cargar-paquetes",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#cargar-paquetes",
+    "title": "⚙️ Puesta a punto",
+    "section": "Cargar paquetes",
+    "text": "Cargar paquetes\nCada vez que abras RStudio, tenés que cargar los paquetes:\n\n# Cargar el paquete\nlibrary(tidyverse)\n\n\n\nAnalogía 📚\n\n\n\nAcción\nAnalogía\n\n\n\n\nInstalar\nComprar el libro (una vez)\n\n\nCargar\nSacar el libro de la biblioteca (cada sesión)"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#paquetes-del-curso",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#paquetes-del-curso",
+    "title": "⚙️ Puesta a punto",
+    "section": "Paquetes del curso",
+    "text": "Paquetes del curso\n\n# Ecosistema tidyverse\ninstall.packages(\"tidyverse\")  # Manipulación y visualización\n# Importación de datos\ninstall.packages(\"haven\")      # Leer archivos SPSS/Stata\ninstall.packages(\"readxl\")     # Leer archivos Excel\n# Datos de Argentina\ninstall.packages(\"eph\")        # Encuesta Permanente de Hogares\n# Utilidades\ninstall.packages(\"janitor\")    # Limpieza de datos\n\n\n\n💡 También podés ejecutar el script 00-puesta_a_punto.R"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#script-de-puesta-a-punto",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#script-de-puesta-a-punto",
+    "title": "⚙️ Puesta a punto",
+    "section": "Script de puesta a punto",
+    "text": "Script de puesta a punto\nDescargá y ejecutá el script desde el sitio del curso:\n\nestacion-r.github.io/intro-r-sociales/encuentros/0-puesta-a-punto/\n\n\nEste script:\n\n✅ Verifica que R esté instalado correctamente\n✅ Instala todos los paquetes necesarios\n✅ Comprueba que todo funcione"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#comunicación-del-curso",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#comunicación-del-curso",
+    "title": "⚙️ Puesta a punto",
+    "section": "Comunicación del curso",
+    "text": "Comunicación del curso\nUsamos Slack para:\n\n\n\n\n💬 Consultas entre clases\n📎 Compartir código y recursos\n\n\n\n📢 Anuncios importantes\n👥 Comunidad de estudiantes\n\n\n\n\nDescargar: slack.com/downloads"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#unirse-al-workspace",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#unirse-al-workspace",
+    "title": "⚙️ Puesta a punto",
+    "section": "Unirse al workspace",
+    "text": "Unirse al workspace\n\n\n1. Recibirás una invitación por email\n\n\n\n2. Crear cuenta o usar una existente\n\n\n\n3. Buscar el canal #intro-r-sociales\n\n\n\n4. ¡Presentate brevemente en el canal!"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#r-no-se-encuentra",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#r-no-se-encuentra",
+    "title": "⚙️ Puesta a punto",
+    "section": "R no se encuentra",
+    "text": "R no se encuentra\nError: RStudio no detecta R\n\n\nSolución:\n\nVerificar que R esté instalado\nReinstalar R si es necesario\nEn Windows: verificar que R está en el PATH"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#error-al-instalar-paquetes",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#error-al-instalar-paquetes",
+    "title": "⚙️ Puesta a punto",
+    "section": "Error al instalar paquetes",
+    "text": "Error al instalar paquetes\nError: package 'xxx' is not available\n\n\nSoluciones:\n\n✅ Verificar conexión a internet\n✅ En Windows: instalar Rtools\n✅ Probar con otro mirror:\n\n\ninstall.packages(\"xxx\", repos = \"https://cloud.r-project.org\")"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#caracteres-especiales",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#caracteres-especiales",
+    "title": "⚙️ Puesta a punto",
+    "section": "Caracteres especiales",
+    "text": "Caracteres especiales\nError: Problemas con tildes o ñ\n\n\nSolución:\nEn RStudio ir a:\nTools → Global Options → Code → Saving → Default text encoding: UTF-8"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#checklist",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#checklist",
+    "title": "⚙️ Puesta a punto",
+    "section": "Checklist",
+    "text": "Checklist\n\n\n\n\nItem\nEstado\n\n\n\n\nR instalado (versión 4.x o superior)\n⬜\n\n\nRStudio instalado y funcionando\n⬜\n\n\nRtools instalado (solo Windows)\n⬜\n\n\nPaquete tidyverse instalado\n⬜\n\n\nSlack instalado y workspace unido\n⬜"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#probar-que-todo-funcione",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#probar-que-todo-funcione",
+    "title": "⚙️ Puesta a punto",
+    "section": "Probar que todo funcione",
+    "text": "Probar que todo funcione\nEjecutá este código en RStudio:\n\n# Cargar tidyverse\nlibrary(tidyverse)\n\n# Crear un gráfico simple\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point(color = \"#4F7CFF\", size = 3) +\n  labs(title = \"¡Todo funciona!\") +\n  theme_minimal()\n\n\n\nSi ves el gráfico, ¡estás listo/a para el curso! 🎉"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#nos-vemos-en-clase",
+    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#nos-vemos-en-clase",
+    "title": "⚙️ Puesta a punto",
+    "section": "Nos vemos en clase",
+    "text": "Nos vemos en clase\n\n\n📅 Fecha: Martes 27 de enero, 19hs (ARG)\n\n📚 Tema: Introducción al curso y a la EPH\n\n\nSi tenés problemas con la instalación, escribinos por Slack\n\n\n\n¿Preguntas? 🙋"
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/index.html",
+    "href": "encuentros/1-intro-curso-eph/index.html",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "",
+    "text": "En este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC: qué es, cómo se releva, qué mide y por qué es tan importante para las ciencias sociales en Argentina.\nNo hay ejercitación obligatoria esta semana, pero te proponemos explorar la documentación de la EPH para familiarizarte con la encuesta."
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/index.html#descripción",
+    "href": "encuentros/1-intro-curso-eph/index.html#descripción",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "",
+    "text": "En este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC: qué es, cómo se releva, qué mide y por qué es tan importante para las ciencias sociales en Argentina.\nNo hay ejercitación obligatoria esta semana, pero te proponemos explorar la documentación de la EPH para familiarizarte con la encuesta."
+  },
+  {
+    "objectID": "encuentros/1-intro-curso-eph/index.html#slides",
+    "href": "encuentros/1-intro-curso-eph/index.html#slides",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
     "section": "Slides",
     "text": "Slides"
   },
   {
-    "objectID": "encuentros/0-puesta-a-punto/index.html#pasos-a-seguir",
-    "href": "encuentros/0-puesta-a-punto/index.html#pasos-a-seguir",
-    "title": "Clase 0 - Puesta a punto",
-    "section": "Pasos a seguir",
-    "text": "Pasos a seguir\n\n1. Instalar R\nDescargar desde: cloud.r-project.org\n\nWindows: Download R for Windows → base → Download R-x.x.x\nMac: Download R for macOS → elegir según procesador\nLinux: Seguir instrucciones según distribución\n\n\n\n2. Instalar RStudio\nDescargar desde: posit.co/download/rstudio-desktop/\n\n\n3. Solo Windows: Instalar Rtools\nDescargar desde: cran.r-project.org/bin/windows/Rtools/\n\n\n4. Ejecutar script de puesta a punto\nDescargá y ejecutá el siguiente script en RStudio:\n\n# ============================================\n# SCRIPT DE PUESTA A PUNTO\n# Curso: Intro al Procesamiento de Datos con R\n# ============================================\n\n# 1. Instalar pacman (gestor de paquetes)\nif (!require(\"pacman\")) {\n  install.packages(\"pacman\")\n}\nlibrary(pacman)\n\n# 2. Instalar y cargar paquetes del curso\np_load(\n  \"tidyverse\",   # Manipulación y visualización de datos\n  \"haven\",       # Leer archivos SPSS, Stata, SAS\n  \"readxl\",      # Leer archivos Excel\n  \"janitor\",     # Limpieza de datos\n  \"eph\",         # Datos de la EPH Argentina\n  \"gt\",          # Tablas elegantes\n  \"scales\"       # Formateo de escalas\n)\n\n# 3. Verificar instalación\ncat(\"\\n✓ ¡Paquetes instalados correctamente!\\n\")\ncat(\"Versión de R:\", R.version.string, \"\\n\")\ncat(\"Versión de tidyverse:\", as.character(packageVersion(\"tidyverse\")), \"\\n\")\n\n# 4. Prueba rápida\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point(color = \"#2E86AB\", size = 3) +\n  labs(\n    title = \"¡Todo funciona!\",\n    subtitle = \"Estás listo/a para el curso\"\n  ) +\n  theme_minimal()\n\nTambién podés descargar el script directamente: 00-puesta_a_punto.R\n\n\n5. Instalar Slack\nDescargar desde: slack.com/downloads\nUnirse al workspace de Estación R con la invitación enviada por email."
+    "objectID": "encuentros/1-intro-curso-eph/index.html#contenidos",
+    "href": "encuentros/1-intro-curso-eph/index.html#contenidos",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "Contenidos",
+    "text": "Contenidos\n\nPresentación del curso y dinámica de trabajo\n¿Qué es la EPH? Contexto y objetivos\nCaracterísticas: cobertura, muestra, rotación\nLos tres cuestionarios (vivienda, hogar, individuos)\nPrincipales indicadores y clasificadores\nDocumentación oficial"
   },
   {
-    "objectID": "encuentros/0-puesta-a-punto/index.html#problemas-frecuentes",
-    "href": "encuentros/0-puesta-a-punto/index.html#problemas-frecuentes",
-    "title": "Clase 0 - Puesta a punto",
-    "section": "Problemas frecuentes",
-    "text": "Problemas frecuentes\n\nError al instalar paquetes en Windows\nSi tenés errores al instalar tidyverse, asegurate de:\n\nTener Rtools instalado\nReiniciar RStudio después de instalar Rtools\nVerificar conexión a internet\n\n\n\nRStudio no encuentra R\n\nCerrar RStudio\nVerificar que R esté instalado correctamente\nReinstalar R si es necesario\nAbrir RStudio nuevamente\n\n\n\nProblemas con caracteres especiales (tildes, ñ)\nEn RStudio: Tools → Global Options → Code → Saving → Default text encoding: UTF-8"
+    "objectID": "encuentros/1-intro-curso-eph/index.html#links-útiles",
+    "href": "encuentros/1-intro-curso-eph/index.html#links-útiles",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "section": "Links útiles",
+    "text": "Links útiles\n\nLa nueva EPH continua - Metodología (INDEC)\nDiseño de registro EPH\nCuestionarios EPH"
   },
   {
-    "objectID": "encuentros/0-puesta-a-punto/index.html#ayuda",
-    "href": "encuentros/0-puesta-a-punto/index.html#ayuda",
-    "title": "Clase 0 - Puesta a punto",
-    "section": "Ayuda",
-    "text": "Ayuda\nSi tenés problemas con la instalación:\n\nEscribinos por Slack en el canal #intro-r-sociales\nEnviá un email a pablotiscornia@estacion-r.com"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/index.html#docente",
-    "href": "encuentros/0-puesta-a-punto/index.html#docente",
-    "title": "Clase 0 - Puesta a punto",
+    "objectID": "encuentros/1-intro-curso-eph/index.html#docente",
+    "href": "encuentros/1-intro-curso-eph/index.html#docente",
+    "title": "Encuentro 1 - Introducción al curso y a la EPH",
     "section": "Docente",
     "text": "Docente\n\nPablo Tiscornia"
   },
   {
-    "objectID": "encuentros/6-TP integrador/index.html",
-    "href": "encuentros/6-TP integrador/index.html",
-    "title": "Trabajo Práctico Integrador.",
+    "objectID": "ESTADO_CURSO.html",
+    "href": "ESTADO_CURSO.html",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
     "section": "",
-    "text": "Ejercicio de análisis con tema libre. Se puede optar por elegir la base de trabajo con la que se desarrolló el curso o una propia (tip: que no sea una base muy compleja)"
+    "text": "Año del curso: 2026 - Todas las fechas corresponden a este año.\nÚltima actualización: 2026-03-03\n\n\n\n\nCurso: Introducción al Procesamiento de Datos con R para Ciencias Sociales\nInicio: Martes 28 de enero de 2026, 19hs ARG\nDuración: 6 encuentros de 2:30 hs\nAlumnos inscriptos: 16\nDocente: Pablo Tiscornia\n\n\n\n\n\nSitio del curso: https://estacion-r.github.io/intro-r-sociales/\nRepositorio: https://github.com/Estacion-R/intro-r-sociales\nInscripciones: https://estacion-r.com/courses/8c7c8213-9b25-48d2-a9a7-e58e1cc80e25/detail?type=sync\n\n\n\n\n\n\n\nPaís\nCantidad\n\n\n\n\nArgentina\n12\n\n\nPerú\n2\n\n\nChile\n1\n\n\nColombia\n1\n\n\n\nCampos laborales: Sociología (5), Ciencia Política (2), Consultoría (2), Docencia (2), Geografía (2), Salud (2), Investigación (1)\nVías de difusión: LinkedIn (8), Boca en boca (4), X/Twitter (3), Email (1)\n\n\n\nCarpeta: _difusion/\n\n\n\nArchivo\nDescripción\nEstado\n\n\n\n\ninscriptos_2026.csv\nDatos limpios (sin emails)\n✅ Listo\n\n\nviz_inscriptos.R\nGráficos básicos\n✅ Listo\n\n\nmapa_inscriptos.R\nMapa de países\n✅ Listo\n\n\nmapa_con_insights.R\nMapa con estadísticas\n✅ Listo\n\n\ninfografia_inscriptos.R\nInfografía vertical (story)\n✅ Listo\n\n\nmapa_editorial.R\nEstilo infográfico profesional\n✅ Listo\n\n\n\nOutputs generados (_difusion/outputs/): - grafico_paises.png - Barras por país - grafico_profesiones.png - Barras por profesión - mapa_inscriptos.png - Mapa de Sudamérica - mapa_con_insights.png - Mapa con insights (colorido) - infografia_inscriptos.png - Infografía 1080x1920 - mapa_editorial.png - Estilo editorial con colores Estación R\n\n\n\n\nNota: La clase del 18/02 se suspendió. Se recuperó el 24/02 con contenido ajustado. El contenido real se corrió: select/filter se dieron en Encuentro 4 (no en 3).\n\n\n\n\n\n\n\n\n\n\nEncuentro\nFecha\nTema planificado\nContenido real\n\n\n\n\n1\n28/01\nIntro al curso y EPH\n= planificado\n\n\n2\n04/02\nIntro a R + IA\n= planificado\n\n\n3\n10/02\ntidyverse I\nPaquetes, tidyverse, importación EPH\n\n\n4\n24/02\ntidyverse II\nPipa, select(), filter()\n\n\n5\n03/03\nProyectos\ntidyverse II: mutate, summarise, group_by\n\n\n6\n10/03\nggplot2 + TP\nProyectos + ggplot2 + TP integrador\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMódulo\nFecha real\nTema\nWeb\nContenido\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n✅ Nuevo formato\n\n\n1\n28/01\nIntro al curso y EPH\n✅ Activo\n✅ Nuevo formato\n\n\n2\n04/02\nIntro a R + IA\n✅ Activo\n✅ Nuevo formato\n\n\n3\n10/02\ntidyverse I\n✅ Activo\n✅ Nuevo formato (EPH)\n\n\n4\n24/02\ntidyverse II\n✅ Activo\n✅ Nuevo formato (EPH + dplyr 1.2.0)\n\n\n5\n03/03\ntidyverse II: mutate, summarise, group_by\n✅ Activo\n✅ Slides Módulo 4\n\n\n6\n10/03\nProyectos + ggplot2 + TP integrador\n🔒 Bloqueado\n🟡 Por adaptar\n\n\n\nNota: Los módulos bloqueados aparecen en el menú como “(próximamente)” sin link.\n\n\n\n\n\n\n✅ Creada desde cero con formato del curso Intro Viz\n✅ Slides: encuentros/0-puesta-a-punto/puesta-a-punto.qmd\n✅ Script R: encuentros/0-puesta-a-punto/00-puesta_a_punto.R\n✅ Index: encuentros/0-puesta-a-punto/index.qmd\n\n\n\n\n\n✅ Adaptada al nuevo formato (background colors, fragments, columns)\n✅ Agregadas slides: Programa del curso, “Página de Estación R”\n✅ Actualizado autor a Pablo Tiscornia\n\n\n\n\n\n✅ Slides nuevas: encuentros/3-tidyverse/r-tidyverse-1.qmd\n✅ Todos los ejemplos migrados de PUNA a EPH (T1 2024)\n✅ Sección nueva: Paquetes en R (qué son, install vs library)\n✅ Sección nueva: Importación de datos (INDEC manual + paquete eph)\n✅ Contenido dividido: tidyverse I (pipa, select, filter) / tidyverse II (mutate, summarise, group_by)\n✅ Ejercitación actualizada con consignas EPH\n✅ index.qmd actualizado (docente, links, descripción)\n✅ Módulo 3 activado en _quarto.yml (encuentro + ejercitación)\n✅ Verificación pedagógica: todos los conceptos usados fueron presentados previamente\n✅ Datos EPH descargados localmente (28MB, gitignored)\n\n\n\n\n\n✅ Slides nuevas: encuentros/4-tidyverse-2/r-tidyverse-2.qmd\n✅ Todos los ejemplos con EPH (continuidad con Clase 3)\n✅ Incorpora novedades de dplyr 1.2.0 (feb 2026):\n\n.by como alternativa moderna a group_by() (ahora estable)\nfilter_out() como tip (requiere actualizar dplyr)\n\n✅ Estructura: mutate → case_when → summarise → group_by/.by → pipeline completo\n✅ Ejercitaciones integradas en slides\n✅ index.qmd creado con descripción y links\n✅ Módulo 4 activado en _quarto.yml\n✅ Verificación pedagógica: solo usa conceptos de módulos anteriores + los nuevos de este módulo\n\n\n\n\n\n✅ Sistema de encuentros activos/bloqueados en _quarto.yml\n✅ Ejercitaciones bloqueadas hasta que se dicten\n✅ Archivo ENCUENTROS_STATUS.md para tracking\n✅ Foto del docente actualizada en todas las carpetas\n\n\n\n\n\n\nEditar _quarto.yml:\n# Cambiar de:\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n# A:\n- text: \"Módulo 2: Intro a R + IA\"\n  href: encuentros/1-intro-r/index.qmd\nHacer lo mismo con la ejercitación correspondiente\nActualizar ENCUENTROS_STATUS.md\nEjecutar:\nquarto render\ngit add -A && git commit -m \"Activar Módulo X\" && git push\n\n\n\n\nformat:\n  revealjs:\n    theme: [default, ../1-intro-r/intro-r.scss]\n    slide-number: true\n    embed-resources: true\n    navigation-mode: vertical\n    width: 1280\n    height: 720\nBackground colors: - Secciones principales: {background-color=\"#4F7CFF\"} (azul) - Secciones secundarias: {background-color=\"#F5F5F5\"} (gris) - Ejercicios/destacados: {background-color=\"#D4FF4F\"} (verde lima)\nFragments:\n::: {.fragment .fade-in-then-semi-out}\nContenido animado\n:::\n\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen y links\nActivar Módulo 2 en el sitio\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen y recursos\n\n\n\n\n\nActivar Módulo 3 en el sitio\nAdaptar slides de tidyverse I al nuevo formato\nMigrar ejemplos de PUNA a EPH\nAgregar sección de importación de datos\nAgregar sección de paquetes en R\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen\nActivar Módulo 4 en el sitio\n\n\n\n\n\nAdaptar slides de tidyverse II con EPH\nIncorporar novedades dplyr 1.2.0 (.by, filter_out())\nCrear carpeta encuentros/4-tidyverse-2/ con nuevo formato\nActivar Módulo 4 en _quarto.yml\n\n\n\n\n\nSubir grabación a la plataforma (con título + descripción)\nEnviar mensaje por Slack con resumen y links\nNo se activa Módulo 5 en el sitio (el próximo encuentro usa slides del Módulo 4 ya activo)\n\n\n\n\n\nVerificar que slides del Módulo 4 (r-tidyverse-2.qmd) estén correctas\nActivar ejercitación del Módulo 4 en _quarto.yml\nCrear ejercitación standalone (r-tidyverse-2_ejercitacion.qmd)\nVerificar que los datos EPH estén disponibles localmente\nActualizar slide de cierre (fecha 10/03, contenido Enc 6)\n\n\n\n\n\nAdaptar slides de Proyectos y organización al nuevo formato\nAdaptar/crear slides de ggplot2\nAgregar TP integrador\nMigrar ejemplos de la carpeta 5-reportes/ si corresponde\n\n\n\n\n\nAdaptar Módulo 2 al nuevo formato de slides\nAdaptar Módulo 3 al nuevo formato de slides\nAdaptar Módulo 4 al nuevo formato de slides\nAdaptar Módulos 5-6 al nuevo formato de slides\nVerificar ejercitaciones actualizadas\nAgregar TP integrador en Módulo 6\n\n\nÚltima actualización: 2026-02-25"
   },
   {
-    "objectID": "encuentros/6-TP integrador/index.html#tema",
-    "href": "encuentros/6-TP integrador/index.html#tema",
-    "title": "Trabajo Práctico Integrador.",
+    "objectID": "ESTADO_CURSO.html#información-general",
+    "href": "ESTADO_CURSO.html#información-general",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
     "section": "",
-    "text": "Ejercicio de análisis con tema libre. Se puede optar por elegir la base de trabajo con la que se desarrolló el curso o una propia (tip: que no sea una base muy compleja)"
+    "text": "Curso: Introducción al Procesamiento de Datos con R para Ciencias Sociales\nInicio: Martes 28 de enero de 2026, 19hs ARG\nDuración: 6 encuentros de 2:30 hs\nAlumnos inscriptos: 16\nDocente: Pablo Tiscornia"
   },
   {
-    "objectID": "encuentros/6-TP integrador/index.html#eje-de-análisis",
-    "href": "encuentros/6-TP integrador/index.html#eje-de-análisis",
-    "title": "Trabajo Práctico Integrador.",
-    "section": "Eje de análisis:",
-    "text": "Eje de análisis:\nPlanteo de una pregunta sobre el tema elegido y abordaje de la respuesta con datos."
+    "objectID": "ESTADO_CURSO.html#urls",
+    "href": "ESTADO_CURSO.html#urls",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
+    "section": "",
+    "text": "Sitio del curso: https://estacion-r.github.io/intro-r-sociales/\nRepositorio: https://github.com/Estacion-R/intro-r-sociales\nInscripciones: https://estacion-r.com/courses/8c7c8213-9b25-48d2-a9a7-e58e1cc80e25/detail?type=sync"
   },
   {
-    "objectID": "encuentros/6-TP integrador/index.html#contenido-esperado",
-    "href": "encuentros/6-TP integrador/index.html#contenido-esperado",
-    "title": "Trabajo Práctico Integrador.",
-    "section": "Contenido esperado:",
-    "text": "Contenido esperado:\n\nPlanteo de la pregunta (sencilla).\nrmarkdown con el recorrido de lo visto en el curso:\n\nImportación (por ejemplo: read.csv(), read.table(), o aquellas de los paquetes data.table, readxl, readr, haven, foreign, entre otros). También podemos optar por el paquete {eph} y su función para descargar una base de datos get_microdata().\nLimpieza, tratamiento y transformación de datos con tidyverse (por ejemplo: filter(), select(), mutate(), group_by(), summarise()).\nVisualización de la información con ggplot() y al menos uno o dos gráficos con el geom_ a elección (focalizamos en geom_col()).\n\nBreve análisis de los hallazgos identificados o del proceso mismo del flujo de trabajo."
+    "objectID": "ESTADO_CURSO.html#inscriptos---resumen-16-total",
+    "href": "ESTADO_CURSO.html#inscriptos---resumen-16-total",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
+    "section": "",
+    "text": "País\nCantidad\n\n\n\n\nArgentina\n12\n\n\nPerú\n2\n\n\nChile\n1\n\n\nColombia\n1\n\n\n\nCampos laborales: Sociología (5), Ciencia Política (2), Consultoría (2), Docencia (2), Geografía (2), Salud (2), Investigación (1)\nVías de difusión: LinkedIn (8), Boca en boca (4), X/Twitter (3), Email (1)"
   },
   {
-    "objectID": "encuentros/6-TP integrador/index.html#formato-de-entrega",
-    "href": "encuentros/6-TP integrador/index.html#formato-de-entrega",
-    "title": "Trabajo Práctico Integrador.",
-    "section": "Formato de entrega:",
-    "text": "Formato de entrega:\nEnviar un proyecto de Rstudio (la carpeta completa, con sus subcarpetas y archivos), que contenga el informe elaborado con Rmarkdown. Lo que se evaluará es el flujo de trabajo recorrido y que, al final, el Rmarkdown corra sin problema.\nPueden crear una carpeta en Google Drive (o espacio en la nube a gusto) y enviarme el link con el permiso de acceso para el correo federicobaraghian@gmail.com).\nEn el desarrollo del informe es necesario realizar una breve conclusión respecto a los resultados obtenidos, tanto en lo que refiere a la información producida como a lo enfrentado durante el procesamiento de datos.\n\nEnviar a federicobaraghian@gmail.com\nFecha de entrega: Hasta el 17/11/2025.\nSeguimiento del trabajo: El slack quedará abierto para que podamos intercambiar y realizar consultas para completar la actividad, no duden en usarlo!"
+    "objectID": "ESTADO_CURSO.html#material-de-difusión",
+    "href": "ESTADO_CURSO.html#material-de-difusión",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
+    "section": "",
+    "text": "Carpeta: _difusion/\n\n\n\nArchivo\nDescripción\nEstado\n\n\n\n\ninscriptos_2026.csv\nDatos limpios (sin emails)\n✅ Listo\n\n\nviz_inscriptos.R\nGráficos básicos\n✅ Listo\n\n\nmapa_inscriptos.R\nMapa de países\n✅ Listo\n\n\nmapa_con_insights.R\nMapa con estadísticas\n✅ Listo\n\n\ninfografia_inscriptos.R\nInfografía vertical (story)\n✅ Listo\n\n\nmapa_editorial.R\nEstilo infográfico profesional\n✅ Listo\n\n\n\nOutputs generados (_difusion/outputs/): - grafico_paises.png - Barras por país - grafico_profesiones.png - Barras por profesión - mapa_inscriptos.png - Mapa de Sudamérica - mapa_con_insights.png - Mapa con insights (colorido) - infografia_inscriptos.png - Infografía 1080x1920 - mapa_editorial.png - Estilo editorial con colores Estación R"
+  },
+  {
+    "objectID": "ESTADO_CURSO.html#calendario-actualizado",
+    "href": "ESTADO_CURSO.html#calendario-actualizado",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
+    "section": "",
+    "text": "Nota: La clase del 18/02 se suspendió. Se recuperó el 24/02 con contenido ajustado. El contenido real se corrió: select/filter se dieron en Encuentro 4 (no en 3).\n\n\n\n\n\n\n\n\n\n\nEncuentro\nFecha\nTema planificado\nContenido real\n\n\n\n\n1\n28/01\nIntro al curso y EPH\n= planificado\n\n\n2\n04/02\nIntro a R + IA\n= planificado\n\n\n3\n10/02\ntidyverse I\nPaquetes, tidyverse, importación EPH\n\n\n4\n24/02\ntidyverse II\nPipa, select(), filter()\n\n\n5\n03/03\nProyectos\ntidyverse II: mutate, summarise, group_by\n\n\n6\n10/03\nggplot2 + TP\nProyectos + ggplot2 + TP integrador"
+  },
+  {
+    "objectID": "ESTADO_CURSO.html#estado-de-encuentros-en-el-sitio-web",
+    "href": "ESTADO_CURSO.html#estado-de-encuentros-en-el-sitio-web",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
+    "section": "",
+    "text": "Módulo\nFecha real\nTema\nWeb\nContenido\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n✅ Nuevo formato\n\n\n1\n28/01\nIntro al curso y EPH\n✅ Activo\n✅ Nuevo formato\n\n\n2\n04/02\nIntro a R + IA\n✅ Activo\n✅ Nuevo formato\n\n\n3\n10/02\ntidyverse I\n✅ Activo\n✅ Nuevo formato (EPH)\n\n\n4\n24/02\ntidyverse II\n✅ Activo\n✅ Nuevo formato (EPH + dplyr 1.2.0)\n\n\n5\n03/03\ntidyverse II: mutate, summarise, group_by\n✅ Activo\n✅ Slides Módulo 4\n\n\n6\n10/03\nProyectos + ggplot2 + TP integrador\n🔒 Bloqueado\n🟡 Por adaptar\n\n\n\nNota: Los módulos bloqueados aparecen en el menú como “(próximamente)” sin link."
+  },
+  {
+    "objectID": "ESTADO_CURSO.html#tareas-completadas-esta-sesión",
+    "href": "ESTADO_CURSO.html#tareas-completadas-esta-sesión",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
+    "section": "",
+    "text": "✅ Creada desde cero con formato del curso Intro Viz\n✅ Slides: encuentros/0-puesta-a-punto/puesta-a-punto.qmd\n✅ Script R: encuentros/0-puesta-a-punto/00-puesta_a_punto.R\n✅ Index: encuentros/0-puesta-a-punto/index.qmd\n\n\n\n\n\n✅ Adaptada al nuevo formato (background colors, fragments, columns)\n✅ Agregadas slides: Programa del curso, “Página de Estación R”\n✅ Actualizado autor a Pablo Tiscornia\n\n\n\n\n\n✅ Slides nuevas: encuentros/3-tidyverse/r-tidyverse-1.qmd\n✅ Todos los ejemplos migrados de PUNA a EPH (T1 2024)\n✅ Sección nueva: Paquetes en R (qué son, install vs library)\n✅ Sección nueva: Importación de datos (INDEC manual + paquete eph)\n✅ Contenido dividido: tidyverse I (pipa, select, filter) / tidyverse II (mutate, summarise, group_by)\n✅ Ejercitación actualizada con consignas EPH\n✅ index.qmd actualizado (docente, links, descripción)\n✅ Módulo 3 activado en _quarto.yml (encuentro + ejercitación)\n✅ Verificación pedagógica: todos los conceptos usados fueron presentados previamente\n✅ Datos EPH descargados localmente (28MB, gitignored)\n\n\n\n\n\n✅ Slides nuevas: encuentros/4-tidyverse-2/r-tidyverse-2.qmd\n✅ Todos los ejemplos con EPH (continuidad con Clase 3)\n✅ Incorpora novedades de dplyr 1.2.0 (feb 2026):\n\n.by como alternativa moderna a group_by() (ahora estable)\nfilter_out() como tip (requiere actualizar dplyr)\n\n✅ Estructura: mutate → case_when → summarise → group_by/.by → pipeline completo\n✅ Ejercitaciones integradas en slides\n✅ index.qmd creado con descripción y links\n✅ Módulo 4 activado en _quarto.yml\n✅ Verificación pedagógica: solo usa conceptos de módulos anteriores + los nuevos de este módulo\n\n\n\n\n\n✅ Sistema de encuentros activos/bloqueados en _quarto.yml\n✅ Ejercitaciones bloqueadas hasta que se dicten\n✅ Archivo ENCUENTROS_STATUS.md para tracking\n✅ Foto del docente actualizada en todas las carpetas"
+  },
+  {
+    "objectID": "ESTADO_CURSO.html#cómo-activar-un-módulo-después-de-cada-clase",
+    "href": "ESTADO_CURSO.html#cómo-activar-un-módulo-después-de-cada-clase",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
+    "section": "",
+    "text": "Editar _quarto.yml:\n# Cambiar de:\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n# A:\n- text: \"Módulo 2: Intro a R + IA\"\n  href: encuentros/1-intro-r/index.qmd\nHacer lo mismo con la ejercitación correspondiente\nActualizar ENCUENTROS_STATUS.md\nEjecutar:\nquarto render\ngit add -A && git commit -m \"Activar Módulo X\" && git push"
+  },
+  {
+    "objectID": "ESTADO_CURSO.html#formato-de-presentaciones-nuevo-estilo",
+    "href": "ESTADO_CURSO.html#formato-de-presentaciones-nuevo-estilo",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
+    "section": "",
+    "text": "format:\n  revealjs:\n    theme: [default, ../1-intro-r/intro-r.scss]\n    slide-number: true\n    embed-resources: true\n    navigation-mode: vertical\n    width: 1280\n    height: 720\nBackground colors: - Secciones principales: {background-color=\"#4F7CFF\"} (azul) - Secciones secundarias: {background-color=\"#F5F5F5\"} (gris) - Ejercicios/destacados: {background-color=\"#D4FF4F\"} (verde lima)\nFragments:\n::: {.fragment .fade-in-then-semi-out}\nContenido animado\n:::"
+  },
+  {
+    "objectID": "ESTADO_CURSO.html#próximos-pasos",
+    "href": "ESTADO_CURSO.html#próximos-pasos",
+    "title": "Estado del Curso - Intro R Ciencias Sociales",
+    "section": "",
+    "text": "Subir grabación a la plataforma\nEnviar mensaje por Slack con resumen y links\nActivar Módulo 2 en el sitio\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen y recursos\n\n\n\n\n\nActivar Módulo 3 en el sitio\nAdaptar slides de tidyverse I al nuevo formato\nMigrar ejemplos de PUNA a EPH\nAgregar sección de importación de datos\nAgregar sección de paquetes en R\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen\nActivar Módulo 4 en el sitio\n\n\n\n\n\nAdaptar slides de tidyverse II con EPH\nIncorporar novedades dplyr 1.2.0 (.by, filter_out())\nCrear carpeta encuentros/4-tidyverse-2/ con nuevo formato\nActivar Módulo 4 en _quarto.yml\n\n\n\n\n\nSubir grabación a la plataforma (con título + descripción)\nEnviar mensaje por Slack con resumen y links\nNo se activa Módulo 5 en el sitio (el próximo encuentro usa slides del Módulo 4 ya activo)\n\n\n\n\n\nVerificar que slides del Módulo 4 (r-tidyverse-2.qmd) estén correctas\nActivar ejercitación del Módulo 4 en _quarto.yml\nCrear ejercitación standalone (r-tidyverse-2_ejercitacion.qmd)\nVerificar que los datos EPH estén disponibles localmente\nActualizar slide de cierre (fecha 10/03, contenido Enc 6)\n\n\n\n\n\nAdaptar slides de Proyectos y organización al nuevo formato\nAdaptar/crear slides de ggplot2\nAgregar TP integrador\nMigrar ejemplos de la carpeta 5-reportes/ si corresponde\n\n\n\n\n\nAdaptar Módulo 2 al nuevo formato de slides\nAdaptar Módulo 3 al nuevo formato de slides\nAdaptar Módulo 4 al nuevo formato de slides\nAdaptar Módulos 5-6 al nuevo formato de slides\nVerificar ejercitaciones actualizadas\nAgregar TP integrador en Módulo 6\n\n\nÚltima actualización: 2026-02-25"
+  },
+  {
+    "objectID": "CLAUDE.html",
+    "href": "CLAUDE.html",
+    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
+    "section": "",
+    "text": "Año del curso: 2026\nTodas las fechas de este curso corresponden al año 2026. Al trabajar con fechas: - El curso inició el 28 de enero de 2026 - Las clases son los martes a las 19hs ARG - Verificar siempre el calendario 2026 para fechas correctas\n\n\n\n\n\n\nEncuentro\nFecha\nTema\n\n\n\n\n1\n28/01\nIntro al curso y EPH\n\n\n2\n04/02\nIntro a R + IA\n\n\n3\n10/02\ntidyverse I (paquetes, importación EPH)\n\n\n4\n24/02\ntidyverse I cont. (pipa, select, filter)\n\n\n5\n04/03\ntidyverse II (mutate, summarise, group_by)\n\n\n6\n11/03\nProyectos + ggplot2 + TP integrador\n\n\n\n\n\n\n\nFuente única de verdad para fechas: La tabla “Calendario de encuentros” de este archivo\nAntes de comunicar fechas a alumnos: SIEMPRE verificar contra el calendario de arriba\nSi hay discrepancia entre archivos: Este CLAUDE.md tiene prioridad, corregir el otro archivo\nESTADO_CURSO.md: Archivo operativo para tareas, pero fechas canónicas están aquí\n\n\n\n\n\nESTADO_CURSO.md - Estado actual y próximos pasos (fechas referencian a CLAUDE.md)\n_quarto.yml - Configuración del sitio (activar/bloquear módulos)\nencuentros/ - Carpetas de cada módulo\n\n\n\n\n\nPresentaciones en formato Quarto revealjs\nColores de fondo: azul #4F7CFF, gris #F5F5F5, verde lima #D4FF4F\nUsar fragments para animaciones"
+  },
+  {
+    "objectID": "CLAUDE.html#contexto-temporal",
+    "href": "CLAUDE.html#contexto-temporal",
+    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
+    "section": "",
+    "text": "Año del curso: 2026\nTodas las fechas de este curso corresponden al año 2026. Al trabajar con fechas: - El curso inició el 28 de enero de 2026 - Las clases son los martes a las 19hs ARG - Verificar siempre el calendario 2026 para fechas correctas"
+  },
+  {
+    "objectID": "CLAUDE.html#calendario-de-encuentros-2026",
+    "href": "CLAUDE.html#calendario-de-encuentros-2026",
+    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
+    "section": "",
+    "text": "Encuentro\nFecha\nTema\n\n\n\n\n1\n28/01\nIntro al curso y EPH\n\n\n2\n04/02\nIntro a R + IA\n\n\n3\n10/02\ntidyverse I (paquetes, importación EPH)\n\n\n4\n24/02\ntidyverse I cont. (pipa, select, filter)\n\n\n5\n04/03\ntidyverse II (mutate, summarise, group_by)\n\n\n6\n11/03\nProyectos + ggplot2 + TP integrador"
+  },
+  {
+    "objectID": "CLAUDE.html#reglas-de-consistencia",
+    "href": "CLAUDE.html#reglas-de-consistencia",
+    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
+    "section": "",
+    "text": "Fuente única de verdad para fechas: La tabla “Calendario de encuentros” de este archivo\nAntes de comunicar fechas a alumnos: SIEMPRE verificar contra el calendario de arriba\nSi hay discrepancia entre archivos: Este CLAUDE.md tiene prioridad, corregir el otro archivo\nESTADO_CURSO.md: Archivo operativo para tareas, pero fechas canónicas están aquí"
+  },
+  {
+    "objectID": "CLAUDE.html#archivos-importantes",
+    "href": "CLAUDE.html#archivos-importantes",
+    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
+    "section": "",
+    "text": "ESTADO_CURSO.md - Estado actual y próximos pasos (fechas referencian a CLAUDE.md)\n_quarto.yml - Configuración del sitio (activar/bloquear módulos)\nencuentros/ - Carpetas de cada módulo"
+  },
+  {
+    "objectID": "CLAUDE.html#convenciones",
+    "href": "CLAUDE.html#convenciones",
+    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
+    "section": "",
+    "text": "Presentaciones en formato Quarto revealjs\nColores de fondo: azul #4F7CFF, gris #F5F5F5, verde lima #D4FF4F\nUsar fragments para animaciones"
+  },
+  {
+    "objectID": "APRENDIZAJES_CURSO.html",
+    "href": "APRENDIZAJES_CURSO.html",
+    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "section": "",
+    "text": "Este archivo documenta patrones, flujos y decisiones del curso “Intro al Procesamiento de Datos con R” para sistematizar en un agente de gestión de cursos.\n\n\n\n\n\n\n\nActivar módulo en _quarto.yml (agregar href)\nActivar ejercitación correspondiente\nRenderizar sitio: quarto render\nCommit y push a GitHub\nVerificar que el sitio esté actualizado\n\n\n\n\n\nSubir grabación a la plataforma (estacion-r.com)\nCargar descripción en plataforma con links relevantes\nEnviar mensaje en Slack (ver plantilla abajo)\nActualizar ENCUENTROS_STATUS.md\n\n\n\n\n# En _quarto.yml, cambiar de:\n- text: \"Módulo X: Nombre (próximamente)\"\n\n# A:\n- text: \"Módulo X: Nombre\"\n  href: encuentros/X-carpeta/index.qmd\n\n\n\n\n\n\n\nEjemplo validado (Encuentro 1):\nHola @canal\n\n¡Felicitaciones por haber arrancado con éxito el primer encuentro! De acá en adelante todo se pone un poco más divertido.\n\nLes aviso que ya está cargado el video en la plataforma: https://estacion-r.com/\nDesde ahí también van a poder acceder a todos los materiales. Aprovecho a dejar el link de la página del curso:\n\n:point_right: https://estacion-r.github.io/intro-r-sociales/\n\nImportante: si todavía no instalaron R y RStudio, háganlo antes del martes. En la página está la guía \"Puesta a punto\" con los pasos. Para quienes ya lo hicieron, les sugiero empezar a \"jugar\" con la consola y el script, así el próximo encuentro se hace más natural la interacción con el programa.\n\nPróximo encuentro: martes 4/2, 19hs - arrancamos a programar.\n\nCualquier duda, escriban por acá.\n¡Buena semana!\nNotas de estilo Slack: - Arranca con @canal - Tono directo pero cálido - Sin negritas de markdown (Slack usa su propio formato) - Emoji puntual (:point_right:, no abusar) - Cierre simple (“¡Buena semana!”) - Sin firma (ya saben quién escribe)\n\n\n\nEjemplo validado (Encuentro 1):\n## Encuentro 1: Introducción al curso y a la EPH\n\nEn este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC.\n\n### Links del encuentro\n\n- Página del curso: https://estacion-r.github.io/intro-r-sociales/\n- Slides del Encuentro 1: https://estacion-r.github.io/intro-r-sociales/encuentros/1-intro-curso-eph/intro-curso-eph.html\n- Puesta a punto (instalación): https://estacion-r.github.io/intro-r-sociales/encuentros/0-puesta-a-punto/\n\n### Documentación EPH (INDEC)\n\n- Cuestionario Individual: [link]\n- Cuestionario Hogar: [link]\n- Diseño de registro: [link]\n- Metodología EPH Continua: [link]\n\n### Ejercicio sugerido\n\nExplorar alguno de los cuestionarios de la EPH e identificar preguntas relacionadas con situación laboral, nivel educativo e ingresos.\n\n### Próximo encuentro\n\nMartes 4 de febrero, 19hs (ARG) - Introducción a R + IA en el análisis de datos\n\n¿Dudas? Escribinos por Slack\n\n\n\n\n\n\n\n\nDirecto pero cálido: No ser frío, pero tampoco cursi\nDescriptivo en primeros mensajes: Explicar dónde encontrar las cosas\nProgresivamente más breve: A medida que avanzan los encuentros, menos explicación de navegación\nAccionable: Siempre dejar claro qué deben hacer antes del próximo encuentro\n\n\n\n\n\nFrases como “¡Qué lindo fue conocerlos!”\n“No hay preguntas tontas”\nExceso de emojis\nFirmar cada mensaje (en Slack ya saben quién es)\n\n\n\n\n\n“¡Felicitaciones por…” (celebrar avances)\n“Les aviso que…” (informar sin rodeos)\n“Importante:” (destacar acciones necesarias)\n“Cualquier duda, escriban por acá” (cerrar con disponibilidad)\n\n\n\n\n\n\n\n\nformat:\n  revealjs:\n    theme: [default, ../1-intro-r/intro-r.scss]\n    slide-number: true\n    embed-resources: true\n    navigation-mode: vertical\n    width: 1280\n    height: 720\n\n\n\n\n\n\nTipo\nColor\nCódigo\n\n\n\n\nSección principal\nAzul\n#4F7CFF\n\n\nSección secundaria\nGris claro\n#F5F5F5\n\n\nEjercicio/destacado\nVerde lima\n#D4FF4F\n\n\n\n\n\n\n\nItems sin href en _quarto.yml aparecen como texto gris no clicable\nAgregar “(próximamente)” al texto del item bloqueado\nMantener tracking en ENCUENTROS_STATUS.md\n\n\n\n\n\n\n\n\nTema: Introducción al curso y a la EPH\nAcciones realizadas: - [x] Slides adaptadas al nuevo formato - [x] Slides de programa y “Página de Estación R” agregadas - [x] Grabación subida a plataforma - [x] Descripción cargada en plataforma - [x] Mensaje Slack enviado - [x] Foto docente actualizada\nMensaje Slack validado: Ver sección 2\n\n\n\nTema: Introducción a R + IA en el análisis de datos\nPreparación realizada (2026-02-03): - [x] Slides creadas desde cero con nuevo formato - [x] Contenido sobre R, RStudio, consola, scripts - [x] Sección de IA en el análisis de datos - [x] Ejercitación creada (intro-r-ia_ejercitacion.qmd) - [x] Módulo 2 activado en navegación del sitio - [x] Push a GitHub realizado\nEstructura de la presentación: 1. Bienvenida y repaso Encuentro 1 2. Introducción a R (qué es, para qué sirve) 3. RStudio: entorno de trabajo 4. La consola y el script 5. Tipos de datos básicos 6. IA en el análisis de datos 7. Cierre y próximos pasos\nDecisiones técnicas: - Presentación usa intro-r.scss (CSS compartido) - Imágenes almacenadas en images/ local - Audio de ejemplo para engagement (inst_adlibs_birdman1.wav)\n\n\n\n\n\n\n\n\nEl formato de slides del curso Intro Viz funciona bien como plantilla\nLos estudiantes necesitan instrucciones claras de navegación en el primer mensaje\nEl sistema de “(próximamente)” en el menú funciona para generar expectativa sin dar acceso\nImportante separar el archivo de tracking (ENCUENTROS_STATUS.md) del contexto general (ESTADO_CURSO.md)\nEl tono “personal pero no cursi” es el punto justo para comunicación con alumnos\n\n\n\n\n\nWorkflow de preparación pre-clase funciona: crear contenido → activar módulo → render → push\nEl CSS compartido (intro-r.scss) facilita consistencia visual entre módulos\nLos archivos de gestión (ESTADO_CURSO.md, APRENDIZAJES_CURSO.md, ENCUENTROS_STATUS.md) mantienen el tracking ordenado\nSistema de 3 archivos de documentación es escalable:\n\nESTADO_CURSO.md: qué hay que hacer (operativo)\nAPRENDIZAJES_CURSO.md: qué aprendimos (retrospectivo)\nENCUENTROS_STATUS.md: qué está activo (técnico)\n\nLa estructura de carpetas por encuentro (encuentros/N-nombre/) es clara y replicable\n\n\n\n\n\n\n\n\n\nGenerar mensaje de Slack post-encuentro con plantilla validada\nGenerar descripción para plataforma de videos\nActivar/desactivar módulos en _quarto.yml\nRenderizar y deployar sitio\nTrackear estado de cada encuentro\nRecordar estilo de comunicación del docente\n\n\n\n\n\nNúmero de encuentro\nFecha del próximo encuentro\nTema del próximo encuentro\nAcción específica que deben hacer los alumnos\nLinks relevantes del encuentro\n\n\n\n\n\n_quarto.yml (menú de navegación)\nENCUENTROS_STATUS.md (estado de módulos)\nESTADO_CURSO.md (contexto general)\nAPRENDIZAJES_CURSO.md (este archivo)\n\n\n\n\n\n\n\n\nPENDIENTE para futuro: Crear un template estandarizado de curso basado en esta estructura.\n\nComponentes del template: - Sistema de 3+1 archivos de documentación (CLAUDE, ESTADO, ENCUENTROS, APRENDIZAJES) - _quarto.yml con sistema de módulos bloqueados - Estructura de carpetas encuentros/N-nombre/ - CSS compartido para slides (slides.scss) - Checklists de setup, por-encuentro y cierre\nLimpiar antes de crear template: - Archivos index_ACTIVAR.qmd con contenido genérico - URLs antiguas (intro-r-quarto → intro-r-sociales) - Carpetas legacy duplicadas\n\nÚltima actualización: 2026-02-03"
+  },
+  {
+    "objectID": "APRENDIZAJES_CURSO.html#flujos-de-trabajo",
+    "href": "APRENDIZAJES_CURSO.html#flujos-de-trabajo",
+    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "section": "",
+    "text": "Activar módulo en _quarto.yml (agregar href)\nActivar ejercitación correspondiente\nRenderizar sitio: quarto render\nCommit y push a GitHub\nVerificar que el sitio esté actualizado\n\n\n\n\n\nSubir grabación a la plataforma (estacion-r.com)\nCargar descripción en plataforma con links relevantes\nEnviar mensaje en Slack (ver plantilla abajo)\nActualizar ENCUENTROS_STATUS.md\n\n\n\n\n# En _quarto.yml, cambiar de:\n- text: \"Módulo X: Nombre (próximamente)\"\n\n# A:\n- text: \"Módulo X: Nombre\"\n  href: encuentros/X-carpeta/index.qmd"
+  },
+  {
+    "objectID": "APRENDIZAJES_CURSO.html#plantillas-de-comunicación",
+    "href": "APRENDIZAJES_CURSO.html#plantillas-de-comunicación",
+    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "section": "",
+    "text": "Ejemplo validado (Encuentro 1):\nHola @canal\n\n¡Felicitaciones por haber arrancado con éxito el primer encuentro! De acá en adelante todo se pone un poco más divertido.\n\nLes aviso que ya está cargado el video en la plataforma: https://estacion-r.com/\nDesde ahí también van a poder acceder a todos los materiales. Aprovecho a dejar el link de la página del curso:\n\n:point_right: https://estacion-r.github.io/intro-r-sociales/\n\nImportante: si todavía no instalaron R y RStudio, háganlo antes del martes. En la página está la guía \"Puesta a punto\" con los pasos. Para quienes ya lo hicieron, les sugiero empezar a \"jugar\" con la consola y el script, así el próximo encuentro se hace más natural la interacción con el programa.\n\nPróximo encuentro: martes 4/2, 19hs - arrancamos a programar.\n\nCualquier duda, escriban por acá.\n¡Buena semana!\nNotas de estilo Slack: - Arranca con @canal - Tono directo pero cálido - Sin negritas de markdown (Slack usa su propio formato) - Emoji puntual (:point_right:, no abusar) - Cierre simple (“¡Buena semana!”) - Sin firma (ya saben quién escribe)\n\n\n\nEjemplo validado (Encuentro 1):\n## Encuentro 1: Introducción al curso y a la EPH\n\nEn este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC.\n\n### Links del encuentro\n\n- Página del curso: https://estacion-r.github.io/intro-r-sociales/\n- Slides del Encuentro 1: https://estacion-r.github.io/intro-r-sociales/encuentros/1-intro-curso-eph/intro-curso-eph.html\n- Puesta a punto (instalación): https://estacion-r.github.io/intro-r-sociales/encuentros/0-puesta-a-punto/\n\n### Documentación EPH (INDEC)\n\n- Cuestionario Individual: [link]\n- Cuestionario Hogar: [link]\n- Diseño de registro: [link]\n- Metodología EPH Continua: [link]\n\n### Ejercicio sugerido\n\nExplorar alguno de los cuestionarios de la EPH e identificar preguntas relacionadas con situación laboral, nivel educativo e ingresos.\n\n### Próximo encuentro\n\nMartes 4 de febrero, 19hs (ARG) - Introducción a R + IA en el análisis de datos\n\n¿Dudas? Escribinos por Slack"
+  },
+  {
+    "objectID": "APRENDIZAJES_CURSO.html#estilo-de-comunicación",
+    "href": "APRENDIZAJES_CURSO.html#estilo-de-comunicación",
+    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "section": "",
+    "text": "Directo pero cálido: No ser frío, pero tampoco cursi\nDescriptivo en primeros mensajes: Explicar dónde encontrar las cosas\nProgresivamente más breve: A medida que avanzan los encuentros, menos explicación de navegación\nAccionable: Siempre dejar claro qué deben hacer antes del próximo encuentro\n\n\n\n\n\nFrases como “¡Qué lindo fue conocerlos!”\n“No hay preguntas tontas”\nExceso de emojis\nFirmar cada mensaje (en Slack ya saben quién es)\n\n\n\n\n\n“¡Felicitaciones por…” (celebrar avances)\n“Les aviso que…” (informar sin rodeos)\n“Importante:” (destacar acciones necesarias)\n“Cualquier duda, escriban por acá” (cerrar con disponibilidad)"
+  },
+  {
+    "objectID": "APRENDIZAJES_CURSO.html#decisiones-técnicas",
+    "href": "APRENDIZAJES_CURSO.html#decisiones-técnicas",
+    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "section": "",
+    "text": "format:\n  revealjs:\n    theme: [default, ../1-intro-r/intro-r.scss]\n    slide-number: true\n    embed-resources: true\n    navigation-mode: vertical\n    width: 1280\n    height: 720\n\n\n\n\n\n\nTipo\nColor\nCódigo\n\n\n\n\nSección principal\nAzul\n#4F7CFF\n\n\nSección secundaria\nGris claro\n#F5F5F5\n\n\nEjercicio/destacado\nVerde lima\n#D4FF4F\n\n\n\n\n\n\n\nItems sin href en _quarto.yml aparecen como texto gris no clicable\nAgregar “(próximamente)” al texto del item bloqueado\nMantener tracking en ENCUENTROS_STATUS.md"
+  },
+  {
+    "objectID": "APRENDIZAJES_CURSO.html#registro-por-encuentro",
+    "href": "APRENDIZAJES_CURSO.html#registro-por-encuentro",
+    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "section": "",
+    "text": "Tema: Introducción al curso y a la EPH\nAcciones realizadas: - [x] Slides adaptadas al nuevo formato - [x] Slides de programa y “Página de Estación R” agregadas - [x] Grabación subida a plataforma - [x] Descripción cargada en plataforma - [x] Mensaje Slack enviado - [x] Foto docente actualizada\nMensaje Slack validado: Ver sección 2\n\n\n\nTema: Introducción a R + IA en el análisis de datos\nPreparación realizada (2026-02-03): - [x] Slides creadas desde cero con nuevo formato - [x] Contenido sobre R, RStudio, consola, scripts - [x] Sección de IA en el análisis de datos - [x] Ejercitación creada (intro-r-ia_ejercitacion.qmd) - [x] Módulo 2 activado en navegación del sitio - [x] Push a GitHub realizado\nEstructura de la presentación: 1. Bienvenida y repaso Encuentro 1 2. Introducción a R (qué es, para qué sirve) 3. RStudio: entorno de trabajo 4. La consola y el script 5. Tipos de datos básicos 6. IA en el análisis de datos 7. Cierre y próximos pasos\nDecisiones técnicas: - Presentación usa intro-r.scss (CSS compartido) - Imágenes almacenadas en images/ local - Audio de ejemplo para engagement (inst_adlibs_birdman1.wav)"
+  },
+  {
+    "objectID": "APRENDIZAJES_CURSO.html#lecciones-aprendidas",
+    "href": "APRENDIZAJES_CURSO.html#lecciones-aprendidas",
+    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "section": "",
+    "text": "El formato de slides del curso Intro Viz funciona bien como plantilla\nLos estudiantes necesitan instrucciones claras de navegación en el primer mensaje\nEl sistema de “(próximamente)” en el menú funciona para generar expectativa sin dar acceso\nImportante separar el archivo de tracking (ENCUENTROS_STATUS.md) del contexto general (ESTADO_CURSO.md)\nEl tono “personal pero no cursi” es el punto justo para comunicación con alumnos\n\n\n\n\n\nWorkflow de preparación pre-clase funciona: crear contenido → activar módulo → render → push\nEl CSS compartido (intro-r.scss) facilita consistencia visual entre módulos\nLos archivos de gestión (ESTADO_CURSO.md, APRENDIZAJES_CURSO.md, ENCUENTROS_STATUS.md) mantienen el tracking ordenado\nSistema de 3 archivos de documentación es escalable:\n\nESTADO_CURSO.md: qué hay que hacer (operativo)\nAPRENDIZAJES_CURSO.md: qué aprendimos (retrospectivo)\nENCUENTROS_STATUS.md: qué está activo (técnico)\n\nLa estructura de carpetas por encuentro (encuentros/N-nombre/) es clara y replicable"
+  },
+  {
+    "objectID": "APRENDIZAJES_CURSO.html#para-el-agente-futuro",
+    "href": "APRENDIZAJES_CURSO.html#para-el-agente-futuro",
+    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "section": "",
+    "text": "Generar mensaje de Slack post-encuentro con plantilla validada\nGenerar descripción para plataforma de videos\nActivar/desactivar módulos en _quarto.yml\nRenderizar y deployar sitio\nTrackear estado de cada encuentro\nRecordar estilo de comunicación del docente\n\n\n\n\n\nNúmero de encuentro\nFecha del próximo encuentro\nTema del próximo encuentro\nAcción específica que deben hacer los alumnos\nLinks relevantes del encuentro\n\n\n\n\n\n_quarto.yml (menú de navegación)\nENCUENTROS_STATUS.md (estado de módulos)\nESTADO_CURSO.md (contexto general)\nAPRENDIZAJES_CURSO.md (este archivo)"
+  },
+  {
+    "objectID": "APRENDIZAJES_CURSO.html#próximo-paso-template-de-curso-estación-r",
+    "href": "APRENDIZAJES_CURSO.html#próximo-paso-template-de-curso-estación-r",
+    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "section": "",
+    "text": "PENDIENTE para futuro: Crear un template estandarizado de curso basado en esta estructura.\n\nComponentes del template: - Sistema de 3+1 archivos de documentación (CLAUDE, ESTADO, ENCUENTROS, APRENDIZAJES) - _quarto.yml con sistema de módulos bloqueados - Estructura de carpetas encuentros/N-nombre/ - CSS compartido para slides (slides.scss) - Checklists de setup, por-encuentro y cierre\nLimpiar antes de crear template: - Archivos index_ACTIVAR.qmd con contenido genérico - URLs antiguas (intro-r-quarto → intro-r-sociales) - Carpetas legacy duplicadas\n\nÚltima actualización: 2026-02-03"
+  },
+  {
+    "objectID": "ENCUENTROS_STATUS.html",
+    "href": "ENCUENTROS_STATUS.html",
+    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "section": "",
+    "text": "Este archivo trackea qué encuentros están activos en el sitio web. Actualizar después de cada clase y re-renderizar el sitio.\n\n\n\n\n\n\n\n\n\n\n\n\nMódulo\nFecha\nTema\nEstado\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n\n\n1\n2026-01-28\nIntro al curso y EPH\n✅ Activo\n\n\n2\n2026-02-04\nIntro a R + IA\n✅ Activo\n\n\n3\n2026-02-11\ntidyverse I: Importación\n🔒 Bloqueado\n\n\n4\n2026-02-18\ntidyverse II: Transformación\n🔒 Bloqueado\n\n\n5\n2026-02-25\nProyectos y organización\n🔒 Bloqueado\n\n\n6\n2026-03-04\nggplot2 + TP integrador\n🔒 Bloqueado\n\n\n\n\n\n\n\nCambiar el estado en la tabla de arriba de 🔒 a ✅\nEditar _quarto.yml y agregar el href al item del menú\nRenderizar el sitio: quarto render\nHacer commit y push a GitHub\n\n\n\n\n# Items ACTIVOS tienen href:\n- text: \"Módulo 1: Intro al curso y EPH\"\n  href: encuentros/1-intro-curso-eph/index.qmd\n\n# Items BLOQUEADOS no tienen href (aparecen como texto gris):\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n\nÚltima actualización: 2026-02-03"
+  },
+  {
+    "objectID": "ENCUENTROS_STATUS.html#calendario-del-curso",
+    "href": "ENCUENTROS_STATUS.html#calendario-del-curso",
+    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "section": "",
+    "text": "Módulo\nFecha\nTema\nEstado\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n\n\n1\n2026-01-28\nIntro al curso y EPH\n✅ Activo\n\n\n2\n2026-02-04\nIntro a R + IA\n✅ Activo\n\n\n3\n2026-02-11\ntidyverse I: Importación\n🔒 Bloqueado\n\n\n4\n2026-02-18\ntidyverse II: Transformación\n🔒 Bloqueado\n\n\n5\n2026-02-25\nProyectos y organización\n🔒 Bloqueado\n\n\n6\n2026-03-04\nggplot2 + TP integrador\n🔒 Bloqueado"
+  },
+  {
+    "objectID": "ENCUENTROS_STATUS.html#cómo-activar-un-encuentro",
+    "href": "ENCUENTROS_STATUS.html#cómo-activar-un-encuentro",
+    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "section": "",
+    "text": "Cambiar el estado en la tabla de arriba de 🔒 a ✅\nEditar _quarto.yml y agregar el href al item del menú\nRenderizar el sitio: quarto render\nHacer commit y push a GitHub"
+  },
+  {
+    "objectID": "ENCUENTROS_STATUS.html#estructura-del-menú-en-_quarto.yml",
+    "href": "ENCUENTROS_STATUS.html#estructura-del-menú-en-_quarto.yml",
+    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "section": "",
+    "text": "# Items ACTIVOS tienen href:\n- text: \"Módulo 1: Intro al curso y EPH\"\n  href: encuentros/1-intro-curso-eph/index.qmd\n\n# Items BLOQUEADOS no tienen href (aparecen como texto gris):\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n\nÚltima actualización: 2026-02-03"
   },
   {
     "objectID": "encuentros/1-intro-curso-eph/intro-curso-eph.html#contacto-con-estación-r",
@@ -798,417 +1162,88 @@
     "text": "Próximo encuentro\n\n\n📅 Fecha: Martes 3 de febrero, 19hs (ARG)\n\n📚 Tema: Introducción a R + IA en el análisis de datos\n\n\nSeguimos la comunicación por Slack\n\n\n\n¿Preguntas? 🙋"
   },
   {
-    "objectID": "ENCUENTROS_STATUS.html",
-    "href": "ENCUENTROS_STATUS.html",
-    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "objectID": "encuentros/6-TP integrador/index.html",
+    "href": "encuentros/6-TP integrador/index.html",
+    "title": "Trabajo Práctico Integrador.",
     "section": "",
-    "text": "Este archivo trackea qué encuentros están activos en el sitio web. Actualizar después de cada clase y re-renderizar el sitio.\n\n\n\n\n\n\n\n\n\n\n\n\nMódulo\nFecha\nTema\nEstado\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n\n\n1\n2026-01-28\nIntro al curso y EPH\n✅ Activo\n\n\n2\n2026-02-04\nIntro a R + IA\n✅ Activo\n\n\n3\n2026-02-11\ntidyverse I: Importación\n🔒 Bloqueado\n\n\n4\n2026-02-18\ntidyverse II: Transformación\n🔒 Bloqueado\n\n\n5\n2026-02-25\nProyectos y organización\n🔒 Bloqueado\n\n\n6\n2026-03-04\nggplot2 + TP integrador\n🔒 Bloqueado\n\n\n\n\n\n\n\nCambiar el estado en la tabla de arriba de 🔒 a ✅\nEditar _quarto.yml y agregar el href al item del menú\nRenderizar el sitio: quarto render\nHacer commit y push a GitHub\n\n\n\n\n# Items ACTIVOS tienen href:\n- text: \"Módulo 1: Intro al curso y EPH\"\n  href: encuentros/1-intro-curso-eph/index.qmd\n\n# Items BLOQUEADOS no tienen href (aparecen como texto gris):\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n\nÚltima actualización: 2026-02-03"
+    "text": "Ejercicio de análisis con tema libre. Se puede optar por elegir la base de trabajo con la que se desarrolló el curso o una propia (tip: que no sea una base muy compleja)"
   },
   {
-    "objectID": "ENCUENTROS_STATUS.html#calendario-del-curso",
-    "href": "ENCUENTROS_STATUS.html#calendario-del-curso",
-    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
+    "objectID": "encuentros/6-TP integrador/index.html#tema",
+    "href": "encuentros/6-TP integrador/index.html#tema",
+    "title": "Trabajo Práctico Integrador.",
     "section": "",
-    "text": "Módulo\nFecha\nTema\nEstado\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n\n\n1\n2026-01-28\nIntro al curso y EPH\n✅ Activo\n\n\n2\n2026-02-04\nIntro a R + IA\n✅ Activo\n\n\n3\n2026-02-11\ntidyverse I: Importación\n🔒 Bloqueado\n\n\n4\n2026-02-18\ntidyverse II: Transformación\n🔒 Bloqueado\n\n\n5\n2026-02-25\nProyectos y organización\n🔒 Bloqueado\n\n\n6\n2026-03-04\nggplot2 + TP integrador\n🔒 Bloqueado"
+    "text": "Ejercicio de análisis con tema libre. Se puede optar por elegir la base de trabajo con la que se desarrolló el curso o una propia (tip: que no sea una base muy compleja)"
   },
   {
-    "objectID": "ENCUENTROS_STATUS.html#cómo-activar-un-encuentro",
-    "href": "ENCUENTROS_STATUS.html#cómo-activar-un-encuentro",
-    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
-    "section": "",
-    "text": "Cambiar el estado en la tabla de arriba de 🔒 a ✅\nEditar _quarto.yml y agregar el href al item del menú\nRenderizar el sitio: quarto render\nHacer commit y push a GitHub"
+    "objectID": "encuentros/6-TP integrador/index.html#eje-de-análisis",
+    "href": "encuentros/6-TP integrador/index.html#eje-de-análisis",
+    "title": "Trabajo Práctico Integrador.",
+    "section": "Eje de análisis:",
+    "text": "Eje de análisis:\nPlanteo de una pregunta sobre el tema elegido y abordaje de la respuesta con datos."
   },
   {
-    "objectID": "ENCUENTROS_STATUS.html#estructura-del-menú-en-_quarto.yml",
-    "href": "ENCUENTROS_STATUS.html#estructura-del-menú-en-_quarto.yml",
-    "title": "Estado de Encuentros - Intro al Procesamiento de Datos con R",
-    "section": "",
-    "text": "# Items ACTIVOS tienen href:\n- text: \"Módulo 1: Intro al curso y EPH\"\n  href: encuentros/1-intro-curso-eph/index.qmd\n\n# Items BLOQUEADOS no tienen href (aparecen como texto gris):\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n\nÚltima actualización: 2026-02-03"
+    "objectID": "encuentros/6-TP integrador/index.html#contenido-esperado",
+    "href": "encuentros/6-TP integrador/index.html#contenido-esperado",
+    "title": "Trabajo Práctico Integrador.",
+    "section": "Contenido esperado:",
+    "text": "Contenido esperado:\n\nPlanteo de la pregunta (sencilla).\nrmarkdown con el recorrido de lo visto en el curso:\n\nImportación (por ejemplo: read.csv(), read.table(), o aquellas de los paquetes data.table, readxl, readr, haven, foreign, entre otros). También podemos optar por el paquete {eph} y su función para descargar una base de datos get_microdata().\nLimpieza, tratamiento y transformación de datos con tidyverse (por ejemplo: filter(), select(), mutate(), group_by(), summarise()).\nVisualización de la información con ggplot() y al menos uno o dos gráficos con el geom_ a elección (focalizamos en geom_col()).\n\nBreve análisis de los hallazgos identificados o del proceso mismo del flujo de trabajo."
   },
   {
-    "objectID": "APRENDIZAJES_CURSO.html",
-    "href": "APRENDIZAJES_CURSO.html",
-    "title": "Aprendizajes del Curso - Para Agente de Gestión",
-    "section": "",
-    "text": "Este archivo documenta patrones, flujos y decisiones del curso “Intro al Procesamiento de Datos con R” para sistematizar en un agente de gestión de cursos.\n\n\n\n\n\n\n\nActivar módulo en _quarto.yml (agregar href)\nActivar ejercitación correspondiente\nRenderizar sitio: quarto render\nCommit y push a GitHub\nVerificar que el sitio esté actualizado\n\n\n\n\n\nSubir grabación a la plataforma (estacion-r.com)\nCargar descripción en plataforma con links relevantes\nEnviar mensaje en Slack (ver plantilla abajo)\nActualizar ENCUENTROS_STATUS.md\n\n\n\n\n# En _quarto.yml, cambiar de:\n- text: \"Módulo X: Nombre (próximamente)\"\n\n# A:\n- text: \"Módulo X: Nombre\"\n  href: encuentros/X-carpeta/index.qmd\n\n\n\n\n\n\n\nEjemplo validado (Encuentro 1):\nHola @canal\n\n¡Felicitaciones por haber arrancado con éxito el primer encuentro! De acá en adelante todo se pone un poco más divertido.\n\nLes aviso que ya está cargado el video en la plataforma: https://estacion-r.com/\nDesde ahí también van a poder acceder a todos los materiales. Aprovecho a dejar el link de la página del curso:\n\n:point_right: https://estacion-r.github.io/intro-r-sociales/\n\nImportante: si todavía no instalaron R y RStudio, háganlo antes del martes. En la página está la guía \"Puesta a punto\" con los pasos. Para quienes ya lo hicieron, les sugiero empezar a \"jugar\" con la consola y el script, así el próximo encuentro se hace más natural la interacción con el programa.\n\nPróximo encuentro: martes 4/2, 19hs - arrancamos a programar.\n\nCualquier duda, escriban por acá.\n¡Buena semana!\nNotas de estilo Slack: - Arranca con @canal - Tono directo pero cálido - Sin negritas de markdown (Slack usa su propio formato) - Emoji puntual (:point_right:, no abusar) - Cierre simple (“¡Buena semana!”) - Sin firma (ya saben quién escribe)\n\n\n\nEjemplo validado (Encuentro 1):\n## Encuentro 1: Introducción al curso y a la EPH\n\nEn este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC.\n\n### Links del encuentro\n\n- Página del curso: https://estacion-r.github.io/intro-r-sociales/\n- Slides del Encuentro 1: https://estacion-r.github.io/intro-r-sociales/encuentros/1-intro-curso-eph/intro-curso-eph.html\n- Puesta a punto (instalación): https://estacion-r.github.io/intro-r-sociales/encuentros/0-puesta-a-punto/\n\n### Documentación EPH (INDEC)\n\n- Cuestionario Individual: [link]\n- Cuestionario Hogar: [link]\n- Diseño de registro: [link]\n- Metodología EPH Continua: [link]\n\n### Ejercicio sugerido\n\nExplorar alguno de los cuestionarios de la EPH e identificar preguntas relacionadas con situación laboral, nivel educativo e ingresos.\n\n### Próximo encuentro\n\nMartes 4 de febrero, 19hs (ARG) - Introducción a R + IA en el análisis de datos\n\n¿Dudas? Escribinos por Slack\n\n\n\n\n\n\n\n\nDirecto pero cálido: No ser frío, pero tampoco cursi\nDescriptivo en primeros mensajes: Explicar dónde encontrar las cosas\nProgresivamente más breve: A medida que avanzan los encuentros, menos explicación de navegación\nAccionable: Siempre dejar claro qué deben hacer antes del próximo encuentro\n\n\n\n\n\nFrases como “¡Qué lindo fue conocerlos!”\n“No hay preguntas tontas”\nExceso de emojis\nFirmar cada mensaje (en Slack ya saben quién es)\n\n\n\n\n\n“¡Felicitaciones por…” (celebrar avances)\n“Les aviso que…” (informar sin rodeos)\n“Importante:” (destacar acciones necesarias)\n“Cualquier duda, escriban por acá” (cerrar con disponibilidad)\n\n\n\n\n\n\n\n\nformat:\n  revealjs:\n    theme: [default, ../1-intro-r/intro-r.scss]\n    slide-number: true\n    embed-resources: true\n    navigation-mode: vertical\n    width: 1280\n    height: 720\n\n\n\n\n\n\nTipo\nColor\nCódigo\n\n\n\n\nSección principal\nAzul\n#4F7CFF\n\n\nSección secundaria\nGris claro\n#F5F5F5\n\n\nEjercicio/destacado\nVerde lima\n#D4FF4F\n\n\n\n\n\n\n\nItems sin href en _quarto.yml aparecen como texto gris no clicable\nAgregar “(próximamente)” al texto del item bloqueado\nMantener tracking en ENCUENTROS_STATUS.md\n\n\n\n\n\n\n\n\nTema: Introducción al curso y a la EPH\nAcciones realizadas: - [x] Slides adaptadas al nuevo formato - [x] Slides de programa y “Página de Estación R” agregadas - [x] Grabación subida a plataforma - [x] Descripción cargada en plataforma - [x] Mensaje Slack enviado - [x] Foto docente actualizada\nMensaje Slack validado: Ver sección 2\n\n\n\nTema: Introducción a R + IA en el análisis de datos\nPreparación realizada (2026-02-03): - [x] Slides creadas desde cero con nuevo formato - [x] Contenido sobre R, RStudio, consola, scripts - [x] Sección de IA en el análisis de datos - [x] Ejercitación creada (intro-r-ia_ejercitacion.qmd) - [x] Módulo 2 activado en navegación del sitio - [x] Push a GitHub realizado\nEstructura de la presentación: 1. Bienvenida y repaso Encuentro 1 2. Introducción a R (qué es, para qué sirve) 3. RStudio: entorno de trabajo 4. La consola y el script 5. Tipos de datos básicos 6. IA en el análisis de datos 7. Cierre y próximos pasos\nDecisiones técnicas: - Presentación usa intro-r.scss (CSS compartido) - Imágenes almacenadas en images/ local - Audio de ejemplo para engagement (inst_adlibs_birdman1.wav)\n\n\n\n\n\n\n\n\nEl formato de slides del curso Intro Viz funciona bien como plantilla\nLos estudiantes necesitan instrucciones claras de navegación en el primer mensaje\nEl sistema de “(próximamente)” en el menú funciona para generar expectativa sin dar acceso\nImportante separar el archivo de tracking (ENCUENTROS_STATUS.md) del contexto general (ESTADO_CURSO.md)\nEl tono “personal pero no cursi” es el punto justo para comunicación con alumnos\n\n\n\n\n\nWorkflow de preparación pre-clase funciona: crear contenido → activar módulo → render → push\nEl CSS compartido (intro-r.scss) facilita consistencia visual entre módulos\nLos archivos de gestión (ESTADO_CURSO.md, APRENDIZAJES_CURSO.md, ENCUENTROS_STATUS.md) mantienen el tracking ordenado\nSistema de 3 archivos de documentación es escalable:\n\nESTADO_CURSO.md: qué hay que hacer (operativo)\nAPRENDIZAJES_CURSO.md: qué aprendimos (retrospectivo)\nENCUENTROS_STATUS.md: qué está activo (técnico)\n\nLa estructura de carpetas por encuentro (encuentros/N-nombre/) es clara y replicable\n\n\n\n\n\n\n\n\n\nGenerar mensaje de Slack post-encuentro con plantilla validada\nGenerar descripción para plataforma de videos\nActivar/desactivar módulos en _quarto.yml\nRenderizar y deployar sitio\nTrackear estado de cada encuentro\nRecordar estilo de comunicación del docente\n\n\n\n\n\nNúmero de encuentro\nFecha del próximo encuentro\nTema del próximo encuentro\nAcción específica que deben hacer los alumnos\nLinks relevantes del encuentro\n\n\n\n\n\n_quarto.yml (menú de navegación)\nENCUENTROS_STATUS.md (estado de módulos)\nESTADO_CURSO.md (contexto general)\nAPRENDIZAJES_CURSO.md (este archivo)\n\n\n\n\n\n\n\n\nPENDIENTE para futuro: Crear un template estandarizado de curso basado en esta estructura.\n\nComponentes del template: - Sistema de 3+1 archivos de documentación (CLAUDE, ESTADO, ENCUENTROS, APRENDIZAJES) - _quarto.yml con sistema de módulos bloqueados - Estructura de carpetas encuentros/N-nombre/ - CSS compartido para slides (slides.scss) - Checklists de setup, por-encuentro y cierre\nLimpiar antes de crear template: - Archivos index_ACTIVAR.qmd con contenido genérico - URLs antiguas (intro-r-quarto → intro-r-sociales) - Carpetas legacy duplicadas\n\nÚltima actualización: 2026-02-03"
+    "objectID": "encuentros/6-TP integrador/index.html#formato-de-entrega",
+    "href": "encuentros/6-TP integrador/index.html#formato-de-entrega",
+    "title": "Trabajo Práctico Integrador.",
+    "section": "Formato de entrega:",
+    "text": "Formato de entrega:\nEnviar un proyecto de Rstudio (la carpeta completa, con sus subcarpetas y archivos), que contenga el informe elaborado con Rmarkdown. Lo que se evaluará es el flujo de trabajo recorrido y que, al final, el Rmarkdown corra sin problema.\nPueden crear una carpeta en Google Drive (o espacio en la nube a gusto) y enviarme el link con el permiso de acceso para el correo federicobaraghian@gmail.com).\nEn el desarrollo del informe es necesario realizar una breve conclusión respecto a los resultados obtenidos, tanto en lo que refiere a la información producida como a lo enfrentado durante el procesamiento de datos.\n\nEnviar a federicobaraghian@gmail.com\nFecha de entrega: Hasta el 17/11/2025.\nSeguimiento del trabajo: El slack quedará abierto para que podamos intercambiar y realizar consultas para completar la actividad, no duden en usarlo!"
   },
   {
-    "objectID": "APRENDIZAJES_CURSO.html#flujos-de-trabajo",
-    "href": "APRENDIZAJES_CURSO.html#flujos-de-trabajo",
-    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "objectID": "encuentros/0-puesta-a-punto/index.html",
+    "href": "encuentros/0-puesta-a-punto/index.html",
+    "title": "Clase 0 - Puesta a punto",
     "section": "",
-    "text": "Activar módulo en _quarto.yml (agregar href)\nActivar ejercitación correspondiente\nRenderizar sitio: quarto render\nCommit y push a GitHub\nVerificar que el sitio esté actualizado\n\n\n\n\n\nSubir grabación a la plataforma (estacion-r.com)\nCargar descripción en plataforma con links relevantes\nEnviar mensaje en Slack (ver plantilla abajo)\nActualizar ENCUENTROS_STATUS.md\n\n\n\n\n# En _quarto.yml, cambiar de:\n- text: \"Módulo X: Nombre (próximamente)\"\n\n# A:\n- text: \"Módulo X: Nombre\"\n  href: encuentros/X-carpeta/index.qmd"
+    "text": "Antes de comenzar el curso, es necesario tener instalado R y RStudio en tu computadora. Esta guía te ayudará a preparar todo lo necesario para trabajar sin problemas desde el primer encuentro.\nTiempo estimado: 30-45 minutos"
   },
   {
-    "objectID": "APRENDIZAJES_CURSO.html#plantillas-de-comunicación",
-    "href": "APRENDIZAJES_CURSO.html#plantillas-de-comunicación",
-    "title": "Aprendizajes del Curso - Para Agente de Gestión",
+    "objectID": "encuentros/0-puesta-a-punto/index.html#descripción",
+    "href": "encuentros/0-puesta-a-punto/index.html#descripción",
+    "title": "Clase 0 - Puesta a punto",
     "section": "",
-    "text": "Ejemplo validado (Encuentro 1):\nHola @canal\n\n¡Felicitaciones por haber arrancado con éxito el primer encuentro! De acá en adelante todo se pone un poco más divertido.\n\nLes aviso que ya está cargado el video en la plataforma: https://estacion-r.com/\nDesde ahí también van a poder acceder a todos los materiales. Aprovecho a dejar el link de la página del curso:\n\n:point_right: https://estacion-r.github.io/intro-r-sociales/\n\nImportante: si todavía no instalaron R y RStudio, háganlo antes del martes. En la página está la guía \"Puesta a punto\" con los pasos. Para quienes ya lo hicieron, les sugiero empezar a \"jugar\" con la consola y el script, así el próximo encuentro se hace más natural la interacción con el programa.\n\nPróximo encuentro: martes 4/2, 19hs - arrancamos a programar.\n\nCualquier duda, escriban por acá.\n¡Buena semana!\nNotas de estilo Slack: - Arranca con @canal - Tono directo pero cálido - Sin negritas de markdown (Slack usa su propio formato) - Emoji puntual (:point_right:, no abusar) - Cierre simple (“¡Buena semana!”) - Sin firma (ya saben quién escribe)\n\n\n\nEjemplo validado (Encuentro 1):\n## Encuentro 1: Introducción al curso y a la EPH\n\nEn este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC.\n\n### Links del encuentro\n\n- Página del curso: https://estacion-r.github.io/intro-r-sociales/\n- Slides del Encuentro 1: https://estacion-r.github.io/intro-r-sociales/encuentros/1-intro-curso-eph/intro-curso-eph.html\n- Puesta a punto (instalación): https://estacion-r.github.io/intro-r-sociales/encuentros/0-puesta-a-punto/\n\n### Documentación EPH (INDEC)\n\n- Cuestionario Individual: [link]\n- Cuestionario Hogar: [link]\n- Diseño de registro: [link]\n- Metodología EPH Continua: [link]\n\n### Ejercicio sugerido\n\nExplorar alguno de los cuestionarios de la EPH e identificar preguntas relacionadas con situación laboral, nivel educativo e ingresos.\n\n### Próximo encuentro\n\nMartes 4 de febrero, 19hs (ARG) - Introducción a R + IA en el análisis de datos\n\n¿Dudas? Escribinos por Slack"
+    "text": "Antes de comenzar el curso, es necesario tener instalado R y RStudio en tu computadora. Esta guía te ayudará a preparar todo lo necesario para trabajar sin problemas desde el primer encuentro.\nTiempo estimado: 30-45 minutos"
   },
   {
-    "objectID": "APRENDIZAJES_CURSO.html#estilo-de-comunicación",
-    "href": "APRENDIZAJES_CURSO.html#estilo-de-comunicación",
-    "title": "Aprendizajes del Curso - Para Agente de Gestión",
-    "section": "",
-    "text": "Directo pero cálido: No ser frío, pero tampoco cursi\nDescriptivo en primeros mensajes: Explicar dónde encontrar las cosas\nProgresivamente más breve: A medida que avanzan los encuentros, menos explicación de navegación\nAccionable: Siempre dejar claro qué deben hacer antes del próximo encuentro\n\n\n\n\n\nFrases como “¡Qué lindo fue conocerlos!”\n“No hay preguntas tontas”\nExceso de emojis\nFirmar cada mensaje (en Slack ya saben quién es)\n\n\n\n\n\n“¡Felicitaciones por…” (celebrar avances)\n“Les aviso que…” (informar sin rodeos)\n“Importante:” (destacar acciones necesarias)\n“Cualquier duda, escriban por acá” (cerrar con disponibilidad)"
-  },
-  {
-    "objectID": "APRENDIZAJES_CURSO.html#decisiones-técnicas",
-    "href": "APRENDIZAJES_CURSO.html#decisiones-técnicas",
-    "title": "Aprendizajes del Curso - Para Agente de Gestión",
-    "section": "",
-    "text": "format:\n  revealjs:\n    theme: [default, ../1-intro-r/intro-r.scss]\n    slide-number: true\n    embed-resources: true\n    navigation-mode: vertical\n    width: 1280\n    height: 720\n\n\n\n\n\n\nTipo\nColor\nCódigo\n\n\n\n\nSección principal\nAzul\n#4F7CFF\n\n\nSección secundaria\nGris claro\n#F5F5F5\n\n\nEjercicio/destacado\nVerde lima\n#D4FF4F\n\n\n\n\n\n\n\nItems sin href en _quarto.yml aparecen como texto gris no clicable\nAgregar “(próximamente)” al texto del item bloqueado\nMantener tracking en ENCUENTROS_STATUS.md"
-  },
-  {
-    "objectID": "APRENDIZAJES_CURSO.html#registro-por-encuentro",
-    "href": "APRENDIZAJES_CURSO.html#registro-por-encuentro",
-    "title": "Aprendizajes del Curso - Para Agente de Gestión",
-    "section": "",
-    "text": "Tema: Introducción al curso y a la EPH\nAcciones realizadas: - [x] Slides adaptadas al nuevo formato - [x] Slides de programa y “Página de Estación R” agregadas - [x] Grabación subida a plataforma - [x] Descripción cargada en plataforma - [x] Mensaje Slack enviado - [x] Foto docente actualizada\nMensaje Slack validado: Ver sección 2\n\n\n\nTema: Introducción a R + IA en el análisis de datos\nPreparación realizada (2026-02-03): - [x] Slides creadas desde cero con nuevo formato - [x] Contenido sobre R, RStudio, consola, scripts - [x] Sección de IA en el análisis de datos - [x] Ejercitación creada (intro-r-ia_ejercitacion.qmd) - [x] Módulo 2 activado en navegación del sitio - [x] Push a GitHub realizado\nEstructura de la presentación: 1. Bienvenida y repaso Encuentro 1 2. Introducción a R (qué es, para qué sirve) 3. RStudio: entorno de trabajo 4. La consola y el script 5. Tipos de datos básicos 6. IA en el análisis de datos 7. Cierre y próximos pasos\nDecisiones técnicas: - Presentación usa intro-r.scss (CSS compartido) - Imágenes almacenadas en images/ local - Audio de ejemplo para engagement (inst_adlibs_birdman1.wav)"
-  },
-  {
-    "objectID": "APRENDIZAJES_CURSO.html#lecciones-aprendidas",
-    "href": "APRENDIZAJES_CURSO.html#lecciones-aprendidas",
-    "title": "Aprendizajes del Curso - Para Agente de Gestión",
-    "section": "",
-    "text": "El formato de slides del curso Intro Viz funciona bien como plantilla\nLos estudiantes necesitan instrucciones claras de navegación en el primer mensaje\nEl sistema de “(próximamente)” en el menú funciona para generar expectativa sin dar acceso\nImportante separar el archivo de tracking (ENCUENTROS_STATUS.md) del contexto general (ESTADO_CURSO.md)\nEl tono “personal pero no cursi” es el punto justo para comunicación con alumnos\n\n\n\n\n\nWorkflow de preparación pre-clase funciona: crear contenido → activar módulo → render → push\nEl CSS compartido (intro-r.scss) facilita consistencia visual entre módulos\nLos archivos de gestión (ESTADO_CURSO.md, APRENDIZAJES_CURSO.md, ENCUENTROS_STATUS.md) mantienen el tracking ordenado\nSistema de 3 archivos de documentación es escalable:\n\nESTADO_CURSO.md: qué hay que hacer (operativo)\nAPRENDIZAJES_CURSO.md: qué aprendimos (retrospectivo)\nENCUENTROS_STATUS.md: qué está activo (técnico)\n\nLa estructura de carpetas por encuentro (encuentros/N-nombre/) es clara y replicable"
-  },
-  {
-    "objectID": "APRENDIZAJES_CURSO.html#para-el-agente-futuro",
-    "href": "APRENDIZAJES_CURSO.html#para-el-agente-futuro",
-    "title": "Aprendizajes del Curso - Para Agente de Gestión",
-    "section": "",
-    "text": "Generar mensaje de Slack post-encuentro con plantilla validada\nGenerar descripción para plataforma de videos\nActivar/desactivar módulos en _quarto.yml\nRenderizar y deployar sitio\nTrackear estado de cada encuentro\nRecordar estilo de comunicación del docente\n\n\n\n\n\nNúmero de encuentro\nFecha del próximo encuentro\nTema del próximo encuentro\nAcción específica que deben hacer los alumnos\nLinks relevantes del encuentro\n\n\n\n\n\n_quarto.yml (menú de navegación)\nENCUENTROS_STATUS.md (estado de módulos)\nESTADO_CURSO.md (contexto general)\nAPRENDIZAJES_CURSO.md (este archivo)"
-  },
-  {
-    "objectID": "APRENDIZAJES_CURSO.html#próximo-paso-template-de-curso-estación-r",
-    "href": "APRENDIZAJES_CURSO.html#próximo-paso-template-de-curso-estación-r",
-    "title": "Aprendizajes del Curso - Para Agente de Gestión",
-    "section": "",
-    "text": "PENDIENTE para futuro: Crear un template estandarizado de curso basado en esta estructura.\n\nComponentes del template: - Sistema de 3+1 archivos de documentación (CLAUDE, ESTADO, ENCUENTROS, APRENDIZAJES) - _quarto.yml con sistema de módulos bloqueados - Estructura de carpetas encuentros/N-nombre/ - CSS compartido para slides (slides.scss) - Checklists de setup, por-encuentro y cierre\nLimpiar antes de crear template: - Archivos index_ACTIVAR.qmd con contenido genérico - URLs antiguas (intro-r-quarto → intro-r-sociales) - Carpetas legacy duplicadas\n\nÚltima actualización: 2026-02-03"
-  },
-  {
-    "objectID": "CLAUDE.html",
-    "href": "CLAUDE.html",
-    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
-    "section": "",
-    "text": "Año del curso: 2026\nTodas las fechas de este curso corresponden al año 2026. Al trabajar con fechas: - El curso inició el 28 de enero de 2026 - Las clases son los martes a las 19hs ARG - Verificar siempre el calendario 2026 para fechas correctas\n\n\n\n\n\n\nMódulo\nFecha\nTema\n\n\n\n\n1\n28/01\nIntro al curso y EPH\n\n\n2\n04/02\nIntro a R + IA\n\n\n3\n10/02\ntidyverse I\n\n\n4\n18/02\ntidyverse II\n\n\n5\n25/02\nProyectos y organización\n\n\n6\n04/03\nggplot2 + TP integrador\n\n\n\n\n\n\n\nFuente única de verdad para fechas: La tabla “Calendario de encuentros” de este archivo\nAntes de comunicar fechas a alumnos: SIEMPRE verificar contra el calendario de arriba\nSi hay discrepancia entre archivos: Este CLAUDE.md tiene prioridad, corregir el otro archivo\nESTADO_CURSO.md: Archivo operativo para tareas, pero fechas canónicas están aquí\n\n\n\n\n\nESTADO_CURSO.md - Estado actual y próximos pasos (fechas referencian a CLAUDE.md)\n_quarto.yml - Configuración del sitio (activar/bloquear módulos)\nencuentros/ - Carpetas de cada módulo\n\n\n\n\n\nPresentaciones en formato Quarto revealjs\nColores de fondo: azul #4F7CFF, gris #F5F5F5, verde lima #D4FF4F\nUsar fragments para animaciones"
-  },
-  {
-    "objectID": "CLAUDE.html#contexto-temporal",
-    "href": "CLAUDE.html#contexto-temporal",
-    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
-    "section": "",
-    "text": "Año del curso: 2026\nTodas las fechas de este curso corresponden al año 2026. Al trabajar con fechas: - El curso inició el 28 de enero de 2026 - Las clases son los martes a las 19hs ARG - Verificar siempre el calendario 2026 para fechas correctas"
-  },
-  {
-    "objectID": "CLAUDE.html#calendario-de-encuentros-2026",
-    "href": "CLAUDE.html#calendario-de-encuentros-2026",
-    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
-    "section": "",
-    "text": "Módulo\nFecha\nTema\n\n\n\n\n1\n28/01\nIntro al curso y EPH\n\n\n2\n04/02\nIntro a R + IA\n\n\n3\n10/02\ntidyverse I\n\n\n4\n18/02\ntidyverse II\n\n\n5\n25/02\nProyectos y organización\n\n\n6\n04/03\nggplot2 + TP integrador"
-  },
-  {
-    "objectID": "CLAUDE.html#reglas-de-consistencia",
-    "href": "CLAUDE.html#reglas-de-consistencia",
-    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
-    "section": "",
-    "text": "Fuente única de verdad para fechas: La tabla “Calendario de encuentros” de este archivo\nAntes de comunicar fechas a alumnos: SIEMPRE verificar contra el calendario de arriba\nSi hay discrepancia entre archivos: Este CLAUDE.md tiene prioridad, corregir el otro archivo\nESTADO_CURSO.md: Archivo operativo para tareas, pero fechas canónicas están aquí"
-  },
-  {
-    "objectID": "CLAUDE.html#archivos-importantes",
-    "href": "CLAUDE.html#archivos-importantes",
-    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
-    "section": "",
-    "text": "ESTADO_CURSO.md - Estado actual y próximos pasos (fechas referencian a CLAUDE.md)\n_quarto.yml - Configuración del sitio (activar/bloquear módulos)\nencuentros/ - Carpetas de cada módulo"
-  },
-  {
-    "objectID": "CLAUDE.html#convenciones",
-    "href": "CLAUDE.html#convenciones",
-    "title": "CLAUDE.md - Intro a R para Ciencias Sociales",
-    "section": "",
-    "text": "Presentaciones en formato Quarto revealjs\nColores de fondo: azul #4F7CFF, gris #F5F5F5, verde lima #D4FF4F\nUsar fragments para animaciones"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html",
-    "href": "ESTADO_CURSO.html",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "Año del curso: 2026 - Todas las fechas corresponden a este año.\nÚltima actualización: 2026-02-24\n\n\n\n\nCurso: Introducción al Procesamiento de Datos con R para Ciencias Sociales\nInicio: Martes 28 de enero de 2026, 19hs ARG\nDuración: 6 encuentros de 2:30 hs\nAlumnos inscriptos: 16\nDocente: Pablo Tiscornia\n\n\n\n\n\nSitio del curso: https://estacion-r.github.io/intro-r-sociales/\nRepositorio: https://github.com/Estacion-R/intro-r-sociales\nInscripciones: https://estacion-r.com/courses/8c7c8213-9b25-48d2-a9a7-e58e1cc80e25/detail?type=sync\n\n\n\n\n\n\n\nPaís\nCantidad\n\n\n\n\nArgentina\n12\n\n\nPerú\n2\n\n\nChile\n1\n\n\nColombia\n1\n\n\n\nCampos laborales: Sociología (5), Ciencia Política (2), Consultoría (2), Docencia (2), Geografía (2), Salud (2), Investigación (1)\nVías de difusión: LinkedIn (8), Boca en boca (4), X/Twitter (3), Email (1)\n\n\n\nCarpeta: _difusion/\n\n\n\nArchivo\nDescripción\nEstado\n\n\n\n\ninscriptos_2026.csv\nDatos limpios (sin emails)\n✅ Listo\n\n\nviz_inscriptos.R\nGráficos básicos\n✅ Listo\n\n\nmapa_inscriptos.R\nMapa de países\n✅ Listo\n\n\nmapa_con_insights.R\nMapa con estadísticas\n✅ Listo\n\n\ninfografia_inscriptos.R\nInfografía vertical (story)\n✅ Listo\n\n\nmapa_editorial.R\nEstilo infográfico profesional\n✅ Listo\n\n\n\nOutputs generados (_difusion/outputs/): - grafico_paises.png - Barras por país - grafico_profesiones.png - Barras por profesión - mapa_inscriptos.png - Mapa de Sudamérica - mapa_con_insights.png - Mapa con insights (colorido) - infografia_inscriptos.png - Infografía 1080x1920 - mapa_editorial.png - Estilo editorial con colores Estación R\n\n\n\n\nNota: La clase del 18/02 se suspendió. Se recupera el 24/02, corriendo el resto una semana.\n\n\n\n\nMódulo\nFecha original\nFecha real\nTema\n\n\n\n\n1\n28/01\n28/01\nIntro al curso y EPH\n\n\n2\n04/02\n04/02\nIntro a R + IA\n\n\n3\n10/02\n10/02\ntidyverse I\n\n\n4\n18/02\n24/02\ntidyverse II\n\n\n5\n25/02\n04/03\nProyectos y organización\n\n\n6\n04/03\n11/03\nggplot2 + TP integrador\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMódulo\nFecha real\nTema\nWeb\nContenido\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n✅ Nuevo formato\n\n\n1\n28/01\nIntro al curso y EPH\n✅ Activo\n✅ Nuevo formato\n\n\n2\n04/02\nIntro a R + IA\n✅ Activo\n✅ Nuevo formato\n\n\n3\n10/02\ntidyverse I\n✅ Activo\n✅ Nuevo formato (EPH)\n\n\n4\n24/02\ntidyverse II\n✅ Activo\n✅ Nuevo formato (EPH + dplyr 1.2.0)\n\n\n5\n04/03\nProyectos y organización\n🔒 Bloqueado\n🟡 Por adaptar\n\n\n6\n11/03\nggplot2 + TP integrador\n🔒 Bloqueado\n🟡 Por adaptar\n\n\n\nNota: Los módulos bloqueados aparecen en el menú como “(próximamente)” sin link.\n\n\n\n\n\n\n✅ Creada desde cero con formato del curso Intro Viz\n✅ Slides: encuentros/0-puesta-a-punto/puesta-a-punto.qmd\n✅ Script R: encuentros/0-puesta-a-punto/00-puesta_a_punto.R\n✅ Index: encuentros/0-puesta-a-punto/index.qmd\n\n\n\n\n\n✅ Adaptada al nuevo formato (background colors, fragments, columns)\n✅ Agregadas slides: Programa del curso, “Página de Estación R”\n✅ Actualizado autor a Pablo Tiscornia\n\n\n\n\n\n✅ Slides nuevas: encuentros/3-tidyverse/r-tidyverse-1.qmd\n✅ Todos los ejemplos migrados de PUNA a EPH (T1 2024)\n✅ Sección nueva: Paquetes en R (qué son, install vs library)\n✅ Sección nueva: Importación de datos (INDEC manual + paquete eph)\n✅ Contenido dividido: tidyverse I (pipa, select, filter) / tidyverse II (mutate, summarise, group_by)\n✅ Ejercitación actualizada con consignas EPH\n✅ index.qmd actualizado (docente, links, descripción)\n✅ Módulo 3 activado en _quarto.yml (encuentro + ejercitación)\n✅ Verificación pedagógica: todos los conceptos usados fueron presentados previamente\n✅ Datos EPH descargados localmente (28MB, gitignored)\n\n\n\n\n\n✅ Slides nuevas: encuentros/4-tidyverse-2/r-tidyverse-2.qmd\n✅ Todos los ejemplos con EPH (continuidad con Clase 3)\n✅ Incorpora novedades de dplyr 1.2.0 (feb 2026):\n\n.by como alternativa moderna a group_by() (ahora estable)\nfilter_out() como tip (requiere actualizar dplyr)\n\n✅ Estructura: mutate → case_when → summarise → group_by/.by → pipeline completo\n✅ Ejercitaciones integradas en slides\n✅ index.qmd creado con descripción y links\n✅ Módulo 4 activado en _quarto.yml\n✅ Verificación pedagógica: solo usa conceptos de módulos anteriores + los nuevos de este módulo\n\n\n\n\n\n✅ Sistema de encuentros activos/bloqueados en _quarto.yml\n✅ Ejercitaciones bloqueadas hasta que se dicten\n✅ Archivo ENCUENTROS_STATUS.md para tracking\n✅ Foto del docente actualizada en todas las carpetas\n\n\n\n\n\n\nEditar _quarto.yml:\n# Cambiar de:\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n# A:\n- text: \"Módulo 2: Intro a R + IA\"\n  href: encuentros/1-intro-r/index.qmd\nHacer lo mismo con la ejercitación correspondiente\nActualizar ENCUENTROS_STATUS.md\nEjecutar:\nquarto render\ngit add -A && git commit -m \"Activar Módulo X\" && git push\n\n\n\n\nformat:\n  revealjs:\n    theme: [default, ../1-intro-r/intro-r.scss]\n    slide-number: true\n    embed-resources: true\n    navigation-mode: vertical\n    width: 1280\n    height: 720\nBackground colors: - Secciones principales: {background-color=\"#4F7CFF\"} (azul) - Secciones secundarias: {background-color=\"#F5F5F5\"} (gris) - Ejercicios/destacados: {background-color=\"#D4FF4F\"} (verde lima)\nFragments:\n::: {.fragment .fade-in-then-semi-out}\nContenido animado\n:::\n\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen y links\nActivar Módulo 2 en el sitio\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen y recursos\n\n\n\n\n\nActivar Módulo 3 en el sitio\nAdaptar slides de tidyverse I al nuevo formato\nMigrar ejemplos de PUNA a EPH\nAgregar sección de importación de datos\nAgregar sección de paquetes en R\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen\nActivar Módulo 4 en el sitio\n\n\n\n\n\nAdaptar slides de tidyverse II con EPH\nIncorporar novedades dplyr 1.2.0 (.by, filter_out())\nCrear carpeta encuentros/4-tidyverse-2/ con nuevo formato\nActivar Módulo 4 en _quarto.yml\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen\nActivar Módulo 5 en el sitio\n\n\n\n\n\nAdaptar slides de Proyectos y organización\nMigrar ejemplos de la carpeta 5-reportes/ al tema de proyectos\n\n\n\n\n\nAdaptar Módulo 2 al nuevo formato de slides\nAdaptar Módulo 3 al nuevo formato de slides\nAdaptar Módulo 4 al nuevo formato de slides\nAdaptar Módulos 5-6 al nuevo formato de slides\nVerificar ejercitaciones actualizadas\nAgregar TP integrador en Módulo 6\n\n\nÚltima actualización: 2026-02-24"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#información-general",
-    "href": "ESTADO_CURSO.html#información-general",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "Curso: Introducción al Procesamiento de Datos con R para Ciencias Sociales\nInicio: Martes 28 de enero de 2026, 19hs ARG\nDuración: 6 encuentros de 2:30 hs\nAlumnos inscriptos: 16\nDocente: Pablo Tiscornia"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#urls",
-    "href": "ESTADO_CURSO.html#urls",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "Sitio del curso: https://estacion-r.github.io/intro-r-sociales/\nRepositorio: https://github.com/Estacion-R/intro-r-sociales\nInscripciones: https://estacion-r.com/courses/8c7c8213-9b25-48d2-a9a7-e58e1cc80e25/detail?type=sync"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#inscriptos---resumen-16-total",
-    "href": "ESTADO_CURSO.html#inscriptos---resumen-16-total",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "País\nCantidad\n\n\n\n\nArgentina\n12\n\n\nPerú\n2\n\n\nChile\n1\n\n\nColombia\n1\n\n\n\nCampos laborales: Sociología (5), Ciencia Política (2), Consultoría (2), Docencia (2), Geografía (2), Salud (2), Investigación (1)\nVías de difusión: LinkedIn (8), Boca en boca (4), X/Twitter (3), Email (1)"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#material-de-difusión",
-    "href": "ESTADO_CURSO.html#material-de-difusión",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "Carpeta: _difusion/\n\n\n\nArchivo\nDescripción\nEstado\n\n\n\n\ninscriptos_2026.csv\nDatos limpios (sin emails)\n✅ Listo\n\n\nviz_inscriptos.R\nGráficos básicos\n✅ Listo\n\n\nmapa_inscriptos.R\nMapa de países\n✅ Listo\n\n\nmapa_con_insights.R\nMapa con estadísticas\n✅ Listo\n\n\ninfografia_inscriptos.R\nInfografía vertical (story)\n✅ Listo\n\n\nmapa_editorial.R\nEstilo infográfico profesional\n✅ Listo\n\n\n\nOutputs generados (_difusion/outputs/): - grafico_paises.png - Barras por país - grafico_profesiones.png - Barras por profesión - mapa_inscriptos.png - Mapa de Sudamérica - mapa_con_insights.png - Mapa con insights (colorido) - infografia_inscriptos.png - Infografía 1080x1920 - mapa_editorial.png - Estilo editorial con colores Estación R"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#calendario-actualizado-clase-4-suspendida-y-recuperada",
-    "href": "ESTADO_CURSO.html#calendario-actualizado-clase-4-suspendida-y-recuperada",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "Nota: La clase del 18/02 se suspendió. Se recupera el 24/02, corriendo el resto una semana.\n\n\n\n\nMódulo\nFecha original\nFecha real\nTema\n\n\n\n\n1\n28/01\n28/01\nIntro al curso y EPH\n\n\n2\n04/02\n04/02\nIntro a R + IA\n\n\n3\n10/02\n10/02\ntidyverse I\n\n\n4\n18/02\n24/02\ntidyverse II\n\n\n5\n25/02\n04/03\nProyectos y organización\n\n\n6\n04/03\n11/03\nggplot2 + TP integrador"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#estado-de-encuentros-en-el-sitio-web",
-    "href": "ESTADO_CURSO.html#estado-de-encuentros-en-el-sitio-web",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "Módulo\nFecha real\nTema\nWeb\nContenido\n\n\n\n\n0\n-\nPuesta a punto\n✅ Activo\n✅ Nuevo formato\n\n\n1\n28/01\nIntro al curso y EPH\n✅ Activo\n✅ Nuevo formato\n\n\n2\n04/02\nIntro a R + IA\n✅ Activo\n✅ Nuevo formato\n\n\n3\n10/02\ntidyverse I\n✅ Activo\n✅ Nuevo formato (EPH)\n\n\n4\n24/02\ntidyverse II\n✅ Activo\n✅ Nuevo formato (EPH + dplyr 1.2.0)\n\n\n5\n04/03\nProyectos y organización\n🔒 Bloqueado\n🟡 Por adaptar\n\n\n6\n11/03\nggplot2 + TP integrador\n🔒 Bloqueado\n🟡 Por adaptar\n\n\n\nNota: Los módulos bloqueados aparecen en el menú como “(próximamente)” sin link."
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#tareas-completadas-esta-sesión",
-    "href": "ESTADO_CURSO.html#tareas-completadas-esta-sesión",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "✅ Creada desde cero con formato del curso Intro Viz\n✅ Slides: encuentros/0-puesta-a-punto/puesta-a-punto.qmd\n✅ Script R: encuentros/0-puesta-a-punto/00-puesta_a_punto.R\n✅ Index: encuentros/0-puesta-a-punto/index.qmd\n\n\n\n\n\n✅ Adaptada al nuevo formato (background colors, fragments, columns)\n✅ Agregadas slides: Programa del curso, “Página de Estación R”\n✅ Actualizado autor a Pablo Tiscornia\n\n\n\n\n\n✅ Slides nuevas: encuentros/3-tidyverse/r-tidyverse-1.qmd\n✅ Todos los ejemplos migrados de PUNA a EPH (T1 2024)\n✅ Sección nueva: Paquetes en R (qué son, install vs library)\n✅ Sección nueva: Importación de datos (INDEC manual + paquete eph)\n✅ Contenido dividido: tidyverse I (pipa, select, filter) / tidyverse II (mutate, summarise, group_by)\n✅ Ejercitación actualizada con consignas EPH\n✅ index.qmd actualizado (docente, links, descripción)\n✅ Módulo 3 activado en _quarto.yml (encuentro + ejercitación)\n✅ Verificación pedagógica: todos los conceptos usados fueron presentados previamente\n✅ Datos EPH descargados localmente (28MB, gitignored)\n\n\n\n\n\n✅ Slides nuevas: encuentros/4-tidyverse-2/r-tidyverse-2.qmd\n✅ Todos los ejemplos con EPH (continuidad con Clase 3)\n✅ Incorpora novedades de dplyr 1.2.0 (feb 2026):\n\n.by como alternativa moderna a group_by() (ahora estable)\nfilter_out() como tip (requiere actualizar dplyr)\n\n✅ Estructura: mutate → case_when → summarise → group_by/.by → pipeline completo\n✅ Ejercitaciones integradas en slides\n✅ index.qmd creado con descripción y links\n✅ Módulo 4 activado en _quarto.yml\n✅ Verificación pedagógica: solo usa conceptos de módulos anteriores + los nuevos de este módulo\n\n\n\n\n\n✅ Sistema de encuentros activos/bloqueados en _quarto.yml\n✅ Ejercitaciones bloqueadas hasta que se dicten\n✅ Archivo ENCUENTROS_STATUS.md para tracking\n✅ Foto del docente actualizada en todas las carpetas"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#cómo-activar-un-módulo-después-de-cada-clase",
-    "href": "ESTADO_CURSO.html#cómo-activar-un-módulo-después-de-cada-clase",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "Editar _quarto.yml:\n# Cambiar de:\n- text: \"Módulo 2: Intro a R + IA (próximamente)\"\n# A:\n- text: \"Módulo 2: Intro a R + IA\"\n  href: encuentros/1-intro-r/index.qmd\nHacer lo mismo con la ejercitación correspondiente\nActualizar ENCUENTROS_STATUS.md\nEjecutar:\nquarto render\ngit add -A && git commit -m \"Activar Módulo X\" && git push"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#formato-de-presentaciones-nuevo-estilo",
-    "href": "ESTADO_CURSO.html#formato-de-presentaciones-nuevo-estilo",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "format:\n  revealjs:\n    theme: [default, ../1-intro-r/intro-r.scss]\n    slide-number: true\n    embed-resources: true\n    navigation-mode: vertical\n    width: 1280\n    height: 720\nBackground colors: - Secciones principales: {background-color=\"#4F7CFF\"} (azul) - Secciones secundarias: {background-color=\"#F5F5F5\"} (gris) - Ejercicios/destacados: {background-color=\"#D4FF4F\"} (verde lima)\nFragments:\n::: {.fragment .fade-in-then-semi-out}\nContenido animado\n:::"
-  },
-  {
-    "objectID": "ESTADO_CURSO.html#próximos-pasos",
-    "href": "ESTADO_CURSO.html#próximos-pasos",
-    "title": "Estado del Curso - Intro R Ciencias Sociales",
-    "section": "",
-    "text": "Subir grabación a la plataforma\nEnviar mensaje por Slack con resumen y links\nActivar Módulo 2 en el sitio\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen y recursos\n\n\n\n\n\nActivar Módulo 3 en el sitio\nAdaptar slides de tidyverse I al nuevo formato\nMigrar ejemplos de PUNA a EPH\nAgregar sección de importación de datos\nAgregar sección de paquetes en R\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen\nActivar Módulo 4 en el sitio\n\n\n\n\n\nAdaptar slides de tidyverse II con EPH\nIncorporar novedades dplyr 1.2.0 (.by, filter_out())\nCrear carpeta encuentros/4-tidyverse-2/ con nuevo formato\nActivar Módulo 4 en _quarto.yml\n\n\n\n\n\nSubir grabación a la plataforma\nEnviar mensaje por Slack con resumen\nActivar Módulo 5 en el sitio\n\n\n\n\n\nAdaptar slides de Proyectos y organización\nMigrar ejemplos de la carpeta 5-reportes/ al tema de proyectos\n\n\n\n\n\nAdaptar Módulo 2 al nuevo formato de slides\nAdaptar Módulo 3 al nuevo formato de slides\nAdaptar Módulo 4 al nuevo formato de slides\nAdaptar Módulos 5-6 al nuevo formato de slides\nVerificar ejercitaciones actualizadas\nAgregar TP integrador en Módulo 6\n\n\nÚltima actualización: 2026-02-24"
-  },
-  {
-    "objectID": "encuentros/1-intro-curso-eph/index.html",
-    "href": "encuentros/1-intro-curso-eph/index.html",
-    "title": "Encuentro 1 - Introducción al curso y a la EPH",
-    "section": "",
-    "text": "En este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC: qué es, cómo se releva, qué mide y por qué es tan importante para las ciencias sociales en Argentina.\nNo hay ejercitación obligatoria esta semana, pero te proponemos explorar la documentación de la EPH para familiarizarte con la encuesta."
-  },
-  {
-    "objectID": "encuentros/1-intro-curso-eph/index.html#descripción",
-    "href": "encuentros/1-intro-curso-eph/index.html#descripción",
-    "title": "Encuentro 1 - Introducción al curso y a la EPH",
-    "section": "",
-    "text": "En este primer encuentro nos presentamos, conocemos la dinámica del curso y nos introducimos en la Encuesta Permanente de Hogares (EPH) del INDEC: qué es, cómo se releva, qué mide y por qué es tan importante para las ciencias sociales en Argentina.\nNo hay ejercitación obligatoria esta semana, pero te proponemos explorar la documentación de la EPH para familiarizarte con la encuesta."
-  },
-  {
-    "objectID": "encuentros/1-intro-curso-eph/index.html#slides",
-    "href": "encuentros/1-intro-curso-eph/index.html#slides",
-    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "objectID": "encuentros/0-puesta-a-punto/index.html#slides",
+    "href": "encuentros/0-puesta-a-punto/index.html#slides",
+    "title": "Clase 0 - Puesta a punto",
     "section": "Slides",
     "text": "Slides"
   },
   {
-    "objectID": "encuentros/1-intro-curso-eph/index.html#contenidos",
-    "href": "encuentros/1-intro-curso-eph/index.html#contenidos",
-    "title": "Encuentro 1 - Introducción al curso y a la EPH",
-    "section": "Contenidos",
-    "text": "Contenidos\n\nPresentación del curso y dinámica de trabajo\n¿Qué es la EPH? Contexto y objetivos\nCaracterísticas: cobertura, muestra, rotación\nLos tres cuestionarios (vivienda, hogar, individuos)\nPrincipales indicadores y clasificadores\nDocumentación oficial"
+    "objectID": "encuentros/0-puesta-a-punto/index.html#pasos-a-seguir",
+    "href": "encuentros/0-puesta-a-punto/index.html#pasos-a-seguir",
+    "title": "Clase 0 - Puesta a punto",
+    "section": "Pasos a seguir",
+    "text": "Pasos a seguir\n\n1. Instalar R\nDescargar desde: cloud.r-project.org\n\nWindows: Download R for Windows → base → Download R-x.x.x\nMac: Download R for macOS → elegir según procesador\nLinux: Seguir instrucciones según distribución\n\n\n\n2. Instalar RStudio\nDescargar desde: posit.co/download/rstudio-desktop/\n\n\n3. Solo Windows: Instalar Rtools\nDescargar desde: cran.r-project.org/bin/windows/Rtools/\n\n\n4. Ejecutar script de puesta a punto\nDescargá y ejecutá el siguiente script en RStudio:\n\n# ============================================\n# SCRIPT DE PUESTA A PUNTO\n# Curso: Intro al Procesamiento de Datos con R\n# ============================================\n\n# 1. Instalar pacman (gestor de paquetes)\nif (!require(\"pacman\")) {\n  install.packages(\"pacman\")\n}\nlibrary(pacman)\n\n# 2. Instalar y cargar paquetes del curso\np_load(\n  \"tidyverse\",   # Manipulación y visualización de datos\n  \"haven\",       # Leer archivos SPSS, Stata, SAS\n  \"readxl\",      # Leer archivos Excel\n  \"janitor\",     # Limpieza de datos\n  \"eph\",         # Datos de la EPH Argentina\n  \"gt\",          # Tablas elegantes\n  \"scales\"       # Formateo de escalas\n)\n\n# 3. Verificar instalación\ncat(\"\\n✓ ¡Paquetes instalados correctamente!\\n\")\ncat(\"Versión de R:\", R.version.string, \"\\n\")\ncat(\"Versión de tidyverse:\", as.character(packageVersion(\"tidyverse\")), \"\\n\")\n\n# 4. Prueba rápida\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point(color = \"#2E86AB\", size = 3) +\n  labs(\n    title = \"¡Todo funciona!\",\n    subtitle = \"Estás listo/a para el curso\"\n  ) +\n  theme_minimal()\n\nTambién podés descargar el script directamente: 00-puesta_a_punto.R\n\n\n5. Instalar Slack\nDescargar desde: slack.com/downloads\nUnirse al workspace de Estación R con la invitación enviada por email."
   },
   {
-    "objectID": "encuentros/1-intro-curso-eph/index.html#links-útiles",
-    "href": "encuentros/1-intro-curso-eph/index.html#links-útiles",
-    "title": "Encuentro 1 - Introducción al curso y a la EPH",
-    "section": "Links útiles",
-    "text": "Links útiles\n\nLa nueva EPH continua - Metodología (INDEC)\nDiseño de registro EPH\nCuestionarios EPH"
+    "objectID": "encuentros/0-puesta-a-punto/index.html#problemas-frecuentes",
+    "href": "encuentros/0-puesta-a-punto/index.html#problemas-frecuentes",
+    "title": "Clase 0 - Puesta a punto",
+    "section": "Problemas frecuentes",
+    "text": "Problemas frecuentes\n\nError al instalar paquetes en Windows\nSi tenés errores al instalar tidyverse, asegurate de:\n\nTener Rtools instalado\nReiniciar RStudio después de instalar Rtools\nVerificar conexión a internet\n\n\n\nRStudio no encuentra R\n\nCerrar RStudio\nVerificar que R esté instalado correctamente\nReinstalar R si es necesario\nAbrir RStudio nuevamente\n\n\n\nProblemas con caracteres especiales (tildes, ñ)\nEn RStudio: Tools → Global Options → Code → Saving → Default text encoding: UTF-8"
   },
   {
-    "objectID": "encuentros/1-intro-curso-eph/index.html#docente",
-    "href": "encuentros/1-intro-curso-eph/index.html#docente",
-    "title": "Encuentro 1 - Introducción al curso y a la EPH",
+    "objectID": "encuentros/0-puesta-a-punto/index.html#ayuda",
+    "href": "encuentros/0-puesta-a-punto/index.html#ayuda",
+    "title": "Clase 0 - Puesta a punto",
+    "section": "Ayuda",
+    "text": "Ayuda\nSi tenés problemas con la instalación:\n\nEscribinos por Slack en el canal #intro-r-sociales\nEnviá un email a pablotiscornia@estacion-r.com"
+  },
+  {
+    "objectID": "encuentros/0-puesta-a-punto/index.html#docente",
+    "href": "encuentros/0-puesta-a-punto/index.html#docente",
+    "title": "Clase 0 - Puesta a punto",
     "section": "Docente",
     "text": "Docente\n\nPablo Tiscornia"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#contacto-con-estación-r",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#contacto-con-estación-r",
-    "title": "⚙️ Puesta a punto",
-    "section": "Contacto con Estación R",
-    "text": "Contacto con Estación R\n\n\n\n💬 Slack\n🔗 Web\n✉️ Correo\n\n🐘 Mastodon\n𝕏 X\n\n[in] LinkedIn\n[ig] Instagram"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-necesitamos",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-necesitamos",
-    "title": "⚙️ Puesta a punto",
-    "section": "¿Qué necesitamos?",
-    "text": "¿Qué necesitamos?\nPara poder trabajar en el curso necesitamos:\n\n\n1. R 📊\nEl lenguaje de programación\n\n\n\n2. RStudio 💻\nEl entorno de desarrollo (IDE)\n\n\n\n3. Paquetes 📦\nHerramientas adicionales\n\n\n\n4. Slack 💬\nPara comunicarnos"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-es-r",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-es-r",
-    "title": "⚙️ Puesta a punto",
-    "section": "¿Qué es R?",
-    "text": "¿Qué es R?\n\n\n\nR es un lenguaje de programación especializado en estadística y análisis de datos\n\n\n\n\n\nEs gratuito y de código abierto\n\n\n\n\n\nTiene una comunidad enorme de usuarios en todo el mundo\n\n\n\n\n\nIdeal para ciencias sociales, economía, salud pública, etc."
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#descargar-r",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#descargar-r",
-    "title": "⚙️ Puesta a punto",
-    "section": "Descargar R",
-    "text": "Descargar R\nPaso 1: Ir a cloud.r-project.org\n\n\nPaso 2: Elegir tu sistema operativo\n\nWindows: “Download R for Windows” → “base” → “Download R-x.x.x”\nMac: “Download R for macOS” → elegir según procesador\nLinux: Seguir instrucciones según distribución\n\n\n\n\nPaso 3: Ejecutar el instalador con opciones por defecto"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#para-usuarios-de-windows",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#para-usuarios-de-windows",
-    "title": "⚙️ Puesta a punto",
-    "section": "Para usuarios de Windows ⚠️",
-    "text": "Para usuarios de Windows ⚠️\n\nImportante: Instalar también Rtools\n\n\n👉 Ir a cran.r-project.org/bin/windows/Rtools/\n\n\n\n👉 Descargar la versión que corresponda a tu versión de R\n\n\n\n👉 Necesario para compilar algunos paquetes (como tidyverse)"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-es-rstudio",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-es-rstudio",
-    "title": "⚙️ Puesta a punto",
-    "section": "¿Qué es RStudio?",
-    "text": "¿Qué es RStudio?\n\n\nRStudio es un IDE (Entorno de Desarrollo Integrado) para R\n\n\n\nHace que trabajar con R sea mucho más fácil\n\n\n\nIncluye:\n\nEditor de código con autocompletado\nVisualizador de datos y gráficos\nGestor de archivos y proyectos\nTerminal integrada"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#descargar-rstudio",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#descargar-rstudio",
-    "title": "⚙️ Puesta a punto",
-    "section": "Descargar RStudio",
-    "text": "Descargar RStudio\n\n1. Ir a posit.co/download/rstudio-desktop/\n\n\n2. Descargar la versión gratuita “RStudio Desktop”\n\n\n\n3. Elegir tu sistema operativo\n\n\n\n4. Ejecutar el instalador"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#verificar-la-instalación",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#verificar-la-instalación",
-    "title": "⚙️ Puesta a punto",
-    "section": "Verificar la instalación",
-    "text": "Verificar la instalación\n\n1. Abrir RStudio (no R directamente)\n\n\n2. En la consola (panel inferior izquierdo), escribir:\n\nR.version.string\n\n\n\n\n3. Debería mostrar algo como:\n\"R version 4.x.x (2024-xx-xx)\""
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#conociendo-rstudio",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#conociendo-rstudio",
-    "title": "⚙️ Puesta a punto",
-    "section": "Conociendo RStudio",
-    "text": "Conociendo RStudio\nRStudio tiene 4 paneles principales:\n\n\n\n\n1. Editor (arriba izquierda)\nDonde escribimos código\n\n\n\n2. Consola (abajo izquierda)\nDonde se ejecuta el código\n\n\n\n\n3. Entorno (arriba derecha)\nObjetos en memoria\n\n\n\n4. Archivos/Plots/Ayuda (abajo derecha)\nNavegación y visualización"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#consola-vs-editor",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#consola-vs-editor",
-    "title": "⚙️ Puesta a punto",
-    "section": "Consola vs Editor",
-    "text": "Consola vs Editor\n\n\nConsola 💻\n\nEjecuta código inmediatamente\nNo guarda el código\nÚtil para pruebas rápidas\n\n\nEditor 📝\n\nGuarda el código en archivos .R\nPermite ejecutar línea por línea\nSiempre trabajar desde el editor"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-son-los-paquetes",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#qué-son-los-paquetes",
-    "title": "⚙️ Puesta a punto",
-    "section": "¿Qué son los paquetes?",
-    "text": "¿Qué son los paquetes?\n\n\nLos paquetes son extensiones que agregan funcionalidades a R\n\n\n\nR base viene con funciones básicas\n\n\n\nLos paquetes nos dan herramientas especializadas:\n\ntidyverse para manipulación de datos\nggplot2 para visualización\nhaven para leer archivos de SPSS/Stata\neph para datos de la EPH Argentina"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#instalar-paquetes",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#instalar-paquetes",
-    "title": "⚙️ Puesta a punto",
-    "section": "Instalar paquetes",
-    "text": "Instalar paquetes\nEn la consola de RStudio:\n\n# Instalar un paquete\ninstall.packages(\"tidyverse\")\n\n\n\nSolo necesitás hacer esto una vez por paquete\n\n\n\n⏳ La instalación puede tardar algunos minutos"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#cargar-paquetes",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#cargar-paquetes",
-    "title": "⚙️ Puesta a punto",
-    "section": "Cargar paquetes",
-    "text": "Cargar paquetes\nCada vez que abras RStudio, tenés que cargar los paquetes:\n\n# Cargar el paquete\nlibrary(tidyverse)\n\n\n\nAnalogía 📚\n\n\n\nAcción\nAnalogía\n\n\n\n\nInstalar\nComprar el libro (una vez)\n\n\nCargar\nSacar el libro de la biblioteca (cada sesión)"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#paquetes-del-curso",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#paquetes-del-curso",
-    "title": "⚙️ Puesta a punto",
-    "section": "Paquetes del curso",
-    "text": "Paquetes del curso\n\n# Ecosistema tidyverse\ninstall.packages(\"tidyverse\")  # Manipulación y visualización\n# Importación de datos\ninstall.packages(\"haven\")      # Leer archivos SPSS/Stata\ninstall.packages(\"readxl\")     # Leer archivos Excel\n# Datos de Argentina\ninstall.packages(\"eph\")        # Encuesta Permanente de Hogares\n# Utilidades\ninstall.packages(\"janitor\")    # Limpieza de datos\n\n\n\n💡 También podés ejecutar el script 00-puesta_a_punto.R"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#script-de-puesta-a-punto",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#script-de-puesta-a-punto",
-    "title": "⚙️ Puesta a punto",
-    "section": "Script de puesta a punto",
-    "text": "Script de puesta a punto\nDescargá y ejecutá el script desde el sitio del curso:\n\nestacion-r.github.io/intro-r-sociales/encuentros/0-puesta-a-punto/\n\n\nEste script:\n\n✅ Verifica que R esté instalado correctamente\n✅ Instala todos los paquetes necesarios\n✅ Comprueba que todo funcione"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#comunicación-del-curso",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#comunicación-del-curso",
-    "title": "⚙️ Puesta a punto",
-    "section": "Comunicación del curso",
-    "text": "Comunicación del curso\nUsamos Slack para:\n\n\n\n\n💬 Consultas entre clases\n📎 Compartir código y recursos\n\n\n\n📢 Anuncios importantes\n👥 Comunidad de estudiantes\n\n\n\n\nDescargar: slack.com/downloads"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#unirse-al-workspace",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#unirse-al-workspace",
-    "title": "⚙️ Puesta a punto",
-    "section": "Unirse al workspace",
-    "text": "Unirse al workspace\n\n\n1. Recibirás una invitación por email\n\n\n\n2. Crear cuenta o usar una existente\n\n\n\n3. Buscar el canal #intro-r-sociales\n\n\n\n4. ¡Presentate brevemente en el canal!"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#r-no-se-encuentra",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#r-no-se-encuentra",
-    "title": "⚙️ Puesta a punto",
-    "section": "R no se encuentra",
-    "text": "R no se encuentra\nError: RStudio no detecta R\n\n\nSolución:\n\nVerificar que R esté instalado\nReinstalar R si es necesario\nEn Windows: verificar que R está en el PATH"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#error-al-instalar-paquetes",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#error-al-instalar-paquetes",
-    "title": "⚙️ Puesta a punto",
-    "section": "Error al instalar paquetes",
-    "text": "Error al instalar paquetes\nError: package 'xxx' is not available\n\n\nSoluciones:\n\n✅ Verificar conexión a internet\n✅ En Windows: instalar Rtools\n✅ Probar con otro mirror:\n\n\ninstall.packages(\"xxx\", repos = \"https://cloud.r-project.org\")"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#caracteres-especiales",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#caracteres-especiales",
-    "title": "⚙️ Puesta a punto",
-    "section": "Caracteres especiales",
-    "text": "Caracteres especiales\nError: Problemas con tildes o ñ\n\n\nSolución:\nEn RStudio ir a:\nTools → Global Options → Code → Saving → Default text encoding: UTF-8"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#checklist",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#checklist",
-    "title": "⚙️ Puesta a punto",
-    "section": "Checklist",
-    "text": "Checklist\n\n\n\n\nItem\nEstado\n\n\n\n\nR instalado (versión 4.x o superior)\n⬜\n\n\nRStudio instalado y funcionando\n⬜\n\n\nRtools instalado (solo Windows)\n⬜\n\n\nPaquete tidyverse instalado\n⬜\n\n\nSlack instalado y workspace unido\n⬜"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#probar-que-todo-funcione",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#probar-que-todo-funcione",
-    "title": "⚙️ Puesta a punto",
-    "section": "Probar que todo funcione",
-    "text": "Probar que todo funcione\nEjecutá este código en RStudio:\n\n# Cargar tidyverse\nlibrary(tidyverse)\n\n# Crear un gráfico simple\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point(color = \"#4F7CFF\", size = 3) +\n  labs(title = \"¡Todo funciona!\") +\n  theme_minimal()\n\n\n\nSi ves el gráfico, ¡estás listo/a para el curso! 🎉"
-  },
-  {
-    "objectID": "encuentros/0-puesta-a-punto/puesta-a-punto.html#nos-vemos-en-clase",
-    "href": "encuentros/0-puesta-a-punto/puesta-a-punto.html#nos-vemos-en-clase",
-    "title": "⚙️ Puesta a punto",
-    "section": "Nos vemos en clase",
-    "text": "Nos vemos en clase\n\n\n📅 Fecha: Martes 27 de enero, 19hs (ARG)\n\n📚 Tema: Introducción al curso y a la EPH\n\n\nSi tenés problemas con la instalación, escribinos por Slack\n\n\n\n¿Preguntas? 🙋"
   },
   {
     "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2.html#contacto-con-estación-r",
@@ -1400,13 +1435,6 @@
     "text": "Ejercitación summarise() + group_by()\n\n\n\nCalcular la edad promedio y la cantidad de personas para toda la base.\n\n\n\n\n\nCalcular la cantidad de personas por condición de actividad (ESTADO). Tip: summarise(n = n(), .by = ESTADO).\n\n\n\n\n\nFiltrar la población ocupada (ESTADO == 1) con ingreso positivo (P21 &gt; 0). Calcular el ingreso promedio por región (REGION).\n\n\n\n\n\nDesafío: Al ejercicio anterior, agregarle una recodificación de CH04 a sexo (“Varón”/“Mujer”) y calcular el ingreso promedio por sexo y región."
   },
   {
-    "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2.html#novedad-de-dplyr-filter_out",
-    "href": "encuentros/4-tidyverse-2/r-tidyverse-2.html#novedad-de-dplyr-filter_out",
-    "title": "Procesando datos con {tidyverse} - Parte II",
-    "section": "Novedad de dplyr: filter_out()",
-    "text": "Novedad de dplyr: filter_out()\n\n\nDesde febrero 2026, dplyr incluye filter_out(): el complemento de filter().\n\n\n\n\nfilter() = me quedo con las filas que cumplen la condición\nfilter_out() = saco las filas que cumplen la condición\n\n\n\n\n\n# Estas dos líneas hacen lo mismo:\neph_ind |&gt; filter(ESTADO != 4)\n\neph_ind |&gt; filter_out(ESTADO == 4)\n\n\n\n\n\nPara usarlo, actualizar dplyr: install.packages(\"dplyr\")"
-  },
-  {
     "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2.html#un-análisis-completo-con-la-eph",
     "href": "encuentros/4-tidyverse-2/r-tidyverse-2.html#un-análisis-completo-con-la-eph",
     "title": "Procesando datos con {tidyverse} - Parte II",
@@ -1428,18 +1456,18 @@
     "text": "Lo que logramos hoy\n\n\n✅ mutate() + case_when() — crear variables y recodificar\n\n\n\n✅ summarise() — resumir datos (promedios, conteos, etc.)\n\n\n\n✅ group_by() / .by — operar por grupos\n\n\n\n✅ Combinar todo en un pipeline completo con la EPH"
   },
   {
-    "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2.html#próximo-encuentro-proyectos-y-organización",
-    "href": "encuentros/4-tidyverse-2/r-tidyverse-2.html#próximo-encuentro-proyectos-y-organización",
+    "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2.html#próximo-encuentro-proyectos-ggplot2-y-tp-integrador",
+    "href": "encuentros/4-tidyverse-2/r-tidyverse-2.html#próximo-encuentro-proyectos-ggplot2-y-tp-integrador",
     "title": "Procesando datos con {tidyverse} - Parte II",
-    "section": "Próximo encuentro: Proyectos y organización",
-    "text": "Próximo encuentro: Proyectos y organización\n\n\n📁 Cómo organizar un proyecto de R profesionalmente\n\n\n\n📦 RStudio Projects y carpetas de trabajo\n\n\n\n🔄 Buenas prácticas de reproducibilidad\n\n\n\n🎯 Integración con todo lo aprendido"
+    "section": "Próximo encuentro: Proyectos, ggplot2 y TP integrador",
+    "text": "Próximo encuentro: Proyectos, ggplot2 y TP integrador\n\n\n📁 Cómo organizar un proyecto de R profesionalmente\n\n\n\n📊 ggplot2: visualización de datos\n\n\n\n🎯 TP integrador: aplicando todo lo aprendido\n\n\n\n🏁 Último encuentro del curso"
   },
   {
     "objectID": "encuentros/4-tidyverse-2/r-tidyverse-2.html#gracias",
     "href": "encuentros/4-tidyverse-2/r-tidyverse-2.html#gracias",
     "title": "Procesando datos con {tidyverse} - Parte II",
     "section": "¡Gracias!",
-    "text": "¡Gracias!\n\nNos vemos el martes 4 de marzo\n\n📧 pablotiscornia@estacion-r.com\n💬 Slack de Estación R"
+    "text": "¡Gracias!\n\nNos vemos el martes 10 de marzo\n\n📧 pablotiscornia@estacion-r.com\n💬 Slack de Estación R"
   },
   {
     "objectID": "encuentros/2-intro-r-ia/intro-r-ia_ejercitacion.html",
@@ -1785,6 +1813,13 @@
     "text": "Caso práctico - Operador %in%\n\n\nQueremos analizar solo GBA y Patagonia (REGION 1 y 44):\n\n\neph_gba_pat &lt;- eph_ind |&gt;\n  filter(REGION %in% c(1, 44))\n\ntable(eph_gba_pat$REGION)\n\n\n   1   44 \n7051 5527 \n\n\n\n\n\n%in% es más prolijo que escribir REGION == 1 | REGION == 44, especialmente cuando son varias categorías."
   },
   {
+    "objectID": "encuentros/3-tidyverse/r-tidyverse-1.html#novedad-filter_out",
+    "href": "encuentros/3-tidyverse/r-tidyverse-1.html#novedad-filter_out",
+    "title": "Procesando datos con {tidyverse} - Parte I",
+    "section": "Novedad: filter_out()",
+    "text": "Novedad: filter_out()\n\n\nDesde febrero 2026, dplyr incluye filter_out(): el complemento de filter().\n\n\n\n\nfilter() = me quedo con las filas que cumplen la condición\nfilter_out() = saco las filas que cumplen la condición\n\n\n\n\n\n# Estas dos líneas hacen lo mismo:\neph_ind |&gt; filter(ESTADO != 4)\n\neph_ind |&gt; filter_out(ESTADO == 4)\n\n\n\n\n\nPara usarlo, actualizar dplyr: install.packages(\"dplyr\")"
+  },
+  {
     "objectID": "encuentros/3-tidyverse/r-tidyverse-1.html#select-filter",
     "href": "encuentros/3-tidyverse/r-tidyverse-1.html#select-filter",
     "title": "Procesando datos con {tidyverse} - Parte I",
@@ -1916,12 +1951,5 @@
     "title": "Docente",
     "section": "Mundo R:",
     "text": "Mundo R:\nHe participado en la organización y difusión de la comunidad de R en Buenos Aires, en el desarrollo de los paquetes eph, herramientas, comunicacion y evyth.\n📝 Podés encontrar parte de mi recorrido y trabajo con R en mi blog estación-R, buscar Tips sobre R con rtips (twitter)/rtips (Mastodon) y descubrir Asombrosos paquetes de R en Latinoamérica, proyectos que llevo adelante como aporte a la comunidad.\nPodemos cruzarnos en: 𝕏 estacion-r | Mastodon 🦣 | Github | 🇷 estacion-r | 𝕏 pabblo_h"
-  },
-  {
-    "objectID": "encuentros/3-tidyverse/r-tidyverse-1.html#novedad-filter_out",
-    "href": "encuentros/3-tidyverse/r-tidyverse-1.html#novedad-filter_out",
-    "title": "Procesando datos con {tidyverse} - Parte I",
-    "section": "Novedad: filter_out()",
-    "text": "Novedad: filter_out()\n\n\nDesde febrero 2026, dplyr incluye filter_out(): el complemento de filter().\n\n\n\n\nfilter() = me quedo con las filas que cumplen la condición\nfilter_out() = saco las filas que cumplen la condición\n\n\n\n\n\n# Estas dos líneas hacen lo mismo:\neph_ind |&gt; filter(ESTADO != 4)\n\neph_ind |&gt; filter_out(ESTADO == 4)\n\n\n\n\n\nPara usarlo, actualizar dplyr: install.packages(\"dplyr\")"
   }
 ]

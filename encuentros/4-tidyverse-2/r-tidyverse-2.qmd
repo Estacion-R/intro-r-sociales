@@ -758,7 +758,7 @@ eph_ind |>
 
 # Para la semana que viene... {background-color="#F5F5F5"}
 
-## Próximo encuentro: Proyectos y organización
+## Próximo encuentro: Proyectos, ggplot2 y TP integrador
 
 <br>
 
@@ -769,26 +769,26 @@ eph_ind |>
 <br>
 
 ::: {.fragment .fade-in-then-semi-out}
-📦 **RStudio Projects** y carpetas de trabajo
+📊 **ggplot2**: visualización de datos
 :::
 
 <br>
 
 ::: {.fragment .fade-in-then-semi-out}
-🔄 Buenas prácticas de **reproducibilidad**
+🎯 **TP integrador**: aplicando todo lo aprendido
 :::
 
 <br>
 
 ::: {.fragment}
-🎯 Integración con todo lo aprendido
+🏁 Último encuentro del curso
 :::
 
 ## ¡Gracias! {background-color="#4F7CFF"}
 
 <br><br>
 
-### Nos vemos el **martes 4 de marzo**
+### Nos vemos el **martes 10 de marzo**
 
 <br>
 
