@@ -1,42 +1,43 @@
 ---
-title: Trabajo Práctico Integrador. 
+title: "Encuentro 6 - Proyectos de R, ggplot2 y TP integrador"
 author: Estación R
 image: featured.png
-description: Consigna para la entrega del trabajo
+description: "Organización de proyectos en RStudio, visualización de datos con ggplot2, y consigna del trabajo práctico integrador."
 ---
 
-## Tema:
+## Descripción
 
-Ejercicio de análisis con tema libre. Se puede optar por elegir la base de trabajo con la que se desarrolló el curso o una propia (*tip: que no sea una base muy compleja*)
+En este último encuentro cerramos el curso con tres bloques. Primero, aprendemos a **organizar nuestro trabajo** con proyectos de RStudio (rutas relativas, estructura de carpetas). Luego, nos sumergimos en la **visualización de datos** con `{ggplot2}`, construyendo gráficos capa por capa con datos de la EPH. Finalmente, presentamos la **consigna del TP integrador** que aplica todo lo aprendido en el curso.
 
-## Eje de análisis:
+## Slides
 
-Planteo de una pregunta sobre el tema elegido y abordaje de la respuesta con datos.
+<iframe class="slide-deck" src="r-proyectos-ggplot2.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 
-## Contenido esperado:
+## Contenidos
 
--   Planteo de la pregunta (sencilla).
+- Proyectos de RStudio: rutas absolutas vs. relativas
+- Estructura de carpetas para un proyecto de datos
+- `{ggplot2}`: Grammar of Graphics y capas
+- `geom_col()`: gráficos de barras
+- Atributos: `fill`, `color`, `labs()`, `theme()`
+- TP integrador: consigna, formato y fecha de entrega
 
--   rmarkdown con el recorrido de lo visto en el curso:
+## Links útiles
 
-    -   **Importación** (por ejemplo: read.csv(), read.table(), o aquellas de los paquetes data.table, readxl, readr, haven, foreign, entre otros). También podemos optar por el paquete {eph} y su función para descargar una base de datos get_microdata().
+- [Ciencia de Datos para Gente Sociable - Visualización](https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/visualizacion.html)
+- [R para Ciencia de Datos - Visualización](https://es.r4ds.hadley.nz/03-visualize.html)
+- [ggplot2 - Sitio oficial](https://ggplot2.tidyverse.org/)
+- [Diseño de registro EPH](https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_registro_1t19.pdf)
 
-    -   **Limpieza, tratamiento y transformación de datos con tidyverse** (por ejemplo: filter(), select(), mutate(), group_by(), summarise()).
+## Trabajo Práctico Integrador
 
-    -   **Visualización** de la información con ggplot() y al menos uno o dos gráficos con el geom\_ a elección (focalizamos en geom_col()).
+- **Tema:** Análisis con tema libre (EPH u otra base)
+- **Formato:** Proyecto de RStudio con informe en Rmarkdown
+- **Enviar a:** federicobaraghian@gmail.com
+- **Fecha de entrega:** Martes 8 de abril de 2026
 
--   Breve análisis de los hallazgos identificados o del proceso mismo del flujo de trabajo.
+## Docente
 
-## Formato de entrega:
+![](images/docente.jpg){style="float: right; padding-left: 10px;" fig-alt="Foto de Pablo Tiscornia" width="180"}
 
-Enviar un **proyecto de Rstudio** (la carpeta completa, con sus subcarpetas y archivos), que contenga el informe elaborado con Rmarkdown. Lo que se evaluará es el flujo de trabajo recorrido y que, al final, el Rmarkdown corra sin problema.
-
-Pueden crear una carpeta en Google Drive (o espacio en la nube a gusto) y enviarme el link con el permiso de acceso para el correo federicobaraghian\@gmail.com).
-
-En el desarrollo del informe es necesario realizar una breve conclusión respecto a los resultados obtenidos, tanto en lo que refiere a la información producida como a lo enfrentado durante el procesamiento de datos.
-
--   Enviar a *federicobaraghian\@gmail.com*
-
--   **Fecha de entrega**: Hasta el 17/11/2025.
-
--   **Seguimiento del trabajo**: El slack quedará abierto para que podamos intercambiar y realizar consultas para completar la actividad, no duden en usarlo!
+[Pablo Tiscornia](https://www.linkedin.com/in/pablotiscornia/)

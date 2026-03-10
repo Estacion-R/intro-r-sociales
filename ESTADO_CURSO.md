@@ -2,7 +2,7 @@
 
 > **Año del curso: 2026** - Todas las fechas corresponden a este año.
 >
-> Última actualización: 2026-03-03
+> Última actualización: 2026-03-04
 
 ## Información General
 
@@ -204,13 +204,19 @@ Contenido animado
 - [ ] No se activa Módulo 5 en el sitio (el próximo encuentro usa slides del Módulo 4 ya activo)
 
 ### Antes del Encuentro 5 (03/03) — tidyverse II: ✅ COMPLETADO
+- [x] Enviar mensaje recordatorio de conexión por Slack
 - [x] Verificar que slides del Módulo 4 (`r-tidyverse-2.qmd`) estén correctas
 - [x] Activar ejercitación del Módulo 4 en `_quarto.yml`
 - [x] Crear ejercitación standalone (`r-tidyverse-2_ejercitacion.qmd`)
 - [x] Verificar que los datos EPH estén disponibles localmente
 - [x] Actualizar slide de cierre (fecha 10/03, contenido Enc 6)
 
+### Después del Encuentro 5 (03/03):
+- [x] Subir grabación a la plataforma
+- [x] Enviar mensaje por Slack con resumen y links
+
 ### Antes del Encuentro 6 (10/03) — Proyectos + ggplot2:
+- [ ] Enviar mensaje recordatorio de conexión por Slack
 - [ ] Adaptar slides de Proyectos y organización al nuevo formato
 - [ ] Adaptar/crear slides de ggplot2
 - [ ] Agregar TP integrador
@@ -225,4 +231,4 @@ Contenido animado
 - [ ] Agregar TP integrador en Módulo 6
 
 ---
-*Última actualización: 2026-02-25*
+*Última actualización: 2026-03-04*

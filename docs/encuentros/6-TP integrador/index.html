@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Estación R">
-<meta name="description" content="Consigna para la entrega del trabajo">
+<meta name="description" content="Organización de proyectos en RStudio, visualización de datos con ggplot2, y consigna del trabajo práctico integrador.">
 
-<title>Trabajo Práctico Integrador.</title>
+<title>Encuentro 6 - Proyectos de R, ggplot2 y TP integrador</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,8 +130,14 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../../encuentros/4-tidyverse-2/index.html">
  <span class="dropdown-text">Módulo 4: tidyverse II</span></a>
   </li>  
-        <li class="dropdown-header">Módulo 5: Proyectos y organización (próximamente)</li>
-        <li class="dropdown-header">Módulo 6: ggplot2 + TP integrador (próximamente)</li>
+        <li>
+    <a class="dropdown-item" href="../../encuentros/6-TP integrador/index.html">
+ <span class="dropdown-text">Módulo 5: Proyectos y organización</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../encuentros/6-TP integrador/index.html">
+ <span class="dropdown-text">Módulo 6: ggplot2 + TP integrador</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -151,8 +157,14 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../../encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.html">
  <span class="dropdown-text">Módulo 4: tidyverse II</span></a>
   </li>  
-        <li class="dropdown-header">Módulo 5: Proyectos (próximamente)</li>
-        <li class="dropdown-header">Módulo 6: ggplot2 (próximamente)</li>
+        <li>
+    <a class="dropdown-item" href="../../encuentros/6-TP integrador/r-proyectos-ggplot2_ejercitacion.qmd">
+ <span class="dropdown-text">Módulo 5: Proyectos y ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../encuentros/6-TP integrador/index.html">
+ <span class="dropdown-text">Módulo 6: TP integrador</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -177,10 +189,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tema" id="toc-tema" class="nav-link active" data-scroll-target="#tema">Tema:</a></li>
-  <li><a href="#eje-de-análisis" id="toc-eje-de-análisis" class="nav-link" data-scroll-target="#eje-de-análisis">Eje de análisis:</a></li>
-  <li><a href="#contenido-esperado" id="toc-contenido-esperado" class="nav-link" data-scroll-target="#contenido-esperado">Contenido esperado:</a></li>
-  <li><a href="#formato-de-entrega" id="toc-formato-de-entrega" class="nav-link" data-scroll-target="#formato-de-entrega">Formato de entrega:</a></li>
+  <li><a href="#descripción" id="toc-descripción" class="nav-link active" data-scroll-target="#descripción">Descripción</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#contenidos" id="toc-contenidos" class="nav-link" data-scroll-target="#contenidos">Contenidos</a></li>
+  <li><a href="#links-útiles" id="toc-links-útiles" class="nav-link" data-scroll-target="#links-útiles">Links útiles</a></li>
+  <li><a href="#trabajo-práctico-integrador" id="toc-trabajo-práctico-integrador" class="nav-link" data-scroll-target="#trabajo-práctico-integrador">Trabajo Práctico Integrador</a></li>
+  <li><a href="#docente" id="toc-docente" class="nav-link" data-scroll-target="#docente">Docente</a></li>
   </ul>
 </nav>
     </div>
@@ -189,12 +203,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Trabajo Práctico Integrador.</h1>
+<h1 class="title">Encuentro 6 - Proyectos de R, ggplot2 y TP integrador</h1>
 </div>
 
 <div>
   <div class="description">
-    Consigna para la entrega del trabajo
+    Organización de proyectos en RStudio, visualización de datos con ggplot2, y consigna del trabajo práctico integrador.
   </div>
 </div>
 
@@ -217,37 +231,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="tema" class="level2">
-<h2 class="anchored" data-anchor-id="tema">Tema:</h2>
-<p>Ejercicio de análisis con tema libre. Se puede optar por elegir la base de trabajo con la que se desarrolló el curso o una propia (<em>tip: que no sea una base muy compleja</em>)</p>
+<section id="descripción" class="level2">
+<h2 class="anchored" data-anchor-id="descripción">Descripción</h2>
+<p>En este último encuentro cerramos el curso con tres bloques. Primero, aprendemos a <strong>organizar nuestro trabajo</strong> con proyectos de RStudio (rutas relativas, estructura de carpetas). Luego, nos sumergimos en la <strong>visualización de datos</strong> con <code>{ggplot2}</code>, construyendo gráficos capa por capa con datos de la EPH. Finalmente, presentamos la <strong>consigna del TP integrador</strong> que aplica todo lo aprendido en el curso.</p>
 </section>
-<section id="eje-de-análisis" class="level2">
-<h2 class="anchored" data-anchor-id="eje-de-análisis">Eje de análisis:</h2>
-<p>Planteo de una pregunta sobre el tema elegido y abordaje de la respuesta con datos.</p>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<iframe class="slide-deck" src="r-proyectos-ggplot2.html" height="420" width="747" style="border: 1px solid #2e3846;">
+</iframe>
 </section>
-<section id="contenido-esperado" class="level2">
-<h2 class="anchored" data-anchor-id="contenido-esperado">Contenido esperado:</h2>
+<section id="contenidos" class="level2">
+<h2 class="anchored" data-anchor-id="contenidos">Contenidos</h2>
 <ul>
-<li><p>Planteo de la pregunta (sencilla).</p></li>
-<li><p>rmarkdown con el recorrido de lo visto en el curso:</p>
-<ul>
-<li><p><strong>Importación</strong> (por ejemplo: read.csv(), read.table(), o aquellas de los paquetes data.table, readxl, readr, haven, foreign, entre otros). También podemos optar por el paquete {eph} y su función para descargar una base de datos get_microdata().</p></li>
-<li><p><strong>Limpieza, tratamiento y transformación de datos con tidyverse</strong> (por ejemplo: filter(), select(), mutate(), group_by(), summarise()).</p></li>
-<li><p><strong>Visualización</strong> de la información con ggplot() y al menos uno o dos gráficos con el geom_ a elección (focalizamos en geom_col()).</p></li>
-</ul></li>
-<li><p>Breve análisis de los hallazgos identificados o del proceso mismo del flujo de trabajo.</p></li>
+<li>Proyectos de RStudio: rutas absolutas vs.&nbsp;relativas</li>
+<li>Estructura de carpetas para un proyecto de datos</li>
+<li><code>{ggplot2}</code>: Grammar of Graphics y capas</li>
+<li><code>geom_col()</code>: gráficos de barras</li>
+<li>Atributos: <code>fill</code>, <code>color</code>, <code>labs()</code>, <code>theme()</code></li>
+<li>TP integrador: consigna, formato y fecha de entrega</li>
 </ul>
 </section>
-<section id="formato-de-entrega" class="level2">
-<h2 class="anchored" data-anchor-id="formato-de-entrega">Formato de entrega:</h2>
-<p>Enviar un <strong>proyecto de Rstudio</strong> (la carpeta completa, con sus subcarpetas y archivos), que contenga el informe elaborado con Rmarkdown. Lo que se evaluará es el flujo de trabajo recorrido y que, al final, el Rmarkdown corra sin problema.</p>
-<p>Pueden crear una carpeta en Google Drive (o espacio en la nube a gusto) y enviarme el link con el permiso de acceso para el correo federicobaraghian@gmail.com).</p>
-<p>En el desarrollo del informe es necesario realizar una breve conclusión respecto a los resultados obtenidos, tanto en lo que refiere a la información producida como a lo enfrentado durante el procesamiento de datos.</p>
+<section id="links-útiles" class="level2">
+<h2 class="anchored" data-anchor-id="links-útiles">Links útiles</h2>
 <ul>
-<li><p>Enviar a <em>federicobaraghian@gmail.com</em></p></li>
-<li><p><strong>Fecha de entrega</strong>: Hasta el 17/11/2025.</p></li>
-<li><p><strong>Seguimiento del trabajo</strong>: El slack quedará abierto para que podamos intercambiar y realizar consultas para completar la actividad, no duden en usarlo!</p></li>
+<li><a href="https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/visualizacion.html">Ciencia de Datos para Gente Sociable - Visualización</a></li>
+<li><a href="https://es.r4ds.hadley.nz/03-visualize.html">R para Ciencia de Datos - Visualización</a></li>
+<li><a href="https://ggplot2.tidyverse.org/">ggplot2 - Sitio oficial</a></li>
+<li><a href="https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_registro_1t19.pdf">Diseño de registro EPH</a></li>
 </ul>
+</section>
+<section id="trabajo-práctico-integrador" class="level2">
+<h2 class="anchored" data-anchor-id="trabajo-práctico-integrador">Trabajo Práctico Integrador</h2>
+<ul>
+<li><strong>Tema:</strong> Análisis con tema libre (EPH u otra base)</li>
+<li><strong>Formato:</strong> Proyecto de RStudio con informe en Rmarkdown</li>
+<li><strong>Enviar a:</strong> federicobaraghian@gmail.com</li>
+<li><strong>Fecha de entrega:</strong> Martes 8 de abril de 2026</li>
+</ul>
+</section>
+<section id="docente" class="level2">
+<h2 class="anchored" data-anchor-id="docente">Docente</h2>
+<p><img src="images/docente.jpg" class="img-fluid" style="float: right; padding-left: 10px;" alt="Foto de Pablo Tiscornia" width="180"></p>
+<p><a href="https://www.linkedin.com/in/pablotiscornia/">Pablo Tiscornia</a></p>
 
 
 </section>

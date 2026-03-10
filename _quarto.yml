@@ -7,6 +7,7 @@ project:
     - encuentros/2-intro-r-ia/intro-r.scss
     - encuentros/3-tidyverse/intro-r.scss
     - encuentros/4-tidyverse-2/intro-r.scss
+    - encuentros/6-TP integrador/intro-r.scss
 
 website:
   #logo: jsm-logo.png
@@ -38,8 +39,10 @@ website:
             href: encuentros/3-tidyverse/index.qmd
           - text: "Módulo 4: tidyverse II"
             href: encuentros/4-tidyverse-2/index.qmd
-          - text: "Módulo 5: Proyectos y organización (próximamente)"
-          - text: "Módulo 6: ggplot2 + TP integrador (próximamente)"
+          - text: "Módulo 5: Proyectos y organización"
+            href: encuentros/6-TP integrador/index.qmd
+          - text: "Módulo 6: ggplot2 + TP integrador"
+            href: encuentros/6-TP integrador/index.qmd
       - text: "Ejercitación"
         menu:
          - text: "Módulo 2: Intro a R + IA"
@@ -49,8 +52,10 @@ website:
            href: encuentros/3-tidyverse/r-tidyverse_ejercicios.qmd
          - text: "Módulo 4: tidyverse II"
            href: encuentros/4-tidyverse-2/r-tidyverse-2_ejercitacion.qmd
-         - text: "Módulo 5: Proyectos (próximamente)"
-         - text: "Módulo 6: ggplot2 (próximamente)"
+         - text: "Módulo 5: Proyectos y ggplot2"
+           href: encuentros/6-TP integrador/r-proyectos-ggplot2_ejercitacion.qmd
+         - text: "Módulo 6: TP integrador"
+           href: encuentros/6-TP integrador/index.qmd
     right: 
       - href: cod_de_conducta.qmd
         text: Código de conducta

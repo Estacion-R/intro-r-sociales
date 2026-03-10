@@ -11,14 +11,14 @@ Todas las fechas de este curso corresponden al año 2026. Al trabajar con fechas
 
 ## Calendario de encuentros 2026
 
-| Módulo | Fecha | Tema |
-|--------|-------|------|
+| Encuentro | Fecha | Tema |
+|-----------|-------|------|
 | 1 | 28/01 | Intro al curso y EPH |
 | 2 | 04/02 | Intro a R + IA |
-| 3 | 10/02 | tidyverse I |
-| 4 | 18/02 | tidyverse II |
-| 5 | 25/02 | Proyectos y organización |
-| 6 | 04/03 | ggplot2 + TP integrador |
+| 3 | 10/02 | tidyverse I (paquetes, importación EPH) |
+| 4 | 24/02 | tidyverse I cont. (pipa, select, filter) |
+| 5 | 04/03 | tidyverse II (mutate, summarise, group_by) |
+| 6 | 11/03 | Proyectos + ggplot2 + TP integrador |
 
 ## Reglas de Consistencia
 
