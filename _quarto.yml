@@ -26,6 +26,8 @@ website:
         text: "Puesta a punto"
       - href: profesor.qmd
         text: "Docente"
+      - href: tp-integrador.qmd
+        text: "TP Integrador"
       - text: "Encuentros"
         menu:
           - text: "Clase 0: Puesta a punto"

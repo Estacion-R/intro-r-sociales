@@ -1,0 +1,88 @@
+---
+title: "Trabajo Práctico Integrador"
+subtitle: "Introducción al Procesamiento de Datos con R para Ciencias Sociales"
+author: "Estación R"
+date: 2026-03-10
+format:
+  html:
+    theme: cosmo
+    toc: false
+    embed-resources: true
+  pdf:
+    documentclass: article
+    geometry: margin=2.5cm
+---
+
+![](img/Logo_PNG_Baja_Mesa%20de%20trabajo%201.png){fig-align="center" width="180"}
+
+## Consigna
+
+Realizar un **ejercicio de análisis de datos con tema libre**. Pueden usar la EPH que trabajamos durante el curso u otra base de datos que les interese.
+
+El objetivo es integrar las herramientas que vimos a lo largo del curso en un flujo de trabajo completo: desde la importación de datos hasta la obtención de resultados.
+
+## Contenido esperado
+
+El trabajo tiene que incluir:
+
+- **Importación** de datos
+- **Procesamiento** con `{tidyverse}`: `filter()`, `select()`, `mutate()`, `summarise()`
+- **Visualización** con `{ggplot2}` *(opcional, pero suma)*
+- **Breve análisis** de los hallazgos (puede ser con comentarios en el script usando `#`)
+
+## Formato de entrega
+
+1. Crear un **proyecto de RStudio** con la estructura de carpetas que vimos en clase:
+
+```
+mi_proyecto/
+├── mi_proyecto.Rproj
+├── datos/
+│   └── mi_base_de_datos.csv
+├── scripts/
+│   └── analisis.R
+└── outputs/        # (opcional)
+    └── grafico.png
+```
+
+2. El proyecto tiene que contener un **script de R** (`.R`) con el código del análisis.
+
+3. **Subir la carpeta completa** a Google Drive (u otro servicio) y compartir el link.
+
+4. **Enviar el link** a: [pablotiscornia@estacion-r.com](mailto:pablotiscornia@estacion-r.com)
+
+## Fecha de entrega
+
+**Martes 8 de abril de 2026**
+
+## Evaluación
+
+La evaluación es **aprobado / desaprobado**.
+
+Se evalúa el **flujo de trabajo**, no la complejidad del análisis:
+
+- ✅ Que el script **corra sin errores** de principio a fin
+- ✅ Que esté **organizado** dentro de un proyecto de RStudio
+- ✅ Que use las **herramientas** que vimos en el curso
+
+No hace falta que sea un análisis sofisticado. Lo importante es demostrar que pueden armar un proyecto, cargar datos, procesarlos y obtener un resultado.
+
+## Ideas de bases de datos
+
+Si no quieren usar la EPH, acá hay algunas fuentes donde pueden encontrar datos interesantes:
+
+| Fuente | Descripción | Link |
+|--------|-------------|------|
+| **EPH (INDEC)** | Encuesta Permanente de Hogares — la que usamos en el curso | [indec.gob.ar](https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos) |
+| **datos.gob.ar** | Portal de datos abiertos de Argentina (salud, educación, transporte) | [datos.gob.ar](https://datos.gob.ar/) |
+| **Buenos Aires Data** | Datos abiertos de la Ciudad de Buenos Aires | [data.buenosaires.gob.ar](https://data.buenosaires.gob.ar/) |
+| **datos.gob.mx** | Portal de datos abiertos de México | [datos.gob.mx](https://datos.gob.mx/) |
+| **Paquete `eph`** | Descargar la EPH directo desde R con `get_microdata()` | [CRAN](https://cran.r-project.org/package=eph) |
+
+## Consultas
+
+El canal de **Slack** queda abierto para consultas sobre la consigna o el código. No duden en escribir.
+
+---
+
+*Estación R — [estacion-r.com](https://estacion-r.com/)*
