@@ -928,21 +928,21 @@
     "href": "encuentros/6-TP integrador/r-proyectos-ggplot2.html#consigna-del-tp",
     "title": "Proyectos de R y Visualización con {ggplot2}",
     "section": "Consigna del TP",
-    "text": "Consigna del TP\n\n\nTema: Ejercicio de análisis con tema libre. Pueden usar la EPH u otra base de datos propia.\n\n\n\nEje: Plantear una pregunta sencilla sobre el tema elegido y responderla con datos.\n\n\n\nContenido esperado:\n\nImportación de datos\nProcesamiento con tidyverse (filter, select, mutate, summarise)\nVisualización con ggplot2 (al menos 1-2 gráficos)\nBreve análisis de los hallazgos"
+    "text": "Consigna del TP\n\n\nTema: Ejercicio de análisis con tema libre. Pueden usar la EPH u otra base de datos propia.\n\n\n\nEje: Plantear una pregunta sencilla sobre el tema elegido y responderla con datos.\n\n\n\nContenido esperado:\n\nImportación de datos\nProcesamiento con tidyverse (filter, select, mutate, summarise)\nVisualización con ggplot2 (opcional, suma puntos)\nBreve análisis de los hallazgos"
   },
   {
     "objectID": "encuentros/6-TP integrador/r-proyectos-ggplot2.html#formato-de-entrega",
     "href": "encuentros/6-TP integrador/r-proyectos-ggplot2.html#formato-de-entrega",
     "title": "Proyectos de R y Visualización con {ggplot2}",
     "section": "Formato de entrega",
-    "text": "Formato de entrega\n\n\n📂 Enviar un proyecto de RStudio completo (carpeta con subcarpetas y archivos)\n\n\n\n📄 Que contenga un informe elaborado con Rmarkdown (.Rmd)\n\n\n\n☁️ Subir a Google Drive (u otro servicio) y compartir el link\n\n\n\n📧 Enviar a: federicobaraghian@gmail.com\n📅 Fecha de entrega: Martes 8 de abril de 2026"
+    "text": "Formato de entrega\n\n\n📂 Enviar un proyecto de RStudio completo (carpeta con subcarpetas y archivos)\n\n\n\n📄 Que contenga un script de R (.R) con el código del análisis\n\n\n\n☁️ Subir a Google Drive (u otro servicio) y compartir el link\n\n\n\n📧 Enviar a: pablotiscornia@estacion-r.com\n📅 Fecha de entrega: Martes 8 de abril de 2026"
   },
   {
     "objectID": "encuentros/6-TP integrador/r-proyectos-ggplot2.html#tips-para-el-tp",
     "href": "encuentros/6-TP integrador/r-proyectos-ggplot2.html#tips-para-el-tp",
     "title": "Proyectos de R y Visualización con {ggplot2}",
     "section": "Tips para el TP",
-    "text": "Tips para el TP\n\n\n\nNo elegir una base muy compleja. La EPH está perfecta.\n\n\n\n\n\nQue el Rmarkdown corra sin errores de principio a fin.\n\n\n\n\n\nEl Slack queda abierto para consultas.\n\n\n\n\n\nSe evalúa el flujo de trabajo, no la complejidad del análisis."
+    "text": "Tips para el TP\n\n\n\nNo elegir una base muy compleja. La EPH está perfecta.\n\n\n\n\n\nQue el script corra sin errores de principio a fin.\n\n\n\n\n\nEl Slack queda abierto para consultas.\n\n\n\n\n\nSe evalúa el flujo de trabajo, no la complejidad del análisis."
   },
   {
     "objectID": "encuentros/6-TP integrador/r-proyectos-ggplot2.html#lo-que-logramos-en-el-curso",
@@ -1418,7 +1418,7 @@
     "href": "encuentros/6-TP integrador/index.html#trabajo-práctico-integrador",
     "title": "Encuentro 6 - Proyectos de R, ggplot2 y TP integrador",
     "section": "Trabajo Práctico Integrador",
-    "text": "Trabajo Práctico Integrador\n\nTema: Análisis con tema libre (EPH u otra base)\nFormato: Proyecto de RStudio con informe en Rmarkdown\nEnviar a: federicobaraghian@gmail.com\nFecha de entrega: Martes 8 de abril de 2026"
+    "text": "Trabajo Práctico Integrador\n\nTema: Análisis con tema libre (EPH u otra base)\nFormato: Proyecto de RStudio con script de R (.R)\nEnviar a: federicobaraghian@gmail.com\nFecha de entrega: Martes 8 de abril de 2026"
   },
   {
     "objectID": "encuentros/6-TP integrador/index.html#docente",

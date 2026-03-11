@@ -619,7 +619,7 @@ ggplot(data = df_ingreso_sexo,
 
 -   **Importación** de datos
 -   **Procesamiento** con tidyverse (`filter`, `select`, `mutate`, `summarise`)
--   **Visualización** con `ggplot2` (al menos 1-2 gráficos)
+-   **Visualización** con `ggplot2` (opcional, suma puntos)
 -   Breve **análisis** de los hallazgos
 :::
 
@@ -634,7 +634,7 @@ ggplot(data = df_ingreso_sexo,
 <br>
 
 ::: {.fragment .fade-in-then-semi-out}
-📄 Que contenga un informe elaborado con **Rmarkdown** (.Rmd)
+📄 Que contenga un **script de R** (.R) con el código del análisis
 :::
 
 <br>
@@ -646,7 +646,7 @@ ggplot(data = df_ingreso_sexo,
 <br>
 
 ::: fragment
-📧 Enviar a: **federicobaraghian\@gmail.com**
+📧 Enviar a: **pablotiscornia\@estacion-r.com**
 
 📅 **Fecha de entrega:** Martes 8 de abril de 2026
 :::
@@ -662,7 +662,7 @@ ggplot(data = df_ingreso_sexo,
 <br>
 
 ::: {.fragment .fade-in-then-semi-out}
--   Que el Rmarkdown **corra sin errores** de principio a fin.
+-   Que el script **corra sin errores** de principio a fin.
 :::
 
 <br>
